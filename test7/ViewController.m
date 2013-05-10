@@ -1,0 +1,136 @@
+//
+//  ViewController.m
+//  test7
+//
+//  Created by Joosung Kim on 4/26/13.
+//  Copyright (c) 2013 Joosung Kim. All rights reserved.
+//
+//  Edited by Jay Jeong on 4/28/13
+//  Copyright (c) 2013 Jay Jeong. All rights reserved.
+
+
+#import "ViewController.h"
+
+
+@interface ViewController ()
+@property (retain, nonatomic) IBOutlet UIView *taskList;
+
+@property (retain, nonatomic) IBOutlet UIScrollView *scrollView;
+
+@end
+
+@implementation ViewController
+@synthesize scrollView, taskList;
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+	// Do any additional setup after loading the view, typically from a nib.
+    [scrollView addSubview: self.taskList];
+    [scrollView setContentSize:self.taskList.frame.size];
+    self.observerName.text = self.valObsName;
+    self.observeSite.text = self.valObsSite;
+    self.observeFloor.text = self.valObsFloor;
+}
+
+- (void)viewDidAppear
+{
+    [scrollView setContentSize:CGSizeMake(770, 740)];
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+- (void)dealloc {
+//    [_observerName release];
+//    [_observeSite release];
+    [_detailTitle release];
+    [_partialV2 release];
+    [_partialV1 release];
+    [_partialV3 release];
+    [_partialV4 release];
+    [observeFloor release];
+    [super dealloc];
+}
+- (IBAction)changeLocation:(id)sender {
+    self.detailTitle.title = @"Location";
+    self.partialV1.hidden = NO;
+    self.partialV2.hidden = YES;
+    self.partialV3.hidden = YES;
+    self.partialV4.hidden = YES;
+}
+- (IBAction)taskComp:(id)sender {
+    self.detailTitle.title = @"Computer";
+    self.partialV1.hidden = YES;
+    self.partialV2.hidden = NO;
+    self.partialV3.hidden = YES;
+    self.partialV4.hidden = YES;
+}
+
+- (IBAction)taskPaper:(id)sender {
+    self.detailTitle.title = @"Paper";
+    self.partialV1.hidden = YES;
+    self.partialV2.hidden = YES;
+    self.partialV3.hidden = NO;
+    self.partialV4.hidden = YES;
+}
+
+- (IBAction)taskInteraction:(id)sender {
+    self.detailTitle.title = @"Interaction";
+    self.partialV1.hidden = YES;
+    self.partialV2.hidden = YES;
+    self.partialV3.hidden = YES;
+    self.partialV4.hidden = NO;
+}
+
+- (IBAction)endObservation:(id)sender {
+    UIAlertView *exitConfirm = [[UIAlertView alloc] initWithTitle:@"End Observation" message:@"Are you sure to end the current observation?" delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
+    [exitConfirm show];
+    [exitConfirm release];
+    
+}
+
+
+@synthesize lblLocation;
+@synthesize observerName;
+@synthesize observeSite;
+
+- (IBAction)changeLabelLocation_exam:(id)sender {
+    UIButton *button = (UIButton *)sender;
+    lblLocation.text = [NSString stringWithFormat:@"Exam Room %@", button.titleLabel.text];
+}
+- (IBAction)changeLabelLocation_office:(id)sender {
+    UIButton *button = (UIButton *)sender;
+    lblLocation.text = [NSString stringWithFormat:@"Office %@", button.titleLabel.text];
+}
+- (IBAction)changeLabelLocation_procedure:(id)sender {
+    UIButton *button = (UIButton *)sender;
+    lblLocation.text = [NSString stringWithFormat:@"Procedure Room %@", button.titleLabel.text];
+}
+- (IBAction)changeLabelLocation_nurse:(id)sender {
+    UIButton *button = (UIButton *)sender;
+    lblLocation.text = [NSString stringWithFormat:@"Nurse Station %@", button.titleLabel.text];
+}
+- (IBAction)changeLabelLocation_lab:(id)sender {
+    UIButton *button = (UIButton *)sender;
+    lblLocation.text = [NSString stringWithFormat:@"Lab %@", button.titleLabel.text];
+}
+- (IBAction)changeLabelLocation_other:(id)sender {
+    UIButton *button = (UIButton *)sender;
+    lblLocation.text = [NSString stringWithFormat:@"%@", button.titleLabel.text];
+}
+
+-(void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if(buttonIndex == [alertView cancelButtonIndex]){
+        NSLog(@"Cancel");
+    }else{
+        [self performSegueWithIdentifier:@"logoutSegue" sender: self];
+        
+    }
+}
+
+@end
