@@ -14,13 +14,15 @@
 
 @interface ViewController ()
 @property (retain, nonatomic) IBOutlet UIView *taskList;
+@property (retain, nonatomic) IBOutlet UIView *locationList;
+@property (retain, nonatomic) IBOutlet UINavigationItem *headerMain;
 
 @property (retain, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @end
 
 @implementation ViewController
-@synthesize scrollView, taskList;
+@synthesize scrollView, taskList, locationList;
 
 - (void)viewDidLoad
 {
@@ -53,6 +55,7 @@
     [_partialV3 release];
     [_partialV4 release];
     [observeFloor release];
+    [_headerMain release];
     [super dealloc];
 }
 - (IBAction)changeLocation:(id)sender {
@@ -91,6 +94,26 @@
     [exitConfirm show];
     [exitConfirm release];
     
+}
+
+- (IBAction)changeViewTask:(id)sender {
+    locationList.hidden = YES;
+    taskList.hidden = NO;
+    self.headerMain.title = @"Task";
+}
+
+- (IBAction)changeViewLocation:(id)sender {
+    taskList.hidden = YES;
+    locationList.hidden = NO;
+    self.headerMain.title = @"Location";
+}
+
+- (IBAction)triggerTask:(id)sender {
+    if([self.lblLocation.text isEqualToString:@"-"]){
+        UIAlertView *error = [[UIAlertView alloc] initWithTitle:@"Error" message:@"You have to select location first!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        [error show];
+        [error release];
+    }
 }
 
 

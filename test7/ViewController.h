@@ -36,6 +36,9 @@
 - (IBAction)taskPaper:(id)sender;
 - (IBAction)taskInteraction:(id)sender;
 - (IBAction)endObservation:(id)sender;
+- (IBAction)changeViewTask:(id)sender;
+- (IBAction)changeViewLocation:(id)sender;
+- (IBAction)triggerTask:(id)sender;
 
 
 
