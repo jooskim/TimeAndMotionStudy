@@ -8,11 +8,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "test7/ViewController.h"
-         timestampString = "390353653.125706"
+         timestampString = "390640576.706114"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "52"
-         endingLineNumber = "52"
+         startingLineNumber = "57"
+         endingLineNumber = "57"
          landmarkName = "@interface ViewController"
          landmarkType = "2">
       </FileBreakpoint>
@@ -21,37 +21,37 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "test7/ViewController.h"
-         timestampString = "389863525.712673"
+         timestampString = "390640576.706114"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "34"
-         endingLineNumber = "34"
-         landmarkName = "partialV1"
+         startingLineNumber = "38"
+         endingLineNumber = "38"
+         landmarkName = "activityContainer"
          landmarkType = "19">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "test7/LoginController.m"
-         timestampString = "389863525.712673"
+         filePath = "test7/ViewController.h"
+         timestampString = "390633030.021715"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "97"
-         endingLineNumber = "97"
-         landmarkName = "-prepareForSegue:sender:"
-         landmarkType = "5">
+         startingLineNumber = "9"
+         endingLineNumber = "9">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "test7/ViewController.h"
-         timestampString = "390349121.573679"
+         filePath = "tableController.m"
+         timestampString = "390633380.73953"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "9"
-         endingLineNumber = "9">
+         startingLineNumber = "55"
+         endingLineNumber = "55"
+         landmarkName = "-tableView:cellForRowAtIndexPath:"
+         landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
 </Bucket>

@@ -21,6 +21,7 @@
 		4A187F11172B0FD700D10D07 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A187F10172B0FD700D10D07 /* ViewController.m */; };
 		4A259B1B173C3FE200011EF0 /* startobs.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A259B1A173C3FE200011EF0 /* startobs.png */; };
 		4A259B1F173C6EEE00011EF0 /* TaskView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A259B1E173C6EEE00011EF0 /* TaskView.xib */; };
+		4A90989C174876950051C070 /* tableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A90989B174876950051C070 /* tableController.m */; };
 		4AD0EC79172B9B1000C89D22 /* DetailTaskController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AD0EC78172B9B1000C89D22 /* DetailTaskController.m */; };
 		4AD0EC7C172B9DB200C89D22 /* LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AD0EC7B172B9DB200C89D22 /* LoginController.m */; };
 		4AD0EC7F172BA11C00C89D22 /* SiteController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AD0EC7E172BA11C00C89D22 /* SiteController.m */; };
@@ -46,6 +47,8 @@
 		4A187F10172B0FD700D10D07 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		4A259B1A173C3FE200011EF0 /* startobs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = startobs.png; sourceTree = "<group>"; };
 		4A259B1E173C6EEE00011EF0 /* TaskView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TaskView.xib; path = ../TaskView.xib; sourceTree = "<group>"; };
+		4A90989A174876950051C070 /* tableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tableController.h; path = ../tableController.h; sourceTree = "<group>"; };
+		4A90989B174876950051C070 /* tableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tableController.m; path = ../tableController.m; sourceTree = "<group>"; };
 		4AD0EC77172B9B1000C89D22 /* DetailTaskController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailTaskController.h; sourceTree = "<group>"; };
 		4AD0EC78172B9B1000C89D22 /* DetailTaskController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailTaskController.m; sourceTree = "<group>"; };
 		4AD0EC7A172B9DB200C89D22 /* LoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginController.h; sourceTree = "<group>"; };
@@ -98,6 +101,8 @@
 		4A187EFA172B0FD700D10D07 /* test7 */ = {
 			isa = PBXGroup;
 			children = (
+				4A90989A174876950051C070 /* tableController.h */,
+				4A90989B174876950051C070 /* tableController.m */,
 				4A259B1E173C6EEE00011EF0 /* TaskView.xib */,
 				4A187F03172B0FD700D10D07 /* AppDelegate.h */,
 				4A187F04172B0FD700D10D07 /* AppDelegate.m */,
@@ -206,6 +211,7 @@
 				4AD0EC79172B9B1000C89D22 /* DetailTaskController.m in Sources */,
 				4AD0EC7C172B9DB200C89D22 /* LoginController.m in Sources */,
 				4AD0EC7F172BA11C00C89D22 /* SiteController.m in Sources */,
+				4A90989C174876950051C070 /* tableController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "ViewController.h">
 
-@interface LoginController : UIViewController
+@interface LoginController : UIViewController <UITableViewDelegate,UITableViewDataSource>
 
 @end

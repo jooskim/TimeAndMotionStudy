@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController<UIScrollViewDelegate>
+@interface ViewController : UIViewController<UIScrollViewDelegate,UITableViewDataSource,UITableViewDelegate>
 {
     IBOutlet UILabel *lblLocation;
     IBOutlet UILabel *observerName;
+    IBOutlet UILabel *observeeName;
     IBOutlet UILabel *observeSite;
     IBOutlet UILabel *observeFloor;
     
@@ -20,10 +21,12 @@
 
 @property (retain, nonatomic) IBOutlet UILabel *observerName;
 @property (nonatomic) NSString *valObsName;
+@property (retain, nonatomic) IBOutlet UILabel *observeeName;
+@property (nonatomic) NSString *valObsEEName;
 @property (retain, nonatomic) IBOutlet UILabel *observeSite;
 @property (nonatomic) NSString *valObsSite;
 @property (retain, nonatomic) IBOutlet UILabel *observeFloor;
-@property (nonatomic) NSString * valObsFloor;
+@property (nonatomic) NSString *valObsFloor;
 @property (retain, nonatomic) IBOutlet UILabel *lblLocation;
 
 - (IBAction)changeLocation:(id)sender;
@@ -32,6 +35,8 @@
 @property (retain, nonatomic) IBOutlet UIView *partialV3;
 @property (retain, nonatomic) IBOutlet UIView *partialV2;
 @property (retain, nonatomic) IBOutlet UIView *partialV1;
+@property (retain, nonatomic) IBOutlet UIView *activityContainer;
+
 - (IBAction)taskComp:(id)sender;
 - (IBAction)taskPaper:(id)sender;
 - (IBAction)taskInteraction:(id)sender;

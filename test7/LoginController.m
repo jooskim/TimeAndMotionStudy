@@ -13,12 +13,15 @@
 @property (retain, nonatomic) IBOutlet UILabel *obsSite;
 @property (retain, nonatomic) IBOutlet UILabel *floor;
 @property (retain, nonatomic) IBOutlet UILabel *obsRA;
+@property (retain, nonatomic) IBOutlet UITextField *obsEEInput;
+@property (retain, nonatomic) IBOutlet UILabel *obsEE;
 - (IBAction)changeSite:(id)sender;
 - (IBAction)changeFloor:(id)sender;
 - (IBAction)changeRA:(id)sender;
 
-
 - (IBAction)startObs:(id)sender;
+- (IBAction)replicateName:(id)sender;
+- (IBAction)hideKeyboard:(id)sender;
 
 @end
 
@@ -49,6 +52,8 @@
     [_obsSite release];
     [_floor release];
     [_obsRA release];
+    [_obsEE release];
+    [_obsEEInput release];
     [super dealloc];
 }
 
@@ -83,10 +88,22 @@
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Error" message:@"You have to select an observer!" delegate: nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
         [alert show];
         [alert release];
+    }else if([noneSel isEqualToString:self.obsEE.text]){
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Error" message:@"You have to enter the observee information!" delegate: nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        [alert show];
+        [alert release];
     }else {
         [self performSegueWithIdentifier:@"loginSegue" sender:self];
     }
     
+}
+
+- (IBAction)replicateName:(id)sender {
+    self.obsEE.text = self.obsEEInput.text;
+}
+
+- (IBAction)hideKeyboard:(id)sender {
+    [self.obsEEInput resignFirstResponder];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -96,6 +113,7 @@
         mainView.valObsSite = self.obsSite.text;
         mainView.valObsName = self.obsRA.text;
         mainView.valObsFloor = self.floor.text;
+        mainView.valObsEEName = self.obsEE.text;
     }
 }
 

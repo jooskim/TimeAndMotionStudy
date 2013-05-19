@@ -16,29 +16,38 @@
 @property (retain, nonatomic) IBOutlet UIView *taskList;
 @property (retain, nonatomic) IBOutlet UIView *locationList;
 @property (retain, nonatomic) IBOutlet UINavigationItem *headerMain;
-
 @property (retain, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @end
 
 @implementation ViewController
+NSArray *activeAct;
+
 @synthesize scrollView, taskList, locationList;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
     [scrollView addSubview: self.taskList];
     [scrollView setContentSize:self.taskList.frame.size];
     self.observerName.text = self.valObsName;
+    self.observeeName.text = self.valObsEEName;
     self.observeSite.text = self.valObsSite;
     self.observeFloor.text = self.valObsFloor;
+    
 }
 
+- (void)viewDidLayoutSubviews
+{
+    activeAct = [NSArray arrayWithObjects:@"test1",@"test2",@"test3",@"buwak", nil];
+
+}
 - (void)viewDidAppear
 {
     [scrollView setContentSize:CGSizeMake(770, 740)];
-}
+    }
 
 - (void)didReceiveMemoryWarning
 {
@@ -56,6 +65,7 @@
     [_partialV4 release];
     [observeFloor release];
     [_headerMain release];
+    [_activityContainer release];
     [super dealloc];
 }
 - (IBAction)changeLocation:(id)sender {
@@ -119,6 +129,7 @@
 
 @synthesize lblLocation;
 @synthesize observerName;
+@synthesize observeeName;
 @synthesize observeSite;
 
 - (IBAction)changeLabelLocation_exam:(id)sender {
@@ -154,6 +165,28 @@
         [self performSegueWithIdentifier:@"logoutSegue" sender: self];
         
     }
+}
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [activeAct count];
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *tableIdentifier = @"Cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:tableIdentifier];
+    if(cell == nil){
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:tableIdentifier];
+        
+    }
+    
+    UILabel *activityName = (UILabel *)[cell viewWithTag:102];
+    activityName.text = [activeAct objectAtIndex:indexPath.row];
+
+    //UILabel *activityTime = (UILabel *)[cell viewWithTag:103];
+
+    
+    //test code
+    //cell.textLabel.text = [activeAct objectAtIndex:indexPath.row];
+    return cell;
 }
 
 @end
