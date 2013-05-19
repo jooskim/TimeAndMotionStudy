@@ -8,11 +8,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "test7/ViewController.h"
-         timestampString = "390640576.706114"
+         timestampString = "390663801.386944"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "57"
-         endingLineNumber = "57"
+         startingLineNumber = "54"
+         endingLineNumber = "54"
          landmarkName = "@interface ViewController"
          landmarkType = "2">
       </FileBreakpoint>
@@ -21,11 +21,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "test7/ViewController.h"
-         timestampString = "390640576.706114"
+         timestampString = "390663801.386944"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "38"
-         endingLineNumber = "38"
+         startingLineNumber = "35"
+         endingLineNumber = "35"
          landmarkName = "activityContainer"
          landmarkType = "19">
       </FileBreakpoint>

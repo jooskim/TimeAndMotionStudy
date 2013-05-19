@@ -35,13 +35,12 @@ NSArray *activeAct;
     self.observerName.text = self.valObsName;
     self.observeeName.text = self.valObsEEName;
     self.observeSite.text = self.valObsSite;
-    self.observeFloor.text = self.valObsFloor;
     
 }
 
 - (void)viewDidLayoutSubviews
 {
-    activeAct = [NSArray arrayWithObjects:@"test1",@"test2",@"test3",@"buwak", nil];
+    activeAct = [NSArray arrayWithObjects:@"test1",@"test2",@"test3",@"test4", nil];
 
 }
 - (void)viewDidAppear
@@ -63,7 +62,6 @@ NSArray *activeAct;
     [_partialV1 release];
     [_partialV3 release];
     [_partialV4 release];
-    [observeFloor release];
     [_headerMain release];
     [_activityContainer release];
     [super dealloc];

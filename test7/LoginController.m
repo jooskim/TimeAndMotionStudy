@@ -11,12 +11,10 @@
 
 @interface LoginController ()
 @property (retain, nonatomic) IBOutlet UILabel *obsSite;
-@property (retain, nonatomic) IBOutlet UILabel *floor;
 @property (retain, nonatomic) IBOutlet UILabel *obsRA;
 @property (retain, nonatomic) IBOutlet UITextField *obsEEInput;
 @property (retain, nonatomic) IBOutlet UILabel *obsEE;
 - (IBAction)changeSite:(id)sender;
-- (IBAction)changeFloor:(id)sender;
 - (IBAction)changeRA:(id)sender;
 
 - (IBAction)startObs:(id)sender;
@@ -50,7 +48,6 @@
 
 - (void)dealloc {
     [_obsSite release];
-    [_floor release];
     [_obsRA release];
     [_obsEE release];
     [_obsEEInput release];
@@ -60,11 +57,6 @@
 - (IBAction)changeSite:(id)sender {
     UIButton *button = (UIButton *) sender;
     self.obsSite.text = [[NSString alloc] initWithFormat:@"%@", button.titleLabel.text];
-}
-
-- (IBAction)changeFloor:(id)sender {
-    UIButton *button = (UIButton *) sender;
-    self.floor.text = [[NSString alloc] initWithFormat:@"%@", button.titleLabel.text];
 }
 
 - (IBAction)changeRA:(id)sender {
@@ -78,10 +70,6 @@
 
     if ([noneSel isEqualToString:self.obsSite.text]) {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Error" message:@"You have to select an observing site!" delegate: nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
-        [alert show];
-        [alert release];
-    }else if([noneSel isEqualToString:self.floor.text]){
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Error" message:@"You have to select a floor where the observation takes place!" delegate: nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
         [alert show];
         [alert release];
     }else if([noneSel isEqualToString:self.obsRA.text]){
@@ -112,7 +100,6 @@
         ViewController *mainView = (ViewController *)segue.destinationViewController;
         mainView.valObsSite = self.obsSite.text;
         mainView.valObsName = self.obsRA.text;
-        mainView.valObsFloor = self.floor.text;
         mainView.valObsEEName = self.obsEE.text;
     }
 }

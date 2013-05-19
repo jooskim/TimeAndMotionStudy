@@ -14,7 +14,6 @@
     IBOutlet UILabel *observerName;
     IBOutlet UILabel *observeeName;
     IBOutlet UILabel *observeSite;
-    IBOutlet UILabel *observeFloor;
     
 }
 
@@ -25,8 +24,6 @@
 @property (nonatomic) NSString *valObsEEName;
 @property (retain, nonatomic) IBOutlet UILabel *observeSite;
 @property (nonatomic) NSString *valObsSite;
-@property (retain, nonatomic) IBOutlet UILabel *observeFloor;
-@property (nonatomic) NSString *valObsFloor;
 @property (retain, nonatomic) IBOutlet UILabel *lblLocation;
 
 - (IBAction)changeLocation:(id)sender;
