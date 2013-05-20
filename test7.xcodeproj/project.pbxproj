@@ -28,6 +28,10 @@
 		4AD0EC79172B9B1000C89D22 /* DetailTaskController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AD0EC78172B9B1000C89D22 /* DetailTaskController.m */; };
 		4AD0EC7C172B9DB200C89D22 /* LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AD0EC7B172B9DB200C89D22 /* LoginController.m */; };
 		4AD0EC7F172BA11C00C89D22 /* SiteController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AD0EC7E172BA11C00C89D22 /* SiteController.m */; };
+		C2FBFB45174A81A6004CF08C /* button_check.png in Resources */ = {isa = PBXBuildFile; fileRef = C2FBFB44174A81A6004CF08C /* button_check.png */; };
+		C2FBFB4D174A86B1004CF08C /* button_minus.png in Resources */ = {isa = PBXBuildFile; fileRef = C2FBFB4C174A86B1004CF08C /* button_minus.png */; };
+		C2FBFB50174A8704004CF08C /* button_check_s.png in Resources */ = {isa = PBXBuildFile; fileRef = C2FBFB4E174A8703004CF08C /* button_check_s.png */; };
+		C2FBFB51174A8704004CF08C /* button_minus_s.png in Resources */ = {isa = PBXBuildFile; fileRef = C2FBFB4F174A8704004CF08C /* button_minus_s.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +65,10 @@
 		4AD0EC7B172B9DB200C89D22 /* LoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginController.m; sourceTree = "<group>"; };
 		4AD0EC7D172BA11C00C89D22 /* SiteController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SiteController.h; sourceTree = "<group>"; };
 		4AD0EC7E172BA11C00C89D22 /* SiteController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SiteController.m; sourceTree = "<group>"; };
+		C2FBFB44174A81A6004CF08C /* button_check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_check.png; sourceTree = "<group>"; };
+		C2FBFB4C174A86B1004CF08C /* button_minus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_minus.png; sourceTree = "<group>"; };
+		C2FBFB4E174A8703004CF08C /* button_check_s.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_check_s.png; sourceTree = "<group>"; };
+		C2FBFB4F174A8704004CF08C /* button_minus_s.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_minus_s.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +137,10 @@
 		4A187EFB172B0FD700D10D07 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C2FBFB4E174A8703004CF08C /* button_check_s.png */,
+				C2FBFB4F174A8704004CF08C /* button_minus_s.png */,
+				C2FBFB4C174A86B1004CF08C /* button_minus.png */,
+				C2FBFB44174A81A6004CF08C /* button_check.png */,
 				4A3E5B7C174915060083672F /* end.png */,
 				4A3E5B7A1749114D0083672F /* smallbutton.png */,
 				4A3E5B7817490F660083672F /* rectbutton.png */,
@@ -207,6 +219,10 @@
 				4A3E5B7917490F660083672F /* rectbutton.png in Resources */,
 				4A3E5B7B1749114D0083672F /* smallbutton.png in Resources */,
 				4A3E5B7D174915060083672F /* end.png in Resources */,
+				C2FBFB45174A81A6004CF08C /* button_check.png in Resources */,
+				C2FBFB4D174A86B1004CF08C /* button_minus.png in Resources */,
+				C2FBFB50174A8704004CF08C /* button_check_s.png in Resources */,
+				C2FBFB51174A8704004CF08C /* button_minus_s.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
