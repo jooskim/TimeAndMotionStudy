@@ -33,6 +33,8 @@
 @property (retain, nonatomic) IBOutlet UIView *partialV2;
 @property (retain, nonatomic) IBOutlet UIView *partialV1;
 @property (retain, nonatomic) IBOutlet UIView *activityContainer;
+@property (retain, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) NSMutableArray *activeAct;
 
 - (IBAction)taskComp:(id)sender;
 - (IBAction)taskPaper:(id)sender;
@@ -41,8 +43,6 @@
 - (IBAction)changeViewTask:(id)sender;
 - (IBAction)changeViewLocation:(id)sender;
 - (IBAction)triggerTask:(id)sender;
-
-
 
 -(IBAction) changeLabelLocation_exam:(id)sender;
 -(IBAction) changeLabelLocation_office:(id)sender;

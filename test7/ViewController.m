@@ -21,9 +21,8 @@
 @end
 
 @implementation ViewController
-NSArray *activeAct;
 
-@synthesize scrollView, taskList, locationList;
+@synthesize scrollView, taskList, locationList, tableView, activeAct;
 
 - (void)viewDidLoad
 {
@@ -40,7 +39,7 @@ NSArray *activeAct;
 
 - (void)viewDidLayoutSubviews
 {
-    activeAct = [NSArray arrayWithObjects:@"test1",@"test2",@"test3",@"test4", nil];
+    activeAct = [[NSMutableArray alloc] init];
 
 }
 - (void)viewDidAppear
@@ -116,13 +115,6 @@ NSArray *activeAct;
     self.headerMain.title = @"Location";
 }
 
-- (IBAction)triggerTask:(id)sender {
-    if([self.lblLocation.text isEqualToString:@"-"]){
-        UIAlertView *error = [[UIAlertView alloc] initWithTitle:@"Error" message:@"You have to select location first!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
-        [error show];
-        [error release];
-    }
-}
 
 
 @synthesize lblLocation;
@@ -164,11 +156,14 @@ NSArray *activeAct;
         
     }
 }
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [activeAct count];
+-(NSInteger) numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+-(NSInteger)tableView:(UITableView *)aTableView numberOfRowsInSection:(NSInteger)section {
+    return activeAct.count;
 }
 
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+-(UITableViewCell *)tableView:(UITableView *)aTableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *tableIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:tableIdentifier];
     if(cell == nil){
@@ -176,15 +171,75 @@ NSArray *activeAct;
         
     }
     
+    // get the current row of the data
+    NSArray *nowArr = [activeAct objectAtIndex:indexPath.row];
+    // activity name
     UILabel *activityName = (UILabel *)[cell viewWithTag:102];
-    activityName.text = [activeAct objectAtIndex:indexPath.row];
-
-    //UILabel *activityTime = (UILabel *)[cell viewWithTag:103];
-
-    
+    activityName.text = [nowArr objectAtIndex:0];
+    // activity time
+    UILabel *activityTime = (UILabel *)[cell viewWithTag:103];
+    activityTime.text = [nowArr objectAtIndex:1];
+    // category
+    UILabel *currentCat = (UILabel *)[cell viewWithTag:99];
+    if([[nowArr objectAtIndex:2] intValue] >= 1000 && [[nowArr objectAtIndex:2] intValue] < 1100){
+        currentCat.text = @"Parent Activity";
+    };
+    if([[nowArr objectAtIndex:2] intValue] >= 1100 && [[nowArr objectAtIndex:2] intValue] < 1200){
+        currentCat.text = @"Phone";
+    };
+    if([[nowArr objectAtIndex:2] intValue] >= 1200 && [[nowArr objectAtIndex:2] intValue] < 1300){
+        currentCat.text = @"Personal";
+    };
+    if([[nowArr objectAtIndex:2] intValue] >= 1300 && [[nowArr objectAtIndex:2] intValue] < 1400){
+        currentCat.text = @"Talking/Rounding";
+    };
+    if([[nowArr objectAtIndex:2] intValue] >= 1400 && [[nowArr objectAtIndex:2] intValue] < 1500){
+        currentCat.text = @"Walking/Moving";
+    };
+    if([[nowArr objectAtIndex:2] intValue] >= 1500 && [[nowArr objectAtIndex:2] intValue] < 1600){
+        currentCat.text = @"Waiting for";
+    };
+    if([[nowArr objectAtIndex:2] intValue] >= 1600 && [[nowArr objectAtIndex:2] intValue] < 1700){
+        currentCat.text = @"Looking for People";
+    };
+    if([[nowArr objectAtIndex:2] intValue] >= 1700 && [[nowArr objectAtIndex:2] intValue] < 1800){
+        currentCat.text = @"Reading Paper Resources";
+    };
+    if([[nowArr objectAtIndex:2] intValue] >= 1800 && [[nowArr objectAtIndex:2] intValue] < 1900){
+        currentCat.text = @"Writing Paper Resources";
+    };
+    if([[nowArr objectAtIndex:2] intValue] >= 1900 && [[nowArr objectAtIndex:2] intValue] < 2000){
+        currentCat.text = @"Writing Computer Resources";
+    };
+    if([[nowArr objectAtIndex:2] intValue] >= 2000 && [[nowArr objectAtIndex:2] intValue] < 2100){
+        currentCat.text = @"Looking for Paper Resources";
+    };
+    if([[nowArr objectAtIndex:2] intValue] >= 2100 && [[nowArr objectAtIndex:2] intValue] < 2200){
+        currentCat.text = @"Reading Computer Resources";
+    };
+    //}
     //test code
     //cell.textLabel.text = [activeAct objectAtIndex:indexPath.row];
     return cell;
+}
+
+- (IBAction)triggerTask:(id)sender {    
+    if([self.lblLocation.text isEqualToString:@"-"]){
+        UIAlertView *error = [[UIAlertView alloc] initWithTitle:@"Error" message:@"You have to select location first!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        [error show];
+        [error release];
+    }else{
+        UIButton *button = (UIButton *) sender;
+        NSDate *currentDate = [NSDate date];
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"HH:mm:ss"];
+        NSString *timeFormatted = [dateFormatter stringFromDate:currentDate];
+        NSString *tagNum = [NSString stringWithFormat:@"%d", button.tag];
+        NSArray *curSel = [[NSArray alloc] initWithObjects:button.titleLabel.text, timeFormatted, tagNum, nil];
+
+        [activeAct insertObject:curSel atIndex:0];
+        [tableView reloadData];
+    }
 }
 
 @end
