@@ -40,6 +40,7 @@
 - (void)viewDidLayoutSubviews
 {
     activeAct = [[NSMutableArray alloc] init];
+    [tableView setEditing:YES];
 
 }
 - (void)viewDidAppear
@@ -152,6 +153,7 @@
     if(buttonIndex == [alertView cancelButtonIndex]){
         NSLog(@"Cancel");
     }else{
+        [self allTasksDone:nil];
         [self performSegueWithIdentifier:@"logoutSegue" sender: self];
         
     }
@@ -163,13 +165,38 @@
     return activeAct.count;
 }
 
+-(void) taskDone:(id) sender {
+    // gets the cell information from the superview
+    UITableViewCell *owingCell = (UITableViewCell *)[sender superview];
+    NSIndexPath *pathToCell = [tableView indexPathForCell:owingCell];
+    
+    // gets the current time
+    NSDate *currentDate = [NSDate date];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"HH:mm:ss"];
+    NSString *timeFormatted = [dateFormatter stringFromDate:currentDate];
+
+    // log starts
+    NSArray *nowArr = [activeAct objectAtIndex:pathToCell.row];
+    NSLog(@"%@,%@,%@,%@,%@,%@",[nowArr objectAtIndex:1],self.lblLocation.text,[nowArr objectAtIndex:2],self.observerName.text,self.observeeName.text,timeFormatted);
+    [activeAct removeObjectAtIndex:pathToCell.row];
+    [tableView deleteRowsAtIndexPaths:@[pathToCell] withRowAnimation:UITableViewRowAnimationFade];
+}
+
 -(UITableViewCell *)tableView:(UITableView *)aTableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *tableIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:tableIdentifier];
     if(cell == nil){
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:tableIdentifier];
-        
     }
+    
+    UIButton *doneButton = [UIButton buttonWithType: UIButtonTypeCustom];
+    [doneButton addTarget:self action:@selector(taskDone:) forControlEvents:UIControlEventTouchDown];
+    UIImage *doneBtnImg = [UIImage imageNamed:@"button_check_s.png"];
+    doneButton.frame = CGRectMake(180,18,24,24);
+    [doneButton setBackgroundImage:doneBtnImg forState:UIControlStateNormal];
+    [cell addSubview:doneButton];
+    
     
     // get the current row of the data
     NSArray *nowArr = [activeAct objectAtIndex:indexPath.row];
@@ -236,9 +263,40 @@
         NSString *timeFormatted = [dateFormatter stringFromDate:currentDate];
         NSString *tagNum = [NSString stringWithFormat:@"%d", button.tag];
         NSArray *curSel = [[NSArray alloc] initWithObjects:button.titleLabel.text, timeFormatted, tagNum, nil];
-
+        
+        // makes a log in the console
+        NSLog(@"%@,%@,%d,%@,%@,%@",timeFormatted,self.lblLocation.text,button.tag,self.observerName.text,self.observeeName.text,@"n/a");
         [activeAct insertObject:curSel atIndex:0];
         [tableView reloadData];
+    }
+}
+
+- (IBAction)allTasksDone:(id)sender {
+    for(int i = 0; i<activeAct.count; i++){
+        NSDate *currentDate = [NSDate date];
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"HH:mm:ss"];
+        NSString *timeFormatted = [dateFormatter stringFromDate:currentDate];
+
+        NSArray *nowArr = [activeAct objectAtIndex:i];
+        NSLog(@"%@,%@,%@,%@,%@,%@",[nowArr objectAtIndex:1],self.lblLocation.text,[nowArr objectAtIndex:2],self.observerName.text,self.observeeName.text,timeFormatted);
+    }
+    [activeAct removeAllObjects];
+    [tableView reloadData];
+    
+}
+
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if(editingStyle == UITableViewCellEditingStyleDelete){
+        NSDate *currentDate = [NSDate date];
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"HH:mm:ss"];
+        NSString *timeFormatted = [dateFormatter stringFromDate:currentDate];
+        
+        NSArray *nowArr = [activeAct objectAtIndex:indexPath.row];
+        NSLog(@"%@,%@,%@,%@,%@,%@",[nowArr objectAtIndex:1],self.lblLocation.text, [nowArr objectAtIndex:2], self.observerName.text, self.observeeName.text,@"canceled");
+        [activeAct removeObjectAtIndex:indexPath.row];
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }
 }
 

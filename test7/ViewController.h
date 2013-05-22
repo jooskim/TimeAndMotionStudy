@@ -43,6 +43,7 @@
 - (IBAction)changeViewTask:(id)sender;
 - (IBAction)changeViewLocation:(id)sender;
 - (IBAction)triggerTask:(id)sender;
+- (IBAction)allTasksDone:(id)sender;
 
 -(IBAction) changeLabelLocation_exam:(id)sender;
 -(IBAction) changeLabelLocation_office:(id)sender;
