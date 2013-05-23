@@ -14,7 +14,7 @@
     IBOutlet UILabel *observerName;
     IBOutlet UILabel *observeeName;
     IBOutlet UILabel *observeSite;
-    
+    IBOutlet UIButton *btnLocation;
 }
 
 
@@ -25,6 +25,7 @@
 @property (retain, nonatomic) IBOutlet UILabel *observeSite;
 @property (nonatomic) NSString *valObsSite;
 @property (retain, nonatomic) IBOutlet UILabel *lblLocation;
+@property (retain, nonatomic) IBOutlet UIButton *btnLocation;
 
 - (IBAction)changeLocation:(id)sender;
 @property (retain, nonatomic) IBOutlet UINavigationItem *detailTitle;
@@ -51,5 +52,6 @@
 -(IBAction) changeLabelLocation_nurse:(id)sender;
 -(IBAction) changeLabelLocation_lab:(id)sender;
 -(IBAction) changeLabelLocation_other:(id)sender;
+
 
 @end

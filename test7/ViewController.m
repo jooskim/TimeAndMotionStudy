@@ -29,12 +29,38 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    [scrollView addSubview: self.taskList];
-    [scrollView setContentSize:self.taskList.frame.size];
+    // create inside content size of scrollview
+    CGSize contentSize = CGSizeMake(scrollView.frame.size.width *2, scrollView.frame.size.height);
+    
+    // set up scrollview content size
+    [scrollView setContentSize:contentSize];
+
+    // create scrollview size for setting up page view size
+    CGSize scrollViewSize = CGSizeMake(scrollView.frame.size.width, scrollView.frame.size.height);
+    
+    // create frame for each page view
+    CGRect firstViewFrame = CGRectMake(0.0f,
+                                       0.0f,
+                                       scrollViewSize.width,
+                                       scrollViewSize.height);
+    CGRect SecondViewFrame = CGRectMake(scrollViewSize.width,
+                                       0.0f,
+                                       scrollViewSize.width,
+                                       scrollViewSize.height);
+    
+    // set up frame to each page vieiw
+    [locationList setFrame:firstViewFrame];
+    [taskList setFrame:SecondViewFrame];
+    
+    // add views on the scroll view
+    [scrollView addSubview:taskList];
+    [scrollView addSubview:locationList];
+   
+//    [scrollView addSubview: self.taskList];
+//    [scrollView setContentSize:self.taskList.frame.size];
     self.observerName.text = self.valObsName;
     self.observeeName.text = self.valObsEEName;
     self.observeSite.text = self.valObsSite;
-    
 }
 
 - (void)viewDidLayoutSubviews
@@ -104,6 +130,7 @@
     
 }
 
+/*
 - (IBAction)changeViewTask:(id)sender {
     locationList.hidden = YES;
     taskList.hidden = NO;
@@ -115,37 +142,59 @@
     locationList.hidden = NO;
     self.headerMain.title = @"Location";
 }
-
+*/
 
 
 @synthesize lblLocation;
 @synthesize observerName;
 @synthesize observeeName;
 @synthesize observeSite;
+@synthesize btnLocation;
 
 - (IBAction)changeLabelLocation_exam:(id)sender {
     UIButton *button = (UIButton *)sender;
-    lblLocation.text = [NSString stringWithFormat:@"Exam Room %@", button.titleLabel.text];
+//    lblLocation.text = [NSString stringWithFormat:@"Exam Room %@", button.titleLabel.text];
+    [self.btnLocation setTitle:[NSString stringWithFormat:@"Exam Room %@", button.titleLabel.text] forState:UIControlStateNormal];
+    [self scrollToPage:1];
 }
 - (IBAction)changeLabelLocation_office:(id)sender {
     UIButton *button = (UIButton *)sender;
-    lblLocation.text = [NSString stringWithFormat:@"Office %@", button.titleLabel.text];
+//    lblLocation.text = [NSString stringWithFormat:@"Office %@", button.titleLabel.text];
+    [self.btnLocation setTitle:[NSString stringWithFormat:@"Office %@", button.titleLabel.text] forState:UIControlStateNormal];
+    [self scrollToPage:1];
 }
 - (IBAction)changeLabelLocation_procedure:(id)sender {
     UIButton *button = (UIButton *)sender;
-    lblLocation.text = [NSString stringWithFormat:@"Procedure Room %@", button.titleLabel.text];
+//    lblLocation.text = [NSString stringWithFormat:@"Procedure Room %@", button.titleLabel.text];
+    [self.btnLocation setTitle:[NSString stringWithFormat:@"Procedure Room %@", button.titleLabel.text] forState:UIControlStateNormal];
+    [self scrollToPage:1];
 }
 - (IBAction)changeLabelLocation_nurse:(id)sender {
     UIButton *button = (UIButton *)sender;
-    lblLocation.text = [NSString stringWithFormat:@"Nurse Station %@", button.titleLabel.text];
+//    lblLocation.text = [NSString stringWithFormat:@"Nurse Station %@", button.titleLabel.text];
+    [self.btnLocation setTitle:[NSString stringWithFormat:@"Nurse Station %@", button.titleLabel.text] forState:UIControlStateNormal];
+    [self scrollToPage:1];
 }
 - (IBAction)changeLabelLocation_lab:(id)sender {
     UIButton *button = (UIButton *)sender;
-    lblLocation.text = [NSString stringWithFormat:@"Lab %@", button.titleLabel.text];
+//    lblLocation.text = [NSString stringWithFormat:@"Lab %@", button.titleLabel.text];
+    [self.btnLocation setTitle:[NSString stringWithFormat:@"Lab %@", button.titleLabel.text] forState:UIControlStateNormal];
+    [self scrollToPage:1];
 }
 - (IBAction)changeLabelLocation_other:(id)sender {
     UIButton *button = (UIButton *)sender;
-    lblLocation.text = [NSString stringWithFormat:@"%@", button.titleLabel.text];
+//    lblLocation.text = [NSString stringWithFormat:@"%@", button.titleLabel.text];
+    [self.btnLocation setTitle:[NSString stringWithFormat:@"%@", button.titleLabel.text] forState:UIControlStateNormal];
+    [self scrollToPage:1];
+}
+
+- (IBAction)scrollToLocation:(id)sender {
+    [self scrollToPage:0];
+}
+
+-(void)scrollToPage:(NSInteger)page
+{
+    [scrollView setContentOffset:CGPointMake(scrollView.frame.size.width * page, 0.0f) animated:YES];
 }
 
 -(void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
@@ -178,7 +227,8 @@
 
     // log starts
     NSArray *nowArr = [activeAct objectAtIndex:pathToCell.row];
-    NSLog(@"%@,%@,%@,%@,%@,%@",[nowArr objectAtIndex:1],self.lblLocation.text,[nowArr objectAtIndex:2],self.observerName.text,self.observeeName.text,timeFormatted);
+//    NSLog(@"%@,%@,%@,%@,%@,%@",[nowArr objectAtIndex:1],self.lblLocation.text,[nowArr objectAtIndex:2],self.observerName.text,self.observeeName.text,timeFormatted);
+    NSLog(@"%@,%@,%@,%@,%@,%@",[nowArr objectAtIndex:1],self.btnLocation.titleLabel.text,[nowArr objectAtIndex:2],self.observerName.text,self.observeeName.text,timeFormatted);
     [activeAct removeObjectAtIndex:pathToCell.row];
     [tableView deleteRowsAtIndexPaths:@[pathToCell] withRowAnimation:UITableViewRowAnimationFade];
 }
@@ -251,7 +301,8 @@
 }
 
 - (IBAction)triggerTask:(id)sender {    
-    if([self.lblLocation.text isEqualToString:@"-"]){
+//    if([self.lblLocation.text isEqualToString:@"-"]){
+    if([self.btnLocation.titleLabel.text isEqualToString:@"-"]){
         UIAlertView *error = [[UIAlertView alloc] initWithTitle:@"Error" message:@"You have to select location first!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
         [error show];
         [error release];
@@ -265,7 +316,8 @@
         NSArray *curSel = [[NSArray alloc] initWithObjects:button.titleLabel.text, timeFormatted, tagNum, nil];
         
         // makes a log in the console
-        NSLog(@"%@,%@,%d,%@,%@,%@",timeFormatted,self.lblLocation.text,button.tag,self.observerName.text,self.observeeName.text,@"n/a");
+//        NSLog(@"%@,%@,%d,%@,%@,%@",timeFormatted,self.lblLocation.text,button.tag,self.observerName.text,self.observeeName.text,@"n/a");
+        NSLog(@"%@,%@,%d,%@,%@,%@",timeFormatted,self.btnLocation.titleLabel.text,button.tag,self.observerName.text,self.observeeName.text,@"n/a");
         [activeAct insertObject:curSel atIndex:0];
         [tableView reloadData];
     }
@@ -279,7 +331,8 @@
         NSString *timeFormatted = [dateFormatter stringFromDate:currentDate];
 
         NSArray *nowArr = [activeAct objectAtIndex:i];
-        NSLog(@"%@,%@,%@,%@,%@,%@",[nowArr objectAtIndex:1],self.lblLocation.text,[nowArr objectAtIndex:2],self.observerName.text,self.observeeName.text,timeFormatted);
+//        NSLog(@"%@,%@,%@,%@,%@,%@",[nowArr objectAtIndex:1],self.lblLocation.text,[nowArr objectAtIndex:2],self.observerName.text,self.observeeName.text,timeFormatted);
+        NSLog(@"%@,%@,%@,%@,%@,%@",[nowArr objectAtIndex:1],self.btnLocation.titleLabel.text,[nowArr objectAtIndex:2],self.observerName.text,self.observeeName.text,timeFormatted);
     }
     [activeAct removeAllObjects];
     [tableView reloadData];
@@ -294,7 +347,8 @@
         NSString *timeFormatted = [dateFormatter stringFromDate:currentDate];
         
         NSArray *nowArr = [activeAct objectAtIndex:indexPath.row];
-        NSLog(@"%@,%@,%@,%@,%@,%@",[nowArr objectAtIndex:1],self.lblLocation.text, [nowArr objectAtIndex:2], self.observerName.text, self.observeeName.text,@"canceled");
+//        NSLog(@"%@,%@,%@,%@,%@,%@",[nowArr objectAtIndex:1],self.lblLocation.text, [nowArr objectAtIndex:2], self.observerName.text, self.observeeName.text,@"canceled");
+        NSLog(@"%@,%@,%@,%@,%@,%@",[nowArr objectAtIndex:1],self.btnLocation.titleLabel.text, [nowArr objectAtIndex:2], self.observerName.text, self.observeeName.text,@"canceled");
         [activeAct removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }
