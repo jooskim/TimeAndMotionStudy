@@ -17,6 +17,7 @@
 @property (retain, nonatomic) IBOutlet UIView *locationList;
 @property (retain, nonatomic) IBOutlet UINavigationItem *headerMain;
 @property (retain, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (retain, nonatomic) IBOutlet UINavigationBar *taskBar;
 
 @end
 
@@ -90,6 +91,7 @@
     [_partialV4 release];
     [_headerMain release];
     [_activityContainer release];
+    [_taskBar release];
     [super dealloc];
 }
 - (IBAction)changeLocation:(id)sender {
@@ -155,36 +157,48 @@
     UIButton *button = (UIButton *)sender;
 //    lblLocation.text = [NSString stringWithFormat:@"Exam Room %@", button.titleLabel.text];
     [self.btnLocation setTitle:[NSString stringWithFormat:@"Exam Room %@", button.titleLabel.text] forState:UIControlStateNormal];
+    NSString *navTitle = [[NSString alloc] initWithFormat:@"Select Task (Exam Room %@)",button.titleLabel.text];
+    [self.taskBar.topItem setTitle:navTitle];
     [self scrollToPage:1];
 }
 - (IBAction)changeLabelLocation_office:(id)sender {
     UIButton *button = (UIButton *)sender;
 //    lblLocation.text = [NSString stringWithFormat:@"Office %@", button.titleLabel.text];
     [self.btnLocation setTitle:[NSString stringWithFormat:@"Office %@", button.titleLabel.text] forState:UIControlStateNormal];
+    NSString *navTitle = [[NSString alloc] initWithFormat:@"Select Task (Office %@)",button.titleLabel.text];
+    [self.taskBar.topItem setTitle:navTitle];
     [self scrollToPage:1];
 }
 - (IBAction)changeLabelLocation_procedure:(id)sender {
     UIButton *button = (UIButton *)sender;
 //    lblLocation.text = [NSString stringWithFormat:@"Procedure Room %@", button.titleLabel.text];
     [self.btnLocation setTitle:[NSString stringWithFormat:@"Procedure Room %@", button.titleLabel.text] forState:UIControlStateNormal];
+    NSString *navTitle = [[NSString alloc] initWithFormat:@"Select Task (Procedure Room %@)",button.titleLabel.text];
+    [self.taskBar.topItem setTitle:navTitle];
     [self scrollToPage:1];
 }
 - (IBAction)changeLabelLocation_nurse:(id)sender {
     UIButton *button = (UIButton *)sender;
 //    lblLocation.text = [NSString stringWithFormat:@"Nurse Station %@", button.titleLabel.text];
     [self.btnLocation setTitle:[NSString stringWithFormat:@"Nurse Station %@", button.titleLabel.text] forState:UIControlStateNormal];
+    NSString *navTitle = [[NSString alloc] initWithFormat:@"Select Task (Nurse Station %@)",button.titleLabel.text];
+    [self.taskBar.topItem setTitle:navTitle];
     [self scrollToPage:1];
 }
 - (IBAction)changeLabelLocation_lab:(id)sender {
     UIButton *button = (UIButton *)sender;
 //    lblLocation.text = [NSString stringWithFormat:@"Lab %@", button.titleLabel.text];
     [self.btnLocation setTitle:[NSString stringWithFormat:@"Lab %@", button.titleLabel.text] forState:UIControlStateNormal];
+    NSString *navTitle = [[NSString alloc] initWithFormat:@"Select Task (Lab %@)",button.titleLabel.text];
+    [self.taskBar.topItem setTitle:navTitle];
     [self scrollToPage:1];
 }
 - (IBAction)changeLabelLocation_other:(id)sender {
     UIButton *button = (UIButton *)sender;
 //    lblLocation.text = [NSString stringWithFormat:@"%@", button.titleLabel.text];
     [self.btnLocation setTitle:[NSString stringWithFormat:@"%@", button.titleLabel.text] forState:UIControlStateNormal];
+    NSString *navTitle = [[NSString alloc] initWithFormat:@"Select Task (%@)",button.titleLabel.text];
+    [self.taskBar.topItem setTitle:navTitle];
     [self scrollToPage:1];
 }
 

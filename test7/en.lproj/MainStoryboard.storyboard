@@ -981,7 +981,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="770" height="44"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                 <items>
-                                                    <navigationItem title="Location" id="6jY-n6-S8j" userLabel="Navigation Item - Location"/>
+                                                    <navigationItem title="Select Location" id="6jY-n6-S8j" userLabel="Navigation Item - Location"/>
                                                 </items>
                                             </navigationBar>
                                         </subviews>
@@ -1948,6 +1948,7 @@
                         <outlet property="partialV1" destination="a4s-PK-34C" id="B2X-ZZ-MG5"/>
                         <outlet property="scrollView" destination="Cmr-zz-Zki" id="lS1-HP-x36"/>
                         <outlet property="tableView" destination="DZX-gI-C5B" id="3Qy-VA-bso"/>
+                        <outlet property="taskBar" destination="XMk-Uv-QZ9" id="Ibo-z4-97m"/>
                         <outlet property="taskList" destination="T9a-zc-G49" id="4i9-0n-0Xp"/>
                         <segue destination="bbN-mV-GHK" kind="modal" identifier="logoutSegue" modalTransitionStyle="flipHorizontal" id="hIZ-ln-hI5"/>
                     </connections>
@@ -2498,6 +2499,7 @@
                 <relationship kind="outlet" name="partialV4" candidateClass="UIView"/>
                 <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
                 <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="taskBar" candidateClass="UINavigationBar"/>
                 <relationship kind="outlet" name="taskList" candidateClass="UIView"/>
             </relationships>
         </class>
