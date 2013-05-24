@@ -8,13 +8,13 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "test7/ViewController.h"
-         timestampString = "390894167.683287"
+         timestampString = "391052477.726331"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "55"
          endingLineNumber = "55"
-         landmarkName = "@interface ViewController"
-         landmarkType = "2">
+         landmarkName = "-changeLabelLocation_other:"
+         landmarkType = "4">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -26,7 +26,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "35"
          endingLineNumber = "35"
-         landmarkName = "activityContainer"
+         landmarkName = "partialV1"
          landmarkType = "19">
       </FileBreakpoint>
       <FileBreakpoint
@@ -58,12 +58,25 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "test7/ViewController.m"
-         timestampString = "391018136.712784"
+         timestampString = "391052477.726331"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "313"
-         endingLineNumber = "313"
+         startingLineNumber = "378"
+         endingLineNumber = "378"
          landmarkName = "-tableView:cellForRowAtIndexPath:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "test7/ViewController.m"
+         timestampString = "391052543.429651"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "399"
+         endingLineNumber = "399"
+         landmarkName = "-triggerTask:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

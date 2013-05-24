@@ -36,6 +36,7 @@
 @property (retain, nonatomic) IBOutlet UIView *activityContainer;
 @property (retain, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSMutableArray *activeAct;
+@property (retain, nonatomic) NSString *globalLocation;
 
 - (IBAction)taskComp:(id)sender;
 - (IBAction)taskPaper:(id)sender;

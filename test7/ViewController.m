@@ -23,7 +23,8 @@
 
 @implementation ViewController
 
-@synthesize scrollView, taskList, locationList, tableView, activeAct;
+@synthesize scrollView, taskList, locationList, tableView, activeAct,globalLocation;
+NSInteger *globalCounter;
 
 - (void)viewDidLoad
 {
@@ -49,7 +50,7 @@
                                        scrollViewSize.width,
                                        scrollViewSize.height);
     
-    // set up frame to each page vieiw
+    // set up frame to each page view
     [locationList setFrame:firstViewFrame];
     [taskList setFrame:SecondViewFrame];
     
@@ -62,6 +63,9 @@
     self.observerName.text = self.valObsName;
     self.observeeName.text = self.valObsEEName;
     self.observeSite.text = self.valObsSite;
+    
+    // initialize the global counter with 0
+    globalCounter = (int) 0;
 }
 
 - (void)viewDidLayoutSubviews
@@ -158,50 +162,111 @@
 //    lblLocation.text = [NSString stringWithFormat:@"Exam Room %@", button.titleLabel.text];
     [self.btnLocation setTitle:[NSString stringWithFormat:@"Exam Room %@", button.titleLabel.text] forState:UIControlStateNormal];
     NSString *navTitle = [[NSString alloc] initWithFormat:@"Select Task (Exam Room %@)",button.titleLabel.text];
-    [self.taskBar.topItem setTitle:navTitle];
-    [self scrollToPage:1];
+    globalLocation = button.titleLabel.text;
+    // checks whether there is more than an active task in the array, and if there is, update the locations of the items in the  array
+    if(activeAct.count == 0){
+        [self.taskBar.topItem setTitle:navTitle];
+        [self scrollToPage:1];
+    }else{
+        [self updateLocationOfArray:sender];
+        [self.taskBar.topItem setTitle:navTitle];
+        [self scrollToPage:1];
+    }
+    
 }
 - (IBAction)changeLabelLocation_office:(id)sender {
     UIButton *button = (UIButton *)sender;
 //    lblLocation.text = [NSString stringWithFormat:@"Office %@", button.titleLabel.text];
     [self.btnLocation setTitle:[NSString stringWithFormat:@"Office %@", button.titleLabel.text] forState:UIControlStateNormal];
     NSString *navTitle = [[NSString alloc] initWithFormat:@"Select Task (Office %@)",button.titleLabel.text];
-    [self.taskBar.topItem setTitle:navTitle];
-    [self scrollToPage:1];
+    globalLocation = button.titleLabel.text;
+    // runs a method that updates the current array of active tasks
+    if(activeAct.count == 0){
+        [self.taskBar.topItem setTitle:navTitle];
+        [self scrollToPage:1];
+    }else{
+        [self updateLocationOfArray:sender];
+        [self.taskBar.topItem setTitle:navTitle];
+        [self scrollToPage:1];
+    }
 }
 - (IBAction)changeLabelLocation_procedure:(id)sender {
     UIButton *button = (UIButton *)sender;
 //    lblLocation.text = [NSString stringWithFormat:@"Procedure Room %@", button.titleLabel.text];
     [self.btnLocation setTitle:[NSString stringWithFormat:@"Procedure Room %@", button.titleLabel.text] forState:UIControlStateNormal];
     NSString *navTitle = [[NSString alloc] initWithFormat:@"Select Task (Procedure Room %@)",button.titleLabel.text];
-    [self.taskBar.topItem setTitle:navTitle];
-    [self scrollToPage:1];
+    globalLocation = button.titleLabel.text;
+    // runs a method that updates the current array of active tasks
+    if(activeAct.count == 0){
+        [self.taskBar.topItem setTitle:navTitle];
+        [self scrollToPage:1];
+    }else{
+        [self updateLocationOfArray:sender];
+        [self.taskBar.topItem setTitle:navTitle];
+        [self scrollToPage:1];
+    }
 }
 - (IBAction)changeLabelLocation_nurse:(id)sender {
     UIButton *button = (UIButton *)sender;
 //    lblLocation.text = [NSString stringWithFormat:@"Nurse Station %@", button.titleLabel.text];
     [self.btnLocation setTitle:[NSString stringWithFormat:@"Nurse Station %@", button.titleLabel.text] forState:UIControlStateNormal];
     NSString *navTitle = [[NSString alloc] initWithFormat:@"Select Task (Nurse Station %@)",button.titleLabel.text];
-    [self.taskBar.topItem setTitle:navTitle];
-    [self scrollToPage:1];
+    globalLocation = button.titleLabel.text;
+    // runs a method that updates the current array of active tasks
+    if(activeAct.count == 0){
+        [self.taskBar.topItem setTitle:navTitle];
+        [self scrollToPage:1];
+    }else{
+        [self updateLocationOfArray:sender];
+        [self.taskBar.topItem setTitle:navTitle];
+        [self scrollToPage:1];
+    }
 }
 - (IBAction)changeLabelLocation_lab:(id)sender {
     UIButton *button = (UIButton *)sender;
 //    lblLocation.text = [NSString stringWithFormat:@"Lab %@", button.titleLabel.text];
     [self.btnLocation setTitle:[NSString stringWithFormat:@"Lab %@", button.titleLabel.text] forState:UIControlStateNormal];
     NSString *navTitle = [[NSString alloc] initWithFormat:@"Select Task (Lab %@)",button.titleLabel.text];
-    [self.taskBar.topItem setTitle:navTitle];
-    [self scrollToPage:1];
+    globalLocation = button.titleLabel.text;
+    // runs a method that updates the current array of active tasks
+    if(activeAct.count == 0){
+        [self.taskBar.topItem setTitle:navTitle];
+        [self scrollToPage:1];
+    }else{
+        [self updateLocationOfArray:sender];
+        [self.taskBar.topItem setTitle:navTitle];
+        [self scrollToPage:1];
+    }
 }
 - (IBAction)changeLabelLocation_other:(id)sender {
     UIButton *button = (UIButton *)sender;
 //    lblLocation.text = [NSString stringWithFormat:@"%@", button.titleLabel.text];
     [self.btnLocation setTitle:[NSString stringWithFormat:@"%@", button.titleLabel.text] forState:UIControlStateNormal];
     NSString *navTitle = [[NSString alloc] initWithFormat:@"Select Task (%@)",button.titleLabel.text];
-    [self.taskBar.topItem setTitle:navTitle];
-    [self scrollToPage:1];
+    globalLocation = button.titleLabel.text;
+    // runs a method that updates the current array of active tasks
+    if(activeAct.count == 0){
+        [self.taskBar.topItem setTitle:navTitle];
+        [self scrollToPage:1];
+    }else{
+        [self updateLocationOfArray:sender];
+        [self.taskBar.topItem setTitle:navTitle];
+        [self scrollToPage:1];
+    }
 }
 
+- (void) updateLocationOfArray:(id)sender {
+    int count = 0;
+    for (count = 0; count < [activeAct count]; count++){
+        // gets the current time
+        NSDate *currentDate = [NSDate date];
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"HH:mm:ss"];
+        NSString *timeFormatted = [dateFormatter stringFromDate:currentDate];
+        NSArray *currentArr = [activeAct objectAtIndex:count];
+        NSLog(@"%@,%@,%@,%@,%@,%@,%@",[currentArr objectAtIndex:0],@"update of location",@"",self.btnLocation.titleLabel.text,timeFormatted,@"",@"");
+    }
+}
 - (IBAction)scrollToLocation:(id)sender {
     [self scrollToPage:0];
 }
@@ -242,7 +307,7 @@
     // log starts
     NSArray *nowArr = [activeAct objectAtIndex:pathToCell.row];
 //    NSLog(@"%@,%@,%@,%@,%@,%@",[nowArr objectAtIndex:1],self.lblLocation.text,[nowArr objectAtIndex:2],self.observerName.text,self.observeeName.text,timeFormatted);
-    NSLog(@"%@,%@,%@,%@,%@,%@",[nowArr objectAtIndex:1],self.btnLocation.titleLabel.text,[nowArr objectAtIndex:2],self.observerName.text,self.observeeName.text,timeFormatted);
+    NSLog(@"%@,%@,%@,%@,%@,%@,%@",[nowArr objectAtIndex:0],@"end of task",@"",self.btnLocation.titleLabel.text,timeFormatted,@"",@"");
     [activeAct removeObjectAtIndex:pathToCell.row];
     [tableView deleteRowsAtIndexPaths:@[pathToCell] withRowAnimation:UITableViewRowAnimationFade];
 }
@@ -266,46 +331,46 @@
     NSArray *nowArr = [activeAct objectAtIndex:indexPath.row];
     // activity name
     UILabel *activityName = (UILabel *)[cell viewWithTag:102];
-    activityName.text = [nowArr objectAtIndex:0];
+    activityName.text = [nowArr objectAtIndex:1];
     // activity time
     UILabel *activityTime = (UILabel *)[cell viewWithTag:103];
-    activityTime.text = [nowArr objectAtIndex:1];
+    activityTime.text = [nowArr objectAtIndex:2];
     // category
     UILabel *currentCat = (UILabel *)[cell viewWithTag:99];
-    if([[nowArr objectAtIndex:2] intValue] >= 1000 && [[nowArr objectAtIndex:2] intValue] < 1100){
+    if([[nowArr objectAtIndex:3] intValue] >= 1000 && [[nowArr objectAtIndex:3] intValue] < 1100){
         currentCat.text = @"Parent Activity";
     };
-    if([[nowArr objectAtIndex:2] intValue] >= 1100 && [[nowArr objectAtIndex:2] intValue] < 1200){
+    if([[nowArr objectAtIndex:3] intValue] >= 1100 && [[nowArr objectAtIndex:3] intValue] < 1200){
         currentCat.text = @"Phone";
     };
-    if([[nowArr objectAtIndex:2] intValue] >= 1200 && [[nowArr objectAtIndex:2] intValue] < 1300){
+    if([[nowArr objectAtIndex:3] intValue] >= 1200 && [[nowArr objectAtIndex:3] intValue] < 1300){
         currentCat.text = @"Personal";
     };
-    if([[nowArr objectAtIndex:2] intValue] >= 1300 && [[nowArr objectAtIndex:2] intValue] < 1400){
+    if([[nowArr objectAtIndex:3] intValue] >= 1300 && [[nowArr objectAtIndex:3] intValue] < 1400){
         currentCat.text = @"Talking/Rounding";
     };
-    if([[nowArr objectAtIndex:2] intValue] >= 1400 && [[nowArr objectAtIndex:2] intValue] < 1500){
+    if([[nowArr objectAtIndex:3] intValue] >= 1400 && [[nowArr objectAtIndex:3] intValue] < 1500){
         currentCat.text = @"Walking/Moving";
     };
-    if([[nowArr objectAtIndex:2] intValue] >= 1500 && [[nowArr objectAtIndex:2] intValue] < 1600){
+    if([[nowArr objectAtIndex:3] intValue] >= 1500 && [[nowArr objectAtIndex:3] intValue] < 1600){
         currentCat.text = @"Waiting for";
     };
-    if([[nowArr objectAtIndex:2] intValue] >= 1600 && [[nowArr objectAtIndex:2] intValue] < 1700){
+    if([[nowArr objectAtIndex:3] intValue] >= 1600 && [[nowArr objectAtIndex:3] intValue] < 1700){
         currentCat.text = @"Looking for People";
     };
-    if([[nowArr objectAtIndex:2] intValue] >= 1700 && [[nowArr objectAtIndex:2] intValue] < 1800){
+    if([[nowArr objectAtIndex:3] intValue] >= 1700 && [[nowArr objectAtIndex:3] intValue] < 1800){
         currentCat.text = @"Reading Paper Resources";
     };
-    if([[nowArr objectAtIndex:2] intValue] >= 1800 && [[nowArr objectAtIndex:2] intValue] < 1900){
+    if([[nowArr objectAtIndex:3] intValue] >= 1800 && [[nowArr objectAtIndex:3] intValue] < 1900){
         currentCat.text = @"Writing Paper Resources";
     };
-    if([[nowArr objectAtIndex:2] intValue] >= 1900 && [[nowArr objectAtIndex:2] intValue] < 2000){
+    if([[nowArr objectAtIndex:3] intValue] >= 1900 && [[nowArr objectAtIndex:3] intValue] < 2000){
         currentCat.text = @"Writing Computer Resources";
     };
-    if([[nowArr objectAtIndex:2] intValue] >= 2000 && [[nowArr objectAtIndex:2] intValue] < 2100){
+    if([[nowArr objectAtIndex:3] intValue] >= 2000 && [[nowArr objectAtIndex:3] intValue] < 2100){
         currentCat.text = @"Looking for Paper Resources";
     };
-    if([[nowArr objectAtIndex:2] intValue] >= 2100 && [[nowArr objectAtIndex:2] intValue] < 2200){
+    if([[nowArr objectAtIndex:3] intValue] >= 2100 && [[nowArr objectAtIndex:3] intValue] < 2200){
         currentCat.text = @"Reading Computer Resources";
     };
     //}
@@ -327,11 +392,12 @@
         [dateFormatter setDateFormat:@"HH:mm:ss"];
         NSString *timeFormatted = [dateFormatter stringFromDate:currentDate];
         NSString *tagNum = [NSString stringWithFormat:@"%d", button.tag];
-        NSArray *curSel = [[NSArray alloc] initWithObjects:button.titleLabel.text, timeFormatted, tagNum, nil];
+        NSArray *curSel = [[NSArray alloc] initWithObjects:[NSString stringWithFormat:@"%d",(int)globalCounter],button.titleLabel.text, timeFormatted, tagNum, nil];
         
         // makes a log in the console
 //        NSLog(@"%@,%@,%d,%@,%@,%@",timeFormatted,self.lblLocation.text,button.tag,self.observerName.text,self.observeeName.text,@"n/a");
-        NSLog(@"%@,%@,%d,%@,%@,%@",timeFormatted,self.btnLocation.titleLabel.text,button.tag,self.observerName.text,self.observeeName.text,@"n/a");
+        NSLog(@"%@,%@,%d,%@,%@,%@,%@",[NSString stringWithFormat:@"%d",(int)globalCounter],@"creation",button.tag,self.btnLocation.titleLabel.text,timeFormatted,self.observerName.text,self.observeeName.text);
+        globalCounter = (NSInteger *) ((int)globalCounter + 1);
         [activeAct insertObject:curSel atIndex:0];
         [tableView reloadData];
     }
@@ -346,7 +412,7 @@
 
         NSArray *nowArr = [activeAct objectAtIndex:i];
 //        NSLog(@"%@,%@,%@,%@,%@,%@",[nowArr objectAtIndex:1],self.lblLocation.text,[nowArr objectAtIndex:2],self.observerName.text,self.observeeName.text,timeFormatted);
-        NSLog(@"%@,%@,%@,%@,%@,%@",[nowArr objectAtIndex:1],self.btnLocation.titleLabel.text,[nowArr objectAtIndex:2],self.observerName.text,self.observeeName.text,timeFormatted);
+        NSLog(@"%@,%@,%@,%@,%@,%@,%@",[nowArr objectAtIndex:0],@"end of task",@"",self.btnLocation.titleLabel.text,timeFormatted,@"",@"");
     }
     [activeAct removeAllObjects];
     [tableView reloadData];
@@ -362,7 +428,7 @@
         
         NSArray *nowArr = [activeAct objectAtIndex:indexPath.row];
 //        NSLog(@"%@,%@,%@,%@,%@,%@",[nowArr objectAtIndex:1],self.lblLocation.text, [nowArr objectAtIndex:2], self.observerName.text, self.observeeName.text,@"canceled");
-        NSLog(@"%@,%@,%@,%@,%@,%@",[nowArr objectAtIndex:1],self.btnLocation.titleLabel.text, [nowArr objectAtIndex:2], self.observerName.text, self.observeeName.text,@"canceled");
+        NSLog(@"%@,%@,%@,%@,%@,%@,%@",[nowArr objectAtIndex:0],@"cancellation",@"",self.btnLocation.titleLabel.text,timeFormatted,@"",@"");
         [activeAct removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }
