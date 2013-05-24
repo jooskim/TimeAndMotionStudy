@@ -37,6 +37,7 @@
 @property (retain, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSMutableArray *activeAct;
 @property (retain, nonatomic) NSString *globalLocation;
+@property (retain, nonatomic) NSMutableArray *exportArr;
 
 - (IBAction)taskComp:(id)sender;
 - (IBAction)taskPaper:(id)sender;
@@ -53,6 +54,8 @@
 -(IBAction) changeLabelLocation_nurse:(id)sender;
 -(IBAction) changeLabelLocation_lab:(id)sender;
 -(IBAction) changeLabelLocation_other:(id)sender;
-
+-(IBAction) saveData:(id)sender;
+-(IBAction) deleteData:(id)sender;
+-(IBAction) sendToFTP:(id)sender;
 
 @end

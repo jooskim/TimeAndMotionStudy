@@ -23,7 +23,7 @@
 
 @implementation ViewController
 
-@synthesize scrollView, taskList, locationList, tableView, activeAct,globalLocation;
+@synthesize scrollView, taskList, locationList, tableView, activeAct,globalLocation,exportArr;
 NSInteger *globalCounter;
 
 - (void)viewDidLoad
@@ -66,6 +66,9 @@ NSInteger *globalCounter;
     
     // initialize the global counter with 0
     globalCounter = (int) 0;
+    
+    // initialize export array
+    exportArr = [[NSMutableArray alloc] init];
 }
 
 - (void)viewDidLayoutSubviews
@@ -265,6 +268,12 @@ NSInteger *globalCounter;
         NSString *timeFormatted = [dateFormatter stringFromDate:currentDate];
         NSArray *currentArr = [activeAct objectAtIndex:count];
         NSLog(@"%@,%@,%@,%@,%@,%@,%@",[currentArr objectAtIndex:0],@"update of location",@"",self.btnLocation.titleLabel.text,timeFormatted,@"",@"");
+        // put this information into the export array
+        NSArray *tempStorage = [[NSArray alloc] initWithObjects:[currentArr objectAtIndex:0],@"update of location",@"",self.btnLocation.titleLabel.text,timeFormatted,@"",@"", nil];
+        [exportArr addObject:tempStorage];
+        if(exportArr.count > 0){
+            NSLog(@"successfully stored the current action. # of items: %d", [exportArr count]);
+        }
     }
 }
 - (IBAction)scrollToLocation:(id)sender {
@@ -282,6 +291,7 @@ NSInteger *globalCounter;
         NSLog(@"Cancel");
     }else{
         [self allTasksDone:nil];
+        [self saveData: nil];
         [self performSegueWithIdentifier:@"logoutSegue" sender: self];
         
     }
@@ -308,6 +318,14 @@ NSInteger *globalCounter;
     NSArray *nowArr = [activeAct objectAtIndex:pathToCell.row];
 //    NSLog(@"%@,%@,%@,%@,%@,%@",[nowArr objectAtIndex:1],self.lblLocation.text,[nowArr objectAtIndex:2],self.observerName.text,self.observeeName.text,timeFormatted);
     NSLog(@"%@,%@,%@,%@,%@,%@,%@",[nowArr objectAtIndex:0],@"end of task",@"",self.btnLocation.titleLabel.text,timeFormatted,@"",@"");
+    
+    // put this information into the export array
+    NSArray *tempStorage = [[NSArray alloc] initWithObjects:[nowArr objectAtIndex:0],@"end of task",@"",self.btnLocation.titleLabel.text,timeFormatted,@"",@"", nil];
+    [exportArr addObject:tempStorage];
+    if(exportArr.count > 0){
+        NSLog(@"successfully stored the current action. # of items: %d", [exportArr count]);
+    }
+
     [activeAct removeObjectAtIndex:pathToCell.row];
     [tableView deleteRowsAtIndexPaths:@[pathToCell] withRowAnimation:UITableViewRowAnimationFade];
 }
@@ -397,6 +415,13 @@ NSInteger *globalCounter;
         // makes a log in the console
 //        NSLog(@"%@,%@,%d,%@,%@,%@",timeFormatted,self.lblLocation.text,button.tag,self.observerName.text,self.observeeName.text,@"n/a");
         NSLog(@"%@,%@,%d,%@,%@,%@,%@",[NSString stringWithFormat:@"%d",(int)globalCounter],@"creation",button.tag,self.btnLocation.titleLabel.text,timeFormatted,self.observerName.text,self.observeeName.text);
+       
+        // put this information into the export array
+        NSArray *tempStorage = [[NSArray alloc] initWithObjects:[NSString stringWithFormat:@"%d", (int)globalCounter],@"creation",[NSString stringWithFormat:@"%d",button.tag],self.btnLocation.titleLabel.text,timeFormatted,self.observerName.text,self.observeeName.text, nil];
+        [exportArr addObject:tempStorage];
+        if(exportArr.count > 0){
+            NSLog(@"successfully stored the current action. # of items: %d", [exportArr count]);
+        }
         globalCounter = (NSInteger *) ((int)globalCounter + 1);
         [activeAct insertObject:curSel atIndex:0];
         [tableView reloadData];
@@ -413,6 +438,13 @@ NSInteger *globalCounter;
         NSArray *nowArr = [activeAct objectAtIndex:i];
 //        NSLog(@"%@,%@,%@,%@,%@,%@",[nowArr objectAtIndex:1],self.lblLocation.text,[nowArr objectAtIndex:2],self.observerName.text,self.observeeName.text,timeFormatted);
         NSLog(@"%@,%@,%@,%@,%@,%@,%@",[nowArr objectAtIndex:0],@"end of task",@"",self.btnLocation.titleLabel.text,timeFormatted,@"",@"");
+        
+        // put this information into the export array
+        NSArray *tempStorage = [[NSArray alloc] initWithObjects:[nowArr objectAtIndex:0],@"end of task",@"",self.btnLocation.titleLabel.text,timeFormatted,@"",@"", nil];
+        [exportArr addObject:tempStorage];
+        if(exportArr.count > 0){
+            NSLog(@"successfully stored the current action. # of items: %d", [exportArr count]);
+        }
     }
     [activeAct removeAllObjects];
     [tableView reloadData];
@@ -429,9 +461,83 @@ NSInteger *globalCounter;
         NSArray *nowArr = [activeAct objectAtIndex:indexPath.row];
 //        NSLog(@"%@,%@,%@,%@,%@,%@",[nowArr objectAtIndex:1],self.lblLocation.text, [nowArr objectAtIndex:2], self.observerName.text, self.observeeName.text,@"canceled");
         NSLog(@"%@,%@,%@,%@,%@,%@,%@",[nowArr objectAtIndex:0],@"cancellation",@"",self.btnLocation.titleLabel.text,timeFormatted,@"",@"");
+        
+        // put this information into the export array
+        NSArray *tempStorage = [[NSArray alloc] initWithObjects:[nowArr objectAtIndex:0],@"cancellation",@"",self.btnLocation.titleLabel.text,timeFormatted,@"",@"", nil];
+        [exportArr addObject:tempStorage];
+        if(exportArr.count > 0){
+            NSLog(@"successfully stored the current action. # of items: %d", [exportArr count]);
+        }
         [activeAct removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }
 }
 
+-(IBAction) saveData:(id)sender {
+    NSDate *currentDate = [NSDate date];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+    NSString *timeFormatted = [dateFormatter stringFromDate:currentDate];
+    
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsPath = [paths objectAtIndex:0];
+    NSString *observerDeHyp = [observerName.text stringByReplacingOccurrencesOfString:@" " withString:@"-"];
+    NSString *observeeDeHyp = [observeeName.text stringByReplacingOccurrencesOfString:@" " withString:@"-"];
+    NSString *plistPath = [documentsPath stringByAppendingPathComponent:[NSString stringWithFormat:@"%@-obsvr-%@-obsvee-%@.plist",timeFormatted,observerDeHyp,observeeDeHyp]];
+    NSString *error = nil;
+    NSData *plistData = [NSPropertyListSerialization dataFromPropertyList:exportArr format:NSPropertyListXMLFormat_v1_0 errorDescription:&error];
+    if(plistData){
+        [plistData writeToFile:plistPath atomically:YES];
+        // write meta data. could we change it in a way it appends to the existing file?
+        NSString *observerDeHyp = [observerName.text stringByReplacingOccurrencesOfString:@" " withString:@"-"];
+        NSString *observeeDeHyp = [observeeName.text stringByReplacingOccurrencesOfString:@" " withString:@"-"];
+        NSString *plistPathMeta = [documentsPath stringByAppendingPathComponent:@"metaData.plist"];
+        NSString *errorMeta = nil;
+        
+        NSMutableArray *metaInfo = [[NSMutableArray alloc] initWithContentsOfFile: plistPathMeta];
+        [metaInfo addObject: [NSString stringWithFormat:@"%@-obsvr-%@-obsvee-%@.plist",timeFormatted,observerDeHyp,observeeDeHyp]];
+        
+        NSData *plistDataMeta = [NSPropertyListSerialization dataFromPropertyList: metaInfo format:NSPropertyListXMLFormat_v1_0 errorDescription:&errorMeta];
+        if(plistDataMeta){
+            [plistDataMeta writeToFile:plistPathMeta atomically:YES];
+        }else{
+            NSLog(@"Error in saving meta data: %@", errorMeta);
+        }
+    }else{
+        NSLog(@"Error in savedata: %@", error);
+    }
+}
+
+
+-(IBAction) deleteData:(id)sender {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains (NSDocumentDirectory, NSUserDomainMask, YES);
+    // get documents path
+    NSString *documentsPath = [paths objectAtIndex:0];
+    // get the path to our Data/plist file
+    NSString *plistPath = [documentsPath stringByAppendingPathComponent:@"data.plist"];
+    
+    // check to see if data.plist exists in documents
+    if (![[NSFileManager defaultManager] fileExistsAtPath:plistPath])
+    {
+        // if not in documents, get property list from main bundle CHECK D capitalisation
+        plistPath = [[NSBundle mainBundle] pathForResource:@"data" ofType:@"plist"];
+    }
+    
+    // read property list into memory as an NSData object
+    NSData *plistXML = [[NSFileManager defaultManager] contentsAtPath:plistPath];
+    NSString *errorDesc = nil;
+    NSPropertyListFormat format;
+    // convert static property list into dictionary object
+    NSMutableArray *arrayTemp = (NSMutableArray *)[NSPropertyListSerialization propertyListFromData:plistXML mutabilityOption:NSPropertyListMutableContainersAndLeaves format:&format errorDescription:&errorDesc];
+    if (!arrayTemp)
+    {
+        NSLog(@"Error reading plist: %@, format: %d", errorDesc, format);
+    }else{
+        NSLog(@"%d",arrayTemp.count);
+    }
+
+}
+-(IBAction) sendToFTP:(id)sender {
+    
+}
 @end

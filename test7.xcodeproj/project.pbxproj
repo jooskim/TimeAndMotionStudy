@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A054642174F117E00CD3B28 /* uploadController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A054641174F117E00CD3B28 /* uploadController.m */; };
 		4A0AF0A7173718B900CA4AC9 /* end copy.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A0AF0A6173718B900CA4AC9 /* end copy.png */; };
 		4A187EF5172B0FD700D10D07 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A187EF4172B0FD700D10D07 /* UIKit.framework */; };
 		4A187EF7172B0FD700D10D07 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A187EF6172B0FD700D10D07 /* Foundation.framework */; };
@@ -35,6 +36,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4A054640174F117E00CD3B28 /* uploadController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = uploadController.h; path = ../uploadController.h; sourceTree = "<group>"; };
+		4A054641174F117E00CD3B28 /* uploadController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = uploadController.m; path = ../uploadController.m; sourceTree = "<group>"; };
 		4A0AF0A6173718B900CA4AC9 /* end copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "end copy.png"; sourceTree = "<group>"; };
 		4A187EF1172B0FD700D10D07 /* test7.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = test7.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A187EF4172B0FD700D10D07 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -117,6 +120,8 @@
 			children = (
 				4A90989A174876950051C070 /* tableController.h */,
 				4A90989B174876950051C070 /* tableController.m */,
+				4A054640174F117E00CD3B28 /* uploadController.h */,
+				4A054641174F117E00CD3B28 /* uploadController.m */,
 				4A259B1E173C6EEE00011EF0 /* TaskView.xib */,
 				4A187F03172B0FD700D10D07 /* AppDelegate.h */,
 				4A187F04172B0FD700D10D07 /* AppDelegate.m */,
@@ -240,6 +245,7 @@
 				4AD0EC7C172B9DB200C89D22 /* LoginController.m in Sources */,
 				4AD0EC7F172BA11C00C89D22 /* SiteController.m in Sources */,
 				4A90989C174876950051C070 /* tableController.m in Sources */,
+				4A054642174F117E00CD3B28 /* uploadController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
