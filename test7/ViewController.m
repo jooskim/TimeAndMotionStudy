@@ -494,10 +494,21 @@ NSInteger *globalCounter;
         NSString *plistPathMeta = [documentsPath stringByAppendingPathComponent:@"metaData.plist"];
         NSString *errorMeta = nil;
         
-        NSMutableArray *metaInfo = [[NSMutableArray alloc] initWithContentsOfFile: plistPathMeta];
-        [metaInfo addObject: [NSString stringWithFormat:@"%@-obsvr-%@-obsvee-%@.plist",timeFormatted,observerDeHyp,observeeDeHyp]];
+        BOOL metaExists = [[NSFileManager defaultManager] fileExistsAtPath:plistPathMeta];
         
+        NSMutableArray *metaInfo = [[NSMutableArray alloc] init];
+        
+        if(metaExists == YES){
+            metaInfo = [[NSMutableArray alloc] initWithContentsOfFile: plistPathMeta];
+            [metaInfo addObject: [NSString stringWithFormat:@"%@-obsvr-%@-obsvee-%@.plist",timeFormatted,observerDeHyp,observeeDeHyp]];
+        }else{
+            metaInfo = [[NSMutableArray alloc] initWithObjects: [NSString stringWithFormat:@"%@-obsvr-%@-obsvee-%@.plist",timeFormatted,observerDeHyp,observeeDeHyp], nil];
+        }
+        
+        
+        NSLog(@"%@, %@, %@", timeFormatted, observerDeHyp, observeeDeHyp);
         NSData *plistDataMeta = [NSPropertyListSerialization dataFromPropertyList: metaInfo format:NSPropertyListXMLFormat_v1_0 errorDescription:&errorMeta];
+
         if(plistDataMeta){
             [plistDataMeta writeToFile:plistPathMeta atomically:YES];
         }else{
@@ -509,34 +520,6 @@ NSInteger *globalCounter;
 }
 
 
--(IBAction) deleteData:(id)sender {
-    NSArray *paths = NSSearchPathForDirectoriesInDomains (NSDocumentDirectory, NSUserDomainMask, YES);
-    // get documents path
-    NSString *documentsPath = [paths objectAtIndex:0];
-    // get the path to our Data/plist file
-    NSString *plistPath = [documentsPath stringByAppendingPathComponent:@"data.plist"];
-    
-    // check to see if data.plist exists in documents
-    if (![[NSFileManager defaultManager] fileExistsAtPath:plistPath])
-    {
-        // if not in documents, get property list from main bundle CHECK D capitalisation
-        plistPath = [[NSBundle mainBundle] pathForResource:@"data" ofType:@"plist"];
-    }
-    
-    // read property list into memory as an NSData object
-    NSData *plistXML = [[NSFileManager defaultManager] contentsAtPath:plistPath];
-    NSString *errorDesc = nil;
-    NSPropertyListFormat format;
-    // convert static property list into dictionary object
-    NSMutableArray *arrayTemp = (NSMutableArray *)[NSPropertyListSerialization propertyListFromData:plistXML mutabilityOption:NSPropertyListMutableContainersAndLeaves format:&format errorDescription:&errorDesc];
-    if (!arrayTemp)
-    {
-        NSLog(@"Error reading plist: %@, format: %d", errorDesc, format);
-    }else{
-        NSLog(@"%d",arrayTemp.count);
-    }
-
-}
 -(IBAction) sendToFTP:(id)sender {
     
 }
