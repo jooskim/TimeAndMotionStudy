@@ -135,28 +135,63 @@ enum {
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
     UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
     NSLog(@"%@ selected", cell.textLabel.text);
-    
-//    assert( [sender isKindOfClass:[UIView class]] );
-    
-    if ( ! self.isSending ) {
-        NSString *  filePath;
-        
-        // User the tag on the UIButton to determine which image to send.
-        
-//        assert(sender.tag >= 0);
-//        filePath = [[NetworkManager sharedInstance] pathForTestImage:(NSUInteger) sender.tag];
-//        assert(filePath != nil);
-        
-        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-        NSString *documentsPath = [paths objectAtIndex:0];
-        filePath = [documentsPath stringByAppendingPathComponent:[NSString stringWithFormat: @"%@", cell.textLabel.text]];
-        
-        
-        [self startSend:filePath];
-    }
 
+    // Show the confirmation.
+    UIAlertView *alert = [[UIAlertView alloc]
+                          initWithTitle: NSLocalizedString(@"Upload Observation Data",nil)
+                          message: [NSString stringWithFormat: @"Are you sure you want to upload %@?", cell.textLabel.text]
+                          delegate: self
+                          cancelButtonTitle: NSLocalizedString(@"Cancel",nil)
+                          otherButtonTitles: NSLocalizedString(@"Upload",nil), nil];
+    [alert show];
+    [alert release];
+
+}
+
+
+// Called when an alertview button is touched
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    switch (buttonIndex) {
+        case 0:
+        {
+            // NSLog(@"Cancel button clicked by the user");
+        }
+            break;
+            
+        case 1:
+        {
+            //NSLog(@"Upload button clicked by the user");
+
+            // Upload the data
+            //    assert( [sender isKindOfClass:[UIView class]] );
+            
+            if ( ! self.isSending ) {
+                NSString *  filePath;
+                
+                // User the tag on the UIButton to determine which image to send.
+                
+                //        assert(sender.tag >= 0);
+                //        filePath = [[NetworkManager sharedInstance] pathForTestImage:(NSUInteger) sender.tag];
+                //        assert(filePath != nil);
+                
+                NSIndexPath *selectedIndexPath = [tableView indexPathForSelectedRow];
+                UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:selectedIndexPath];
+//                NSLog(@"%@", cell.textLabel.text);
+
+                NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+                NSString *documentsPath = [paths objectAtIndex:0];
+                filePath = [documentsPath stringByAppendingPathComponent:[NSString stringWithFormat: @"%@", cell.textLabel.text]];
+                
+                [self startSend:filePath];
+            }
+
+        }
+            break;
+    }
     
 }
 
@@ -235,8 +270,19 @@ enum {
 - (void)sendDidStopWithStatus:(NSString *)statusString
 {
     if (statusString == nil) {
-        statusString = @"Put succeeded";
+        statusString = @"File upload succeeded";
     }
+    
+    // Show success alert message
+    UIAlertView *alert = [[UIAlertView alloc]
+                          initWithTitle: statusString
+                          message: nil
+                          delegate: self
+                          cancelButtonTitle: nil
+                          otherButtonTitles: @"OK",nil, nil];
+    [alert show];
+    [alert release];
+    
     self.statusLabel.text = statusString;
     self.cancelButton.enabled = NO;
     [self.activityIndicator stopAnimating];
@@ -275,7 +321,7 @@ enum {
     // First get and check the URL.
     
 //    url = [[NetworkManager sharedInstance] smartURLForString:self.urlText.text];
-    url = [NSURL URLWithString:@"ftp://test:test@192.168.1.103:2100"];
+    url = [NSURL URLWithString:@"ftp://test:test@192.168.1.176:2100"];
     success = (url != nil);
     
     if (success) {
