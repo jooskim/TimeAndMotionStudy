@@ -2587,9 +2587,17 @@
         <class className="uploadController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/uploadController.h"/>
             <relationships>
+                <relationship kind="action" name="cancelAction:"/>
+                <relationship kind="action" name="sendAction:" candidateClass="UIView"/>
                 <relationship kind="action" name="toggleEdit:"/>
+                <relationship kind="outlet" name="activityIndicator" candidateClass="UIActivityIndicatorView"/>
+                <relationship kind="outlet" name="cancelButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="editButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="passwordText" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="statusLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="urlText" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="usernameText" candidateClass="UITextField"/>
             </relationships>
         </class>
     </classes>

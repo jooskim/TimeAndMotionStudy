@@ -29,6 +29,8 @@
 		4AD0EC79172B9B1000C89D22 /* DetailTaskController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AD0EC78172B9B1000C89D22 /* DetailTaskController.m */; };
 		4AD0EC7C172B9DB200C89D22 /* LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AD0EC7B172B9DB200C89D22 /* LoginController.m */; };
 		4AD0EC7F172BA11C00C89D22 /* SiteController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AD0EC7E172BA11C00C89D22 /* SiteController.m */; };
+		C2790F6B175447FA00628669 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2790F6A175447FA00628669 /* CFNetwork.framework */; };
+		C2790F701754484C00628669 /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C2790F6D1754484C00628669 /* NetworkManager.m */; };
 		C2FBFB45174A81A6004CF08C /* button_check.png in Resources */ = {isa = PBXBuildFile; fileRef = C2FBFB44174A81A6004CF08C /* button_check.png */; };
 		C2FBFB4D174A86B1004CF08C /* button_minus.png in Resources */ = {isa = PBXBuildFile; fileRef = C2FBFB4C174A86B1004CF08C /* button_minus.png */; };
 		C2FBFB50174A8704004CF08C /* button_check_s.png in Resources */ = {isa = PBXBuildFile; fileRef = C2FBFB4E174A8703004CF08C /* button_check_s.png */; };
@@ -68,6 +70,9 @@
 		4AD0EC7B172B9DB200C89D22 /* LoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginController.m; sourceTree = "<group>"; };
 		4AD0EC7D172BA11C00C89D22 /* SiteController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SiteController.h; sourceTree = "<group>"; };
 		4AD0EC7E172BA11C00C89D22 /* SiteController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SiteController.m; sourceTree = "<group>"; };
+		C2790F6A175447FA00628669 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		C2790F6C1754484C00628669 /* NetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
+		C2790F6D1754484C00628669 /* NetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkManager.m; sourceTree = "<group>"; };
 		C2FBFB44174A81A6004CF08C /* button_check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_check.png; sourceTree = "<group>"; };
 		C2FBFB4C174A86B1004CF08C /* button_minus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_minus.png; sourceTree = "<group>"; };
 		C2FBFB4E174A8703004CF08C /* button_check_s.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_check_s.png; sourceTree = "<group>"; };
@@ -79,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2790F6B175447FA00628669 /* CFNetwork.framework in Frameworks */,
 				4A187EF5172B0FD700D10D07 /* UIKit.framework in Frameworks */,
 				4A187EF7172B0FD700D10D07 /* Foundation.framework in Frameworks */,
 				4A187EF9172B0FD700D10D07 /* CoreGraphics.framework in Frameworks */,
@@ -91,9 +97,10 @@
 		4A187EE8172B0FD700D10D07 = {
 			isa = PBXGroup;
 			children = (
-				4A187EFA172B0FD700D10D07 /* test7 */,
+				C2790F6A175447FA00628669 /* CFNetwork.framework */,
 				4A187EF3172B0FD700D10D07 /* Frameworks */,
 				4A187EF2172B0FD700D10D07 /* Products */,
+				4A187EFA172B0FD700D10D07 /* test7 */,
 			);
 			sourceTree = "<group>";
 		};
@@ -122,6 +129,8 @@
 				4A90989B174876950051C070 /* tableController.m */,
 				4A054640174F117E00CD3B28 /* uploadController.h */,
 				4A054641174F117E00CD3B28 /* uploadController.m */,
+				C2790F6C1754484C00628669 /* NetworkManager.h */,
+				C2790F6D1754484C00628669 /* NetworkManager.m */,
 				4A259B1E173C6EEE00011EF0 /* TaskView.xib */,
 				4A187F03172B0FD700D10D07 /* AppDelegate.h */,
 				4A187F04172B0FD700D10D07 /* AppDelegate.m */,
@@ -246,6 +255,7 @@
 				4AD0EC7F172BA11C00C89D22 /* SiteController.m in Sources */,
 				4A90989C174876950051C070 /* tableController.m in Sources */,
 				4A054642174F117E00CD3B28 /* uploadController.m in Sources */,
+				C2790F701754484C00628669 /* NetworkManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,6 +340,10 @@
 		4A187F15172B0FD700D10D07 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../Downloads/QueueFTP-master\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "test7/test7-Prefix.pch";
 				INFOPLIST_FILE = "test7/test7-Info.plist";
@@ -341,6 +355,10 @@
 		4A187F16172B0FD700D10D07 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../Downloads/QueueFTP-master\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "test7/test7-Prefix.pch";
 				INFOPLIST_FILE = "test7/test7-Info.plist";
