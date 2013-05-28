@@ -476,7 +476,7 @@ NSInteger *globalCounter;
 -(IBAction) saveData:(id)sender {
     NSDate *currentDate = [NSDate date];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+    [dateFormatter setDateFormat:@"MMddyyyy-HHmmss"];
     NSString *timeFormatted = [dateFormatter stringFromDate:currentDate];
     
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
