@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "4A187EF0172B0FD700D10D07"
-               BuildableName = "test7.app"
-               BlueprintName = "test7"
-               ReferencedContainer = "container:test7.xcodeproj">
+               BuildableName = "T&amp;M Collector.app"
+               BlueprintName = "T&amp;M Collector"
+               ReferencedContainer = "container:T&amp;M Collector.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4A187EF0172B0FD700D10D07"
-            BuildableName = "test7.app"
-            BlueprintName = "test7"
-            ReferencedContainer = "container:test7.xcodeproj">
+            BuildableName = "T&amp;M Collector.app"
+            BlueprintName = "T&amp;M Collector"
+            ReferencedContainer = "container:T&amp;M Collector.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -52,9 +52,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4A187EF0172B0FD700D10D07"
-            BuildableName = "test7.app"
-            BlueprintName = "test7"
-            ReferencedContainer = "container:test7.xcodeproj">
+            BuildableName = "T&amp;M Collector.app"
+            BlueprintName = "T&amp;M Collector"
+            ReferencedContainer = "container:T&amp;M Collector.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -70,9 +70,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4A187EF0172B0FD700D10D07"
-            BuildableName = "test7.app"
-            BlueprintName = "test7"
-            ReferencedContainer = "container:test7.xcodeproj">
+            BuildableName = "T&amp;M Collector.app"
+            BlueprintName = "T&amp;M Collector"
+            ReferencedContainer = "container:T&amp;M Collector.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
@@ -80,7 +80,8 @@
       buildConfiguration = "Debug">
    </AnalyzeAction>
    <ArchiveAction
-      buildConfiguration = "Release"
+      buildConfiguration = "Ad-Hoc"
+      customArchiveName = "TNMCollector"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>

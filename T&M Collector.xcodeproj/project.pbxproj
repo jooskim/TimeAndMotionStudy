@@ -22,6 +22,8 @@
 		4A187F11172B0FD700D10D07 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A187F10172B0FD700D10D07 /* ViewController.m */; };
 		4A259B1B173C3FE200011EF0 /* startobs.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A259B1A173C3FE200011EF0 /* startobs.png */; };
 		4A259B1F173C6EEE00011EF0 /* TaskView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A259B1E173C6EEE00011EF0 /* TaskView.xib */; };
+		4A3991D517557B8F005BFF96 /* tnmlogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A3991D417557B8F005BFF96 /* tnmlogo.png */; };
+		4A3991D717557BAE005BFF96 /* tnmlogo_retina.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A3991D617557BAE005BFF96 /* tnmlogo_retina.png */; };
 		4A3E5B7917490F660083672F /* rectbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A3E5B7817490F660083672F /* rectbutton.png */; };
 		4A3E5B7B1749114D0083672F /* smallbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A3E5B7A1749114D0083672F /* smallbutton.png */; };
 		4A3E5B7D174915060083672F /* end.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A3E5B7C174915060083672F /* end.png */; };
@@ -41,14 +43,14 @@
 		4A054640174F117E00CD3B28 /* uploadController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = uploadController.h; path = ../uploadController.h; sourceTree = "<group>"; };
 		4A054641174F117E00CD3B28 /* uploadController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = uploadController.m; path = ../uploadController.m; sourceTree = "<group>"; };
 		4A0AF0A6173718B900CA4AC9 /* end copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "end copy.png"; sourceTree = "<group>"; };
-		4A187EF1172B0FD700D10D07 /* test7.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = test7.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A187EF1172B0FD700D10D07 /* T&M Collector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "T&M Collector.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A187EF4172B0FD700D10D07 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4A187EF6172B0FD700D10D07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4A187EF8172B0FD700D10D07 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		4A187EFC172B0FD700D10D07 /* test7-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "test7-Info.plist"; sourceTree = "<group>"; };
+		4A187EFC172B0FD700D10D07 /* T&M Collector-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "T&M Collector-Info.plist"; sourceTree = "<group>"; };
 		4A187EFE172B0FD700D10D07 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4A187F00172B0FD700D10D07 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		4A187F02172B0FD700D10D07 /* test7-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "test7-Prefix.pch"; sourceTree = "<group>"; };
+		4A187F02172B0FD700D10D07 /* T&M Collector-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "T&M Collector-Prefix.pch"; sourceTree = "<group>"; };
 		4A187F03172B0FD700D10D07 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4A187F04172B0FD700D10D07 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		4A187F06172B0FD700D10D07 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
@@ -59,6 +61,8 @@
 		4A187F10172B0FD700D10D07 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		4A259B1A173C3FE200011EF0 /* startobs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = startobs.png; sourceTree = "<group>"; };
 		4A259B1E173C6EEE00011EF0 /* TaskView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TaskView.xib; path = ../TaskView.xib; sourceTree = "<group>"; };
+		4A3991D417557B8F005BFF96 /* tnmlogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tnmlogo.png; sourceTree = "<group>"; };
+		4A3991D617557BAE005BFF96 /* tnmlogo_retina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tnmlogo_retina.png; sourceTree = "<group>"; };
 		4A3E5B7817490F660083672F /* rectbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rectbutton.png; sourceTree = "<group>"; };
 		4A3E5B7A1749114D0083672F /* smallbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = smallbutton.png; sourceTree = "<group>"; };
 		4A3E5B7C174915060083672F /* end.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = end.png; sourceTree = "<group>"; };
@@ -97,6 +101,8 @@
 		4A187EE8172B0FD700D10D07 = {
 			isa = PBXGroup;
 			children = (
+				4A3991D617557BAE005BFF96 /* tnmlogo_retina.png */,
+				4A3991D417557B8F005BFF96 /* tnmlogo.png */,
 				C2790F6A175447FA00628669 /* CFNetwork.framework */,
 				4A187EF3172B0FD700D10D07 /* Frameworks */,
 				4A187EF2172B0FD700D10D07 /* Products */,
@@ -107,7 +113,7 @@
 		4A187EF2172B0FD700D10D07 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4A187EF1172B0FD700D10D07 /* test7.app */,
+				4A187EF1172B0FD700D10D07 /* T&M Collector.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -160,10 +166,10 @@
 				4A3E5B7817490F660083672F /* rectbutton.png */,
 				4A259B1A173C3FE200011EF0 /* startobs.png */,
 				4A0AF0A6173718B900CA4AC9 /* end copy.png */,
-				4A187EFC172B0FD700D10D07 /* test7-Info.plist */,
+				4A187EFC172B0FD700D10D07 /* T&M Collector-Info.plist */,
 				4A187EFD172B0FD700D10D07 /* InfoPlist.strings */,
 				4A187F00172B0FD700D10D07 /* main.m */,
-				4A187F02172B0FD700D10D07 /* test7-Prefix.pch */,
+				4A187F02172B0FD700D10D07 /* T&M Collector-Prefix.pch */,
 				4A187F06172B0FD700D10D07 /* Default.png */,
 				4A187F08172B0FD700D10D07 /* Default@2x.png */,
 				4A187F0A172B0FD700D10D07 /* Default-568h@2x.png */,
@@ -174,9 +180,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4A187EF0172B0FD700D10D07 /* test7 */ = {
+		4A187EF0172B0FD700D10D07 /* T&M Collector */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4A187F14172B0FD700D10D07 /* Build configuration list for PBXNativeTarget "test7" */;
+			buildConfigurationList = 4A187F14172B0FD700D10D07 /* Build configuration list for PBXNativeTarget "T&M Collector" */;
 			buildPhases = (
 				4A187EED172B0FD700D10D07 /* Sources */,
 				4A187EEE172B0FD700D10D07 /* Frameworks */,
@@ -186,9 +192,9 @@
 			);
 			dependencies = (
 			);
-			name = test7;
+			name = "T&M Collector";
 			productName = test7;
-			productReference = 4A187EF1172B0FD700D10D07 /* test7.app */;
+			productReference = 4A187EF1172B0FD700D10D07 /* T&M Collector.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -200,7 +206,7 @@
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Joosung Kim";
 			};
-			buildConfigurationList = 4A187EEC172B0FD700D10D07 /* Build configuration list for PBXProject "test7" */;
+			buildConfigurationList = 4A187EEC172B0FD700D10D07 /* Build configuration list for PBXProject "T&M Collector" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -212,7 +218,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4A187EF0172B0FD700D10D07 /* test7 */,
+				4A187EF0172B0FD700D10D07 /* T&M Collector */,
 			);
 		};
 /* End PBXProject section */
@@ -237,6 +243,8 @@
 				C2FBFB4D174A86B1004CF08C /* button_minus.png in Resources */,
 				C2FBFB50174A8704004CF08C /* button_check_s.png in Resources */,
 				C2FBFB51174A8704004CF08C /* button_minus_s.png in Resources */,
+				4A3991D517557B8F005BFF96 /* tnmlogo.png in Resources */,
+				4A3991D717557BAE005BFF96 /* tnmlogo_retina.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,9 +353,9 @@
 					"\"$(SRCROOT)/../../Downloads/QueueFTP-master\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "test7/test7-Prefix.pch";
-				INFOPLIST_FILE = "test7/test7-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "test7/T&M Collector-Prefix.pch";
+				INFOPLIST_FILE = "test7/T&M Collector-Info.plist";
+				PRODUCT_NAME = "T&M Collector";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -360,30 +368,72 @@
 					"\"$(SRCROOT)/../../Downloads/QueueFTP-master\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "test7/test7-Prefix.pch";
-				INFOPLIST_FILE = "test7/test7-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "test7/T&M Collector-Prefix.pch";
+				INFOPLIST_FILE = "test7/T&M Collector-Info.plist";
+				PRODUCT_NAME = "T&M Collector";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
 		};
+		4A71649E1756B90400776E2F /* Ad-Hoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = "Ad-Hoc";
+		};
+		4A71649F1756B90400776E2F /* Ad-Hoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../Downloads/QueueFTP-master\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "test7/T&M Collector-Prefix.pch";
+				INFOPLIST_FILE = "test7/T&M Collector-Info.plist";
+				PRODUCT_NAME = "T&M Collector";
+				WRAPPER_EXTENSION = app;
+			};
+			name = "Ad-Hoc";
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4A187EEC172B0FD700D10D07 /* Build configuration list for PBXProject "test7" */ = {
+		4A187EEC172B0FD700D10D07 /* Build configuration list for PBXProject "T&M Collector" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4A187F12172B0FD700D10D07 /* Debug */,
 				4A187F13172B0FD700D10D07 /* Release */,
+				4A71649E1756B90400776E2F /* Ad-Hoc */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4A187F14172B0FD700D10D07 /* Build configuration list for PBXNativeTarget "test7" */ = {
+		4A187F14172B0FD700D10D07 /* Build configuration list for PBXNativeTarget "T&M Collector" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4A187F15172B0FD700D10D07 /* Debug */,
 				4A187F16172B0FD700D10D07 /* Release */,
+				4A71649F1756B90400776E2F /* Ad-Hoc */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

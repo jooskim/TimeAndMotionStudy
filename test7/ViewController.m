@@ -356,41 +356,99 @@ NSInteger *globalCounter;
     // category
     UILabel *currentCat = (UILabel *)[cell viewWithTag:99];
     if([[nowArr objectAtIndex:3] intValue] >= 1000 && [[nowArr objectAtIndex:3] intValue] < 1100){
-        currentCat.text = @"Parent Activity";
+        currentCat.text = @"Computer:Entry";
     };
     if([[nowArr objectAtIndex:3] intValue] >= 1100 && [[nowArr objectAtIndex:3] intValue] < 1200){
-        currentCat.text = @"Phone";
+        currentCat.text = @"Computer:Confirming information";
     };
     if([[nowArr objectAtIndex:3] intValue] >= 1200 && [[nowArr objectAtIndex:3] intValue] < 1300){
-        currentCat.text = @"Personal";
+        currentCat.text = @"Computer:Reading";
     };
     if([[nowArr objectAtIndex:3] intValue] >= 1300 && [[nowArr objectAtIndex:3] intValue] < 1400){
-        currentCat.text = @"Talking/Rounding";
+        currentCat.text = @"Phone:Calling";
     };
     if([[nowArr objectAtIndex:3] intValue] >= 1400 && [[nowArr objectAtIndex:3] intValue] < 1500){
-        currentCat.text = @"Walking/Moving";
+        currentCat.text = @"Phone:Answering";
     };
     if([[nowArr objectAtIndex:3] intValue] >= 1500 && [[nowArr objectAtIndex:3] intValue] < 1600){
-        currentCat.text = @"Waiting for";
+        currentCat.text = @"Phone:Transfer call";
     };
     if([[nowArr objectAtIndex:3] intValue] >= 1600 && [[nowArr objectAtIndex:3] intValue] < 1700){
-        currentCat.text = @"Looking for People";
+        currentCat.text = @"Paper:Writing";
     };
     if([[nowArr objectAtIndex:3] intValue] >= 1700 && [[nowArr objectAtIndex:3] intValue] < 1800){
-        currentCat.text = @"Reading Paper Resources";
+        currentCat.text = @"Paper:Reading";
     };
     if([[nowArr objectAtIndex:3] intValue] >= 1800 && [[nowArr objectAtIndex:3] intValue] < 1900){
-        currentCat.text = @"Writing Paper Resources";
+        currentCat.text = @"Paper:Sorting/filing/delivering";
     };
     if([[nowArr objectAtIndex:3] intValue] >= 1900 && [[nowArr objectAtIndex:3] intValue] < 2000){
-        currentCat.text = @"Writing Computer Resources";
+        currentCat.text = @"Paper:Retrieving/accepting";
     };
     if([[nowArr objectAtIndex:3] intValue] >= 2000 && [[nowArr objectAtIndex:3] intValue] < 2100){
-        currentCat.text = @"Looking for Paper Resources";
+        currentCat.text = @"Paper:Printing/faxing";
     };
     if([[nowArr objectAtIndex:3] intValue] >= 2100 && [[nowArr objectAtIndex:3] intValue] < 2200){
-        currentCat.text = @"Reading Computer Resources";
+        currentCat.text = @"Talking/discussion:To coworker";
     };
+    if([[nowArr objectAtIndex:3] intValue] >= 2200 && [[nowArr objectAtIndex:3] intValue] < 2300){
+        currentCat.text = @"Talking/discussion:To patient";
+    };
+    if([[nowArr objectAtIndex:3] intValue] >= 2300 && [[nowArr objectAtIndex:3] intValue] < 2400){
+        currentCat.text = @"Talking/discussion:To manager/supervisor";
+    };
+    if([[nowArr objectAtIndex:3] intValue] >= 2400 && [[nowArr objectAtIndex:3] intValue] < 2500){
+        currentCat.text = @"Dictating/reporting:On device";
+    };
+    if([[nowArr objectAtIndex:3] intValue] >= 2500 && [[nowArr objectAtIndex:3] intValue] < 2600){
+        currentCat.text = @"Procedure/exam:Measurements";
+    };
+    if([[nowArr objectAtIndex:3] intValue] >= 2600 && [[nowArr objectAtIndex:3] intValue] < 2700){
+        currentCat.text = @"Procedure/exam:Physical exam";
+    };
+    if([[nowArr objectAtIndex:3] intValue] >= 2700 && [[nowArr objectAtIndex:3] intValue] < 2800){
+        currentCat.text = @"Procedure/exam:Medical procedure";
+    };
+    if([[nowArr objectAtIndex:3] intValue] >= 2800 && [[nowArr objectAtIndex:3] intValue] < 2900){
+        currentCat.text = @"Procedure/exam:Room patient";
+    };
+    if([[nowArr objectAtIndex:3] intValue] >= 2900 && [[nowArr objectAtIndex:3] intValue] < 3000){
+        currentCat.text = @"Walking:To office";
+    };
+    if([[nowArr objectAtIndex:3] intValue] >= 3000 && [[nowArr objectAtIndex:3] intValue] < 3100){
+        currentCat.text = @"Walking:To nursing station";
+    };
+    if([[nowArr objectAtIndex:3] intValue] >= 3100 && [[nowArr objectAtIndex:3] intValue] < 3200){
+        currentCat.text = @"Walking:To supply area";
+    };
+    if([[nowArr objectAtIndex:3] intValue] >= 3200 && [[nowArr objectAtIndex:3] intValue] < 3300){
+        currentCat.text = @"Walking:Escorting";
+    };
+    if([[nowArr objectAtIndex:3] intValue] >= 3300 && [[nowArr objectAtIndex:3] intValue] < 3400){
+        currentCat.text = @"Walking:Others";
+    };
+    if([[nowArr objectAtIndex:3] intValue] >= 3400 && [[nowArr objectAtIndex:3] intValue] < 3500){
+        currentCat.text = @"Handling:Washing/cleaning";
+    };
+    if([[nowArr objectAtIndex:3] intValue] >= 3400 && [[nowArr objectAtIndex:3] intValue] < 3500){
+        currentCat.text = @"Handling:Washing/cleaning";
+    };
+    if([[nowArr objectAtIndex:3] intValue] >= 3500 && [[nowArr objectAtIndex:3] intValue] < 3600){
+        currentCat.text = @"Handling:Specimen/container";
+    };
+    if([[nowArr objectAtIndex:3] intValue] >= 3600 && [[nowArr objectAtIndex:3] intValue] < 3700){
+        currentCat.text = @"Handling:Vital sign cart";
+    };
+    if([[nowArr objectAtIndex:3] intValue] >= 3700 && [[nowArr objectAtIndex:3] intValue] < 3800){
+        currentCat.text = @"Handling:Procedure tool";
+    };
+    if([[nowArr objectAtIndex:3] intValue] >= 3800 && [[nowArr objectAtIndex:3] intValue] < 3900){
+        currentCat.text = @"Handling:Door flags/light system";
+    };
+    if([[nowArr objectAtIndex:3] intValue] >= 3900 && [[nowArr objectAtIndex:3] intValue] < 4000){
+        currentCat.text = @"Relaxing:Taking break time";
+    };
+    
     //}
     //test code
     //cell.textLabel.text = [activeAct objectAtIndex:indexPath.row];

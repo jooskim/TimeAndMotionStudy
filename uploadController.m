@@ -275,7 +275,7 @@ enum {
     // First get and check the URL.
     
 //    url = [[NetworkManager sharedInstance] smartURLForString:self.urlText.text];
-    url = [NSURL URLWithString:@"ftp://test:test@192.168.1.103:2100"];
+    url = [NSURL URLWithString:@"ftp://test:test@192.168.1.10:2100"];
     success = (url != nil);
     
     if (success) {
