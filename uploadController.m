@@ -85,7 +85,7 @@ enum {
     if(cell == nil){
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:tableIdentifier];
     }
-
+    
     cell.textLabel.text = [dataList objectAtIndex:indexPath.row];
     return cell;
 }
@@ -128,35 +128,70 @@ enum {
             [dataList removeObjectAtIndex:indexPath.row];
             [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
         }
-
-    
+        
+        
     }
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
     UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
     NSLog(@"%@ selected", cell.textLabel.text);
     
-//    assert( [sender isKindOfClass:[UIView class]] );
+    // Show the confirmation.
+    UIAlertView *alert = [[UIAlertView alloc]
+                          initWithTitle: NSLocalizedString(@"Upload Observation Data",nil)
+                          message: [NSString stringWithFormat: @"Are you sure you want to upload %@?", cell.textLabel.text]
+                          delegate: self
+                          cancelButtonTitle: NSLocalizedString(@"Cancel",nil)
+                          otherButtonTitles: NSLocalizedString(@"Upload",nil), nil];
+    [alert show];
+    [alert release];
     
-    if ( ! self.isSending ) {
-        NSString *  filePath;
-        
-        // User the tag on the UIButton to determine which image to send.
-        
-//        assert(sender.tag >= 0);
-//        filePath = [[NetworkManager sharedInstance] pathForTestImage:(NSUInteger) sender.tag];
-//        assert(filePath != nil);
-        
-        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-        NSString *documentsPath = [paths objectAtIndex:0];
-        filePath = [documentsPath stringByAppendingPathComponent:[NSString stringWithFormat: @"%@", cell.textLabel.text]];
-        
-        
-        [self startSend:filePath];
-    }
+}
 
+
+// Called when an alertview button is touched
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    switch (buttonIndex) {
+        case 0:
+        {
+            // NSLog(@"Cancel button clicked by the user");
+        }
+            break;
+            
+        case 1:
+        {
+            //NSLog(@"Upload button clicked by the user");
+            
+            // Upload the data
+            //    assert( [sender isKindOfClass:[UIView class]] );
+            
+            if ( ! self.isSending ) {
+                NSString *  filePath;
+                
+                // User the tag on the UIButton to determine which image to send.
+                
+                //        assert(sender.tag >= 0);
+                //        filePath = [[NetworkManager sharedInstance] pathForTestImage:(NSUInteger) sender.tag];
+                //        assert(filePath != nil);
+                
+                NSIndexPath *selectedIndexPath = [tableView indexPathForSelectedRow];
+                UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:selectedIndexPath];
+                //                NSLog(@"%@", cell.textLabel.text);
+                
+                NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+                NSString *documentsPath = [paths objectAtIndex:0];
+                filePath = [documentsPath stringByAppendingPathComponent:[NSString stringWithFormat: @"%@", cell.textLabel.text]];
+                
+                [self startSend:filePath];
+            }
+            
+        }
+            break;
+    }
     
 }
 
@@ -169,7 +204,7 @@ enum {
         [tableView setEditing:YES animated:YES];
         [self.editButton setTitle: @"Done"];
     }
-
+    
 }
 -(void) loadMetaData:(id)sender {
     NSArray *paths = NSSearchPathForDirectoriesInDomains (NSDocumentDirectory, NSUserDomainMask, YES);
@@ -235,8 +270,19 @@ enum {
 - (void)sendDidStopWithStatus:(NSString *)statusString
 {
     if (statusString == nil) {
-        statusString = @"Put succeeded";
+        statusString = @"File upload succeeded";
     }
+    
+    // Show success alert message
+    UIAlertView *alert = [[UIAlertView alloc]
+                          initWithTitle: statusString
+                          message: nil
+                          delegate: self
+                          cancelButtonTitle: nil
+                          otherButtonTitles: @"OK",nil, nil];
+    [alert show];
+    [alert release];
+    
     self.statusLabel.text = statusString;
     self.cancelButton.enabled = NO;
     [self.activityIndicator stopAnimating];
@@ -267,14 +313,14 @@ enum {
     
     assert(filePath != nil);
     assert([[NSFileManager defaultManager] fileExistsAtPath:filePath]);
-//    assert( [filePath.pathExtension isEqual:@"png"] || [filePath.pathExtension isEqual:@"jpg"] );
+    //    assert( [filePath.pathExtension isEqual:@"png"] || [filePath.pathExtension isEqual:@"jpg"] );
     
     assert(self.networkStream == nil);      // don't tap send twice in a row!
     assert(self.fileStream == nil);         // ditto
     
     // First get and check the URL.
     
-//    url = [[NetworkManager sharedInstance] smartURLForString:self.urlText.text];
+    //    url = [[NetworkManager sharedInstance] smartURLForString:self.urlText.text];
     url = [NSURL URLWithString:@"ftp://test:test@192.168.1.10:2100"];
     success = (url != nil);
     
@@ -291,7 +337,7 @@ enum {
     // If the URL is bogus, let the user know.  Otherwise kick off the connection.
     
     if ( ! success) {
-//        self.statusLabel.text = @"Invalid URL";
+        //        self.statusLabel.text = @"Invalid URL";
         NSLog(@"Invalid URL");
     } else {
         
@@ -323,7 +369,7 @@ enum {
         
         // Tell the UI we're sending.
         
-//        [self sendDidStart];
+        //        [self sendDidStart];
     }
 }
 
