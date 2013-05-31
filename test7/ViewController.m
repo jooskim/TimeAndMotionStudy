@@ -15,6 +15,8 @@
 @interface ViewController ()
 @property (retain, nonatomic) IBOutlet UIView *taskList;
 @property (retain, nonatomic) IBOutlet UIView *locationList;
+@property (retain, nonatomic) IBOutlet UIView *locMilesCity;
+@property (retain, nonatomic) IBOutlet UIView *locCodyClinic;
 @property (retain, nonatomic) IBOutlet UINavigationItem *headerMain;
 @property (retain, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (retain, nonatomic) IBOutlet UINavigationBar *taskBar;
@@ -23,7 +25,7 @@
 
 @implementation ViewController
 
-@synthesize scrollView, taskList, locationList, tableView, activeAct,globalLocation,exportArr;
+@synthesize scrollView, taskList, locationList, locMilesCity, locCodyClinic, tableView, activeAct,globalLocation,exportArr;
 NSInteger *globalCounter;
 
 - (void)viewDidLoad
@@ -56,7 +58,20 @@ NSInteger *globalCounter;
     
     // add views on the scroll view
     [scrollView addSubview:taskList];
-    [scrollView addSubview:locationList];
+
+    if([self.valObsSite isEqualToString:@"Miles City"]){
+        locCodyClinic.hidden = YES;
+        locationList.hidden = YES;
+        [scrollView addSubview:locMilesCity];
+    }else if([self.valObsSite isEqualToString:@"Cody Clinic"]){
+        locMilesCity.hidden = YES;
+        locationList.hidden = YES;
+        [scrollView addSubview:locCodyClinic];
+    }else{
+        locMilesCity.hidden = YES;
+        locCodyClinic.hidden = YES;
+        [scrollView addSubview:locationList];
+    }
    
 //    [scrollView addSubview: self.taskList];
 //    [scrollView setContentSize:self.taskList.frame.size];
