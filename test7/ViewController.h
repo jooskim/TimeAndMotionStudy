@@ -48,6 +48,8 @@
 - (IBAction)triggerTask:(id)sender;
 - (IBAction)allTasksDone:(id)sender;
 
+- (IBAction)changeLocMiles:(id)sender;
+
 -(IBAction) changeLabelLocation_exam:(id)sender;
 -(IBAction) changeLabelLocation_office:(id)sender;
 -(IBAction) changeLabelLocation_procedure:(id)sender;

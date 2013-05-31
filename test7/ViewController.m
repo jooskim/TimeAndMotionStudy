@@ -175,6 +175,21 @@ NSInteger *globalCounter;
 @synthesize observeSite;
 @synthesize btnLocation;
 
+- (IBAction)changeLocMiles:(id)sender {
+    UIButton *button = (UIButton *)sender;
+    [self.btnLocation setTitle:[NSString stringWithFormat:@"%@", button.titleLabel.text] forState:UIControlStateNormal];
+    NSString *navTitle = [[NSString alloc] initWithFormat:@"Select Task (%@)",button.titleLabel.text];
+    globalLocation = button.titleLabel.text;
+    // runs a method that updates the current array of active tasks
+    if(activeAct.count == 0){
+        [self.taskBar.topItem setTitle:navTitle];
+        [self scrollToPage:1];
+    }else{
+        [self updateLocationOfArray:sender];
+        [self.taskBar.topItem setTitle:navTitle];
+        [self scrollToPage:1];
+    }
+}
 - (IBAction)changeLabelLocation_exam:(id)sender {
     UIButton *button = (UIButton *)sender;
 //    lblLocation.text = [NSString stringWithFormat:@"Exam Room %@", button.titleLabel.text];
@@ -523,6 +538,7 @@ NSInteger *globalCounter;
     [tableView reloadData];
     
 }
+
 
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if(editingStyle == UITableViewCellEditingStyleDelete){

@@ -318,10 +318,10 @@ enum {
     assert(self.networkStream == nil);      // don't tap send twice in a row!
     assert(self.fileStream == nil);         // ditto
     
-    // First get and check the URL.
+    // First get and check the URL.d
     
     //    url = [[NetworkManager sharedInstance] smartURLForString:self.urlText.text];
-    url = [NSURL URLWithString:@"ftp://test:test@192.168.1.10:2100"];
+    url = [NSURL URLWithString:@"ftp://jayjeong%40kpcaa.us:tnmstudy2013!@kpcaa.us"];
     success = (url != nil);
     
     if (success) {
