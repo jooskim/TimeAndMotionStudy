@@ -6153,7 +6153,6 @@
                 <relationship kind="action" name="deleteData:"/>
                 <relationship kind="action" name="endObservation:"/>
                 <relationship kind="action" name="saveData:"/>
-                <relationship kind="action" name="scrollToLocation:"/>
                 <relationship kind="action" name="sendToFTP:"/>
                 <relationship kind="action" name="taskComp:"/>
                 <relationship kind="action" name="taskInteraction:"/>
