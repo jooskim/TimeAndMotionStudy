@@ -38,6 +38,7 @@
 @property (strong, nonatomic) NSMutableArray *activeAct;
 @property (retain, nonatomic) NSString *globalLocation;
 @property (retain, nonatomic) NSMutableArray *exportArr;
+@property (retain, nonatomic) IBOutlet UISwitch *isMultitasking;
 
 - (IBAction)taskComp:(id)sender;
 - (IBAction)taskPaper:(id)sender;

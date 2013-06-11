@@ -8,11 +8,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "test7/ViewController.h"
-         timestampString = "391673465.040091"
+         timestampString = "392606934.852877"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "58"
-         endingLineNumber = "58"
+         startingLineNumber = "59"
+         endingLineNumber = "59"
          landmarkName = "-changeLabelLocation_other:"
          landmarkType = "4">
       </FileBreakpoint>
@@ -58,11 +58,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "test7/ViewController.m"
-         timestampString = "391673652.268543"
+         timestampString = "392606934.852877"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "484"
-         endingLineNumber = "484"
+         startingLineNumber = "493"
+         endingLineNumber = "493"
          landmarkName = "-tableView:cellForRowAtIndexPath:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -71,11 +71,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "test7/ViewController.m"
-         timestampString = "391673652.268543"
+         timestampString = "392607998.566634"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "505"
-         endingLineNumber = "505"
+         startingLineNumber = "525"
+         endingLineNumber = "525"
          landmarkName = "-triggerTask:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -84,11 +84,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "test7/ViewController.m"
-         timestampString = "391673790.541875"
+         timestampString = "392606934.852877"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "186"
-         endingLineNumber = "186"
+         startingLineNumber = "187"
+         endingLineNumber = "187"
          landmarkName = "-changeLocMiles:"
          landmarkType = "5">
       </FileBreakpoint>

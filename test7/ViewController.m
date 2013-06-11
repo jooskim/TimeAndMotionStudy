@@ -89,7 +89,7 @@ NSInteger *globalCounter;
 - (void)viewDidLayoutSubviews
 {
     activeAct = [[NSMutableArray alloc] init];
-    [tableView setEditing:YES];
+    [tableView setEditing:NO];
 
 }
 - (void)viewDidAppear
@@ -114,6 +114,7 @@ NSInteger *globalCounter;
     [_headerMain release];
     [_activityContainer release];
     [_taskBar release];
+    [_isMultitasking release];
     [super dealloc];
 }
 - (IBAction)changeLocation:(id)sender {
@@ -182,11 +183,11 @@ NSInteger *globalCounter;
     globalLocation = button.titleLabel.text;
     // runs a method that updates the current array of active tasks
     if(activeAct.count == 0){
-        [self.taskBar.topItem setTitle:navTitle];
+        //[self.taskBar.topItem setTitle:navTitle];
         [self scrollToPage:1];
     }else{
         [self updateLocationOfArray:sender];
-        [self.taskBar.topItem setTitle:navTitle];
+        //[self.taskBar.topItem setTitle:navTitle];
         [self scrollToPage:1];
     }
 }
@@ -198,11 +199,11 @@ NSInteger *globalCounter;
     globalLocation = button.titleLabel.text;
     // checks whether there is more than an active task in the array, and if there is, update the locations of the items in the  array
     if(activeAct.count == 0){
-        [self.taskBar.topItem setTitle:navTitle];
+        //[self.taskBar.topItem setTitle:navTitle];
         [self scrollToPage:1];
     }else{
         [self updateLocationOfArray:sender];
-        [self.taskBar.topItem setTitle:navTitle];
+        //[self.taskBar.topItem setTitle:navTitle];
         [self scrollToPage:1];
     }
     
@@ -215,11 +216,11 @@ NSInteger *globalCounter;
     globalLocation = button.titleLabel.text;
     // runs a method that updates the current array of active tasks
     if(activeAct.count == 0){
-        [self.taskBar.topItem setTitle:navTitle];
+        //[self.taskBar.topItem setTitle:navTitle];
         [self scrollToPage:1];
     }else{
         [self updateLocationOfArray:sender];
-        [self.taskBar.topItem setTitle:navTitle];
+        //[self.taskBar.topItem setTitle:navTitle];
         [self scrollToPage:1];
     }
 }
@@ -231,11 +232,11 @@ NSInteger *globalCounter;
     globalLocation = button.titleLabel.text;
     // runs a method that updates the current array of active tasks
     if(activeAct.count == 0){
-        [self.taskBar.topItem setTitle:navTitle];
+        //[self.taskBar.topItem setTitle:navTitle];
         [self scrollToPage:1];
     }else{
         [self updateLocationOfArray:sender];
-        [self.taskBar.topItem setTitle:navTitle];
+        //[self.taskBar.topItem setTitle:navTitle];
         [self scrollToPage:1];
     }
 }
@@ -247,11 +248,11 @@ NSInteger *globalCounter;
     globalLocation = button.titleLabel.text;
     // runs a method that updates the current array of active tasks
     if(activeAct.count == 0){
-        [self.taskBar.topItem setTitle:navTitle];
+        //[self.taskBar.topItem setTitle:navTitle];
         [self scrollToPage:1];
     }else{
         [self updateLocationOfArray:sender];
-        [self.taskBar.topItem setTitle:navTitle];
+        //[self.taskBar.topItem setTitle:navTitle];
         [self scrollToPage:1];
     }
 }
@@ -263,11 +264,11 @@ NSInteger *globalCounter;
     globalLocation = button.titleLabel.text;
     // runs a method that updates the current array of active tasks
     if(activeAct.count == 0){
-        [self.taskBar.topItem setTitle:navTitle];
+        //[self.taskBar.topItem setTitle:navTitle];
         [self scrollToPage:1];
     }else{
         [self updateLocationOfArray:sender];
-        [self.taskBar.topItem setTitle:navTitle];
+        //[self.taskBar.topItem setTitle:navTitle];
         [self scrollToPage:1];
     }
 }
@@ -279,11 +280,11 @@ NSInteger *globalCounter;
     globalLocation = button.titleLabel.text;
     // runs a method that updates the current array of active tasks
     if(activeAct.count == 0){
-        [self.taskBar.topItem setTitle:navTitle];
+        //[self.taskBar.topItem setTitle:navTitle];
         [self scrollToPage:1];
     }else{
         [self updateLocationOfArray:sender];
-        [self.taskBar.topItem setTitle:navTitle];
+        //[self.taskBar.topItem setTitle:navTitle];
         [self scrollToPage:1];
     }
 }
@@ -293,11 +294,14 @@ NSInteger *globalCounter;
     for (count = 0; count < [activeAct count]; count++){
         // gets the current time
         NSDate *currentDate = [NSDate date];
+        NSDateFormatter *dateFormatterD = [[NSDateFormatter alloc] init];
+        [dateFormatterD setDateFormat:@"MMddyyyy"];
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
         [dateFormatter setDateFormat:@"HH:mm:ss"];
         NSString *timeFormatted = [dateFormatter stringFromDate:currentDate];
+        NSString *dateFormatted = [dateFormatterD stringFromDate:currentDate];
         NSArray *currentArr = [activeAct objectAtIndex:count];
-        NSLog(@"%@,%@,%@,%@,%@,%@,%@",[currentArr objectAtIndex:0],@"update of location",@"",self.btnLocation.titleLabel.text,timeFormatted,@"",@"");
+        NSLog(@"%@,%@,%@,%@,%@,%@,%@,%@",[currentArr objectAtIndex:0],@"update of location",@"",self.btnLocation.titleLabel.text,dateFormatted,timeFormatted,@"",@"");
         // put this information into the export array
         NSArray *tempStorage = [[NSArray alloc] initWithObjects:[currentArr objectAtIndex:0],@"update of location",@"",self.btnLocation.titleLabel.text,timeFormatted,@"",@"", nil];
         [exportArr addObject:tempStorage];
@@ -342,15 +346,19 @@ NSInteger *globalCounter;
     NSDate *currentDate = [NSDate date];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"HH:mm:ss"];
+    NSDateFormatter *dateFormatterD = [[NSDateFormatter alloc] init];
+    [dateFormatterD setDateFormat:@"MMddyyyy"];
+
+    NSString *dateFormatted = [dateFormatterD stringFromDate:currentDate];
     NSString *timeFormatted = [dateFormatter stringFromDate:currentDate];
 
     // log starts
     NSArray *nowArr = [activeAct objectAtIndex:pathToCell.row];
 //    NSLog(@"%@,%@,%@,%@,%@,%@",[nowArr objectAtIndex:1],self.lblLocation.text,[nowArr objectAtIndex:2],self.observerName.text,self.observeeName.text,timeFormatted);
-    NSLog(@"%@,%@,%@,%@,%@,%@,%@",[nowArr objectAtIndex:0],@"end of task",@"",self.btnLocation.titleLabel.text,timeFormatted,@"",@"");
+    NSLog(@"%@,%@,%@,%@,%@,%@,%@,%@",[nowArr objectAtIndex:0],@"end of task",@"",self.btnLocation.titleLabel.text,dateFormatted,timeFormatted,@"",@"");
     
     // put this information into the export array
-    NSArray *tempStorage = [[NSArray alloc] initWithObjects:[nowArr objectAtIndex:0],@"end of task",@"",self.btnLocation.titleLabel.text,timeFormatted,@"",@"", nil];
+    NSArray *tempStorage = [[NSArray alloc] initWithObjects:[nowArr objectAtIndex:0],@"end of task",@"",self.btnLocation.titleLabel.text,dateFormatted,timeFormatted,@"",@"", nil];
     [exportArr addObject:tempStorage];
     if(exportArr.count > 0){
         NSLog(@"successfully stored the current action. # of items: %d", [exportArr count]);
@@ -359,7 +367,6 @@ NSInteger *globalCounter;
     [activeAct removeObjectAtIndex:pathToCell.row];
     [tableView deleteRowsAtIndexPaths:@[pathToCell] withRowAnimation:UITableViewRowAnimationFade];
 }
-
 -(UITableViewCell *)tableView:(UITableView *)aTableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *tableIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:tableIdentifier];
@@ -384,99 +391,101 @@ NSInteger *globalCounter;
     UILabel *activityTime = (UILabel *)[cell viewWithTag:103];
     activityTime.text = [nowArr objectAtIndex:2];
     // category
-    UILabel *currentCat = (UILabel *)[cell viewWithTag:99];
+    //UILabel *currentCat = (UILabel *)[cell viewWithTag:99];
     if([[nowArr objectAtIndex:3] intValue] >= 1000 && [[nowArr objectAtIndex:3] intValue] < 1100){
-        currentCat.text = @"Computer:Entry";
+        //currentCat.text = @"Computer:Entry";
+        cell.contentView.backgroundColor = [UIColor redColor];
     };
     if([[nowArr objectAtIndex:3] intValue] >= 1100 && [[nowArr objectAtIndex:3] intValue] < 1200){
-        currentCat.text = @"Computer:Confirming information";
+        //currentCat.text = @"Computer:Confirming information";
+        cell.contentView.backgroundColor = [UIColor greenColor];
     };
     if([[nowArr objectAtIndex:3] intValue] >= 1200 && [[nowArr objectAtIndex:3] intValue] < 1300){
-        currentCat.text = @"Computer:Reading";
+        //currentCat.text = @"Computer:Reading";
     };
     if([[nowArr objectAtIndex:3] intValue] >= 1300 && [[nowArr objectAtIndex:3] intValue] < 1400){
-        currentCat.text = @"Phone:Calling";
+        //currentCat.text = @"Phone:Calling";
     };
     if([[nowArr objectAtIndex:3] intValue] >= 1400 && [[nowArr objectAtIndex:3] intValue] < 1500){
-        currentCat.text = @"Phone:Answering";
+        //currentCat.text = @"Phone:Answering";
     };
     if([[nowArr objectAtIndex:3] intValue] >= 1500 && [[nowArr objectAtIndex:3] intValue] < 1600){
-        currentCat.text = @"Phone:Transfer call";
+        //currentCat.text = @"Phone:Transfer call";
     };
     if([[nowArr objectAtIndex:3] intValue] >= 1600 && [[nowArr objectAtIndex:3] intValue] < 1700){
-        currentCat.text = @"Paper:Writing";
+        //currentCat.text = @"Paper:Writing";
     };
     if([[nowArr objectAtIndex:3] intValue] >= 1700 && [[nowArr objectAtIndex:3] intValue] < 1800){
-        currentCat.text = @"Paper:Reading";
+        //currentCat.text = @"Paper:Reading";
     };
     if([[nowArr objectAtIndex:3] intValue] >= 1800 && [[nowArr objectAtIndex:3] intValue] < 1900){
-        currentCat.text = @"Paper:Sorting/filing/delivering";
+        //currentCat.text = @"Paper:Sorting/filing/delivering";
     };
     if([[nowArr objectAtIndex:3] intValue] >= 1900 && [[nowArr objectAtIndex:3] intValue] < 2000){
-        currentCat.text = @"Paper:Retrieving/accepting";
+        //currentCat.text = @"Paper:Retrieving/accepting";
     };
     if([[nowArr objectAtIndex:3] intValue] >= 2000 && [[nowArr objectAtIndex:3] intValue] < 2100){
-        currentCat.text = @"Paper:Printing/faxing";
+        //currentCat.text = @"Paper:Printing/faxing";
     };
     if([[nowArr objectAtIndex:3] intValue] >= 2100 && [[nowArr objectAtIndex:3] intValue] < 2200){
-        currentCat.text = @"Talking/discussion:To coworker";
+        //currentCat.text = @"Talking/discussion:To coworker";
     };
     if([[nowArr objectAtIndex:3] intValue] >= 2200 && [[nowArr objectAtIndex:3] intValue] < 2300){
-        currentCat.text = @"Talking/discussion:To patient";
+        //currentCat.text = @"Talking/discussion:To patient";
     };
     if([[nowArr objectAtIndex:3] intValue] >= 2300 && [[nowArr objectAtIndex:3] intValue] < 2400){
-        currentCat.text = @"Talking/discussion:To manager/supervisor";
+        //currentCat.text = @"Talking/discussion:To manager/supervisor";
     };
     if([[nowArr objectAtIndex:3] intValue] >= 2400 && [[nowArr objectAtIndex:3] intValue] < 2500){
-        currentCat.text = @"Dictating/reporting:On device";
+        //currentCat.text = @"Dictating/reporting:On device";
     };
     if([[nowArr objectAtIndex:3] intValue] >= 2500 && [[nowArr objectAtIndex:3] intValue] < 2600){
-        currentCat.text = @"Procedure/exam:Measurements";
+        //currentCat.text = @"Procedure/exam:Measurements";
     };
     if([[nowArr objectAtIndex:3] intValue] >= 2600 && [[nowArr objectAtIndex:3] intValue] < 2700){
-        currentCat.text = @"Procedure/exam:Physical exam";
+        //currentCat.text = @"Procedure/exam:Physical exam";
     };
     if([[nowArr objectAtIndex:3] intValue] >= 2700 && [[nowArr objectAtIndex:3] intValue] < 2800){
-        currentCat.text = @"Procedure/exam:Medical procedure";
+        //currentCat.text = @"Procedure/exam:Medical procedure";
     };
     if([[nowArr objectAtIndex:3] intValue] >= 2800 && [[nowArr objectAtIndex:3] intValue] < 2900){
-        currentCat.text = @"Procedure/exam:Room patient";
+        //currentCat.text = @"Procedure/exam:Room patient";
     };
     if([[nowArr objectAtIndex:3] intValue] >= 2900 && [[nowArr objectAtIndex:3] intValue] < 3000){
-        currentCat.text = @"Walking:To office";
+        //currentCat.text = @"Walking:To office";
     };
     if([[nowArr objectAtIndex:3] intValue] >= 3000 && [[nowArr objectAtIndex:3] intValue] < 3100){
-        currentCat.text = @"Walking:To nursing station";
+        //currentCat.text = @"Walking:To nursing station";
     };
     if([[nowArr objectAtIndex:3] intValue] >= 3100 && [[nowArr objectAtIndex:3] intValue] < 3200){
-        currentCat.text = @"Walking:To supply area";
+        //currentCat.text = @"Walking:To supply area";
     };
     if([[nowArr objectAtIndex:3] intValue] >= 3200 && [[nowArr objectAtIndex:3] intValue] < 3300){
-        currentCat.text = @"Walking:Escorting";
+        //currentCat.text = @"Walking:Escorting";
     };
     if([[nowArr objectAtIndex:3] intValue] >= 3300 && [[nowArr objectAtIndex:3] intValue] < 3400){
-        currentCat.text = @"Walking:Others";
+        //currentCat.text = @"Walking:Others";
     };
     if([[nowArr objectAtIndex:3] intValue] >= 3400 && [[nowArr objectAtIndex:3] intValue] < 3500){
-        currentCat.text = @"Handling:Washing/cleaning";
+        //currentCat.text = @"Handling:Washing/cleaning";
     };
     if([[nowArr objectAtIndex:3] intValue] >= 3400 && [[nowArr objectAtIndex:3] intValue] < 3500){
-        currentCat.text = @"Handling:Washing/cleaning";
+        //currentCat.text = @"Handling:Washing/cleaning";
     };
     if([[nowArr objectAtIndex:3] intValue] >= 3500 && [[nowArr objectAtIndex:3] intValue] < 3600){
-        currentCat.text = @"Handling:Specimen/container";
+        //currentCat.text = @"Handling:Specimen/container";
     };
     if([[nowArr objectAtIndex:3] intValue] >= 3600 && [[nowArr objectAtIndex:3] intValue] < 3700){
-        currentCat.text = @"Handling:Vital sign cart";
+        //currentCat.text = @"Handling:Vital sign cart";
     };
     if([[nowArr objectAtIndex:3] intValue] >= 3700 && [[nowArr objectAtIndex:3] intValue] < 3800){
-        currentCat.text = @"Handling:Procedure tool";
+        //currentCat.text = @"Handling:Procedure tool";
     };
     if([[nowArr objectAtIndex:3] intValue] >= 3800 && [[nowArr objectAtIndex:3] intValue] < 3900){
-        currentCat.text = @"Handling:Door flags/light system";
+        //currentCat.text = @"Handling:Door flags/light system";
     };
     if([[nowArr objectAtIndex:3] intValue] >= 3900 && [[nowArr objectAtIndex:3] intValue] < 4000){
-        currentCat.text = @"Relaxing:Taking break time";
+        //currentCat.text = @"Relaxing:Taking break time";
     };
     
     //}
@@ -496,16 +505,27 @@ NSInteger *globalCounter;
         NSDate *currentDate = [NSDate date];
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
         [dateFormatter setDateFormat:@"HH:mm:ss"];
+        NSDateFormatter *dateFormatterD = [[NSDateFormatter alloc] init];
+        [dateFormatterD setDateFormat:@"MMddyyyy"];
         NSString *timeFormatted = [dateFormatter stringFromDate:currentDate];
+        NSString *dateFormatted = [dateFormatterD stringFromDate:currentDate];
         NSString *tagNum = [NSString stringWithFormat:@"%d", button.tag];
         NSArray *curSel = [[NSArray alloc] initWithObjects:[NSString stringWithFormat:@"%d",(int)globalCounter],button.titleLabel.text, timeFormatted, tagNum, nil];
+        //
+        UIImage *imgTest = [UIImage imageNamed:@"fill_red.png"];
+        [button setBackgroundImage:imgTest forState:UIControlStateSelected];
+        if(button.selected == YES){
+            [button setSelected:NO];
+        }else{
+            [button setSelected:YES];
+        }
         
         // makes a log in the console
 //        NSLog(@"%@,%@,%d,%@,%@,%@",timeFormatted,self.lblLocation.text,button.tag,self.observerName.text,self.observeeName.text,@"n/a");
-        NSLog(@"%@,%@,%d,%@,%@,%@,%@",[NSString stringWithFormat:@"%d",(int)globalCounter],@"creation",button.tag,self.btnLocation.titleLabel.text,timeFormatted,self.observerName.text,self.observeeName.text);
+        NSLog(@"%@,%@,%d,%@,%@,%@,%@,%@",[NSString stringWithFormat:@"%d",(int)globalCounter],@"creation",button.tag,self.btnLocation.titleLabel.text,dateFormatted,timeFormatted,self.observerName.text,self.observeeName.text);
        
         // put this information into the export array
-        NSArray *tempStorage = [[NSArray alloc] initWithObjects:[NSString stringWithFormat:@"%d", (int)globalCounter],@"creation",[NSString stringWithFormat:@"%d",button.tag],self.btnLocation.titleLabel.text,timeFormatted,self.observerName.text,self.observeeName.text, nil];
+        NSArray *tempStorage = [[NSArray alloc] initWithObjects:[NSString stringWithFormat:@"%d", (int)globalCounter],@"creation",[NSString stringWithFormat:@"%d",button.tag],self.btnLocation.titleLabel.text,dateFormatted,timeFormatted,self.observerName.text,self.observeeName.text, nil];
         [exportArr addObject:tempStorage];
         if(exportArr.count > 0){
             NSLog(@"successfully stored the current action. # of items: %d", [exportArr count]);
@@ -521,14 +541,17 @@ NSInteger *globalCounter;
         NSDate *currentDate = [NSDate date];
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
         [dateFormatter setDateFormat:@"HH:mm:ss"];
+        NSDateFormatter *dateFormatterD = [[NSDateFormatter alloc] init];
+        [dateFormatterD setDateFormat:@"MMddyyyy"];
         NSString *timeFormatted = [dateFormatter stringFromDate:currentDate];
+        NSString *dateFormatted = [dateFormatterD stringFromDate:currentDate];
 
         NSArray *nowArr = [activeAct objectAtIndex:i];
 //        NSLog(@"%@,%@,%@,%@,%@,%@",[nowArr objectAtIndex:1],self.lblLocation.text,[nowArr objectAtIndex:2],self.observerName.text,self.observeeName.text,timeFormatted);
-        NSLog(@"%@,%@,%@,%@,%@,%@,%@",[nowArr objectAtIndex:0],@"end of task",@"",self.btnLocation.titleLabel.text,timeFormatted,@"",@"");
+        NSLog(@"%@,%@,%@,%@,%@,%@,%@,%@",[nowArr objectAtIndex:0],@"end of task",@"",self.btnLocation.titleLabel.text,dateFormatted,timeFormatted,@"",@"");
         
         // put this information into the export array
-        NSArray *tempStorage = [[NSArray alloc] initWithObjects:[nowArr objectAtIndex:0],@"end of task",@"",self.btnLocation.titleLabel.text,timeFormatted,@"",@"", nil];
+        NSArray *tempStorage = [[NSArray alloc] initWithObjects:[nowArr objectAtIndex:0],@"end of task",@"",self.btnLocation.titleLabel.text,dateFormatted,timeFormatted,@"",@"", nil];
         [exportArr addObject:tempStorage];
         if(exportArr.count > 0){
             NSLog(@"successfully stored the current action. # of items: %d", [exportArr count]);
@@ -545,14 +568,17 @@ NSInteger *globalCounter;
         NSDate *currentDate = [NSDate date];
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
         [dateFormatter setDateFormat:@"HH:mm:ss"];
+        NSDateFormatter *dateFormatterD = [[NSDateFormatter alloc] init];
+        [dateFormatterD setDateFormat:@"MMddyyyy"];
         NSString *timeFormatted = [dateFormatter stringFromDate:currentDate];
+        NSString *dateFormatted = [dateFormatterD stringFromDate:currentDate];
         
         NSArray *nowArr = [activeAct objectAtIndex:indexPath.row];
 //        NSLog(@"%@,%@,%@,%@,%@,%@",[nowArr objectAtIndex:1],self.lblLocation.text, [nowArr objectAtIndex:2], self.observerName.text, self.observeeName.text,@"canceled");
-        NSLog(@"%@,%@,%@,%@,%@,%@,%@",[nowArr objectAtIndex:0],@"cancellation",@"",self.btnLocation.titleLabel.text,timeFormatted,@"",@"");
+        NSLog(@"%@,%@,%@,%@,%@,%@,%@,%@",[nowArr objectAtIndex:0],@"cancellation",@"",self.btnLocation.titleLabel.text,dateFormatted,timeFormatted,@"",@"");
         
         // put this information into the export array
-        NSArray *tempStorage = [[NSArray alloc] initWithObjects:[nowArr objectAtIndex:0],@"cancellation",@"",self.btnLocation.titleLabel.text,timeFormatted,@"",@"", nil];
+        NSArray *tempStorage = [[NSArray alloc] initWithObjects:[nowArr objectAtIndex:0],@"cancellation",@"",self.btnLocation.titleLabel.text,dateFormatted,timeFormatted,@"",@"", nil];
         [exportArr addObject:tempStorage];
         if(exportArr.count > 0){
             NSLog(@"successfully stored the current action. # of items: %d", [exportArr count]);
