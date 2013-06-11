@@ -32,6 +32,43 @@
 		4AD0EC79172B9B1000C89D22 /* DetailTaskController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AD0EC78172B9B1000C89D22 /* DetailTaskController.m */; };
 		4AD0EC7C172B9DB200C89D22 /* LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AD0EC7B172B9DB200C89D22 /* LoginController.m */; };
 		4AD0EC7F172BA11C00C89D22 /* SiteController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AD0EC7E172BA11C00C89D22 /* SiteController.m */; };
+		C221A8281767139800E82A31 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C221A8271767139800E82A31 /* libxml2.dylib */; };
+		C2565CC01767115000EACEFA /* ACWebDAVClient.m in Sources */ = {isa = PBXBuildFile; fileRef = C2565C7E1767115000EACEFA /* ACWebDAVClient.m */; };
+		C2565CC11767115000EACEFA /* CXMLNode+ACWebDAV.m in Sources */ = {isa = PBXBuildFile; fileRef = C2565C811767115000EACEFA /* CXMLNode+ACWebDAV.m */; };
+		C2565CC21767115000EACEFA /* ACWebDAVCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = C2565C841767115000EACEFA /* ACWebDAVCollection.m */; };
+		C2565CC31767115000EACEFA /* ACWebDAVFile.m in Sources */ = {isa = PBXBuildFile; fileRef = C2565C861767115000EACEFA /* ACWebDAVFile.m */; };
+		C2565CC41767115000EACEFA /* ACWebDAVItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C2565C881767115000EACEFA /* ACWebDAVItem.m */; };
+		C2565CC51767115000EACEFA /* ACWebDAVLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = C2565C8A1767115000EACEFA /* ACWebDAVLocation.m */; };
+		C2565CC61767115000EACEFA /* ACWebDAVLock.m in Sources */ = {isa = PBXBuildFile; fileRef = C2565C8C1767115000EACEFA /* ACWebDAVLock.m */; };
+		C2565CC71767115000EACEFA /* ACWebDAVCopyRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C2565C8F1767115000EACEFA /* ACWebDAVCopyRequest.m */; };
+		C2565CC81767115000EACEFA /* ACWebDAVDeleteRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C2565C911767115000EACEFA /* ACWebDAVDeleteRequest.m */; };
+		C2565CC91767115000EACEFA /* ACWebDAVDownloadRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C2565C931767115000EACEFA /* ACWebDAVDownloadRequest.m */; };
+		C2565CCA1767115000EACEFA /* ACWebDAVLockRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C2565C951767115000EACEFA /* ACWebDAVLockRequest.m */; };
+		C2565CCB1767115000EACEFA /* ACWebDAVMakeCollectionRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C2565C971767115000EACEFA /* ACWebDAVMakeCollectionRequest.m */; };
+		C2565CCC1767115000EACEFA /* ACWebDAVMoveRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C2565C991767115000EACEFA /* ACWebDAVMoveRequest.m */; };
+		C2565CCD1767115000EACEFA /* ACWebDAVPropertyRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C2565C9B1767115000EACEFA /* ACWebDAVPropertyRequest.m */; };
+		C2565CCE1767115000EACEFA /* ACWebDAVUnlockRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C2565C9D1767115000EACEFA /* ACWebDAVUnlockRequest.m */; };
+		C2565CCF1767115000EACEFA /* ACWebDAVUploadRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C2565C9F1767115000EACEFA /* ACWebDAVUploadRequest.m */; };
+		C2565CD01767115000EACEFA /* CXMLDocument_CreationExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C2565CA31767115000EACEFA /* CXMLDocument_CreationExtensions.m */; };
+		C2565CD11767115000EACEFA /* CXMLElement_CreationExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C2565CA51767115000EACEFA /* CXMLElement_CreationExtensions.m */; };
+		C2565CD21767115000EACEFA /* CXMLNode_CreationExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C2565CA71767115000EACEFA /* CXMLNode_CreationExtensions.m */; };
+		C2565CD31767115000EACEFA /* CXHTMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = C2565CA91767115000EACEFA /* CXHTMLDocument.m */; };
+		C2565CD41767115000EACEFA /* CXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = C2565CAB1767115000EACEFA /* CXMLDocument.m */; };
+		C2565CD51767115000EACEFA /* CXMLDocument_PrivateExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C2565CAD1767115000EACEFA /* CXMLDocument_PrivateExtensions.m */; };
+		C2565CD61767115000EACEFA /* CXMLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = C2565CAF1767115000EACEFA /* CXMLElement.m */; };
+		C2565CD71767115000EACEFA /* CXMLElement_CreationExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C2565CB11767115000EACEFA /* CXMLElement_CreationExtensions.m */; };
+		C2565CD81767115000EACEFA /* CXMLElement_ElementTreeExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C2565CB31767115000EACEFA /* CXMLElement_ElementTreeExtensions.m */; };
+		C2565CD91767115000EACEFA /* CXMLNamespaceNode.m in Sources */ = {isa = PBXBuildFile; fileRef = C2565CB51767115000EACEFA /* CXMLNamespaceNode.m */; };
+		C2565CDA1767115000EACEFA /* CXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = C2565CB71767115000EACEFA /* CXMLNode.m */; };
+		C2565CDB1767115000EACEFA /* CXMLNode_PrivateExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C2565CB91767115000EACEFA /* CXMLNode_PrivateExtensions.m */; };
+		C2565CDC1767115000EACEFA /* CXMLNode_XPathExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C2565CBB1767115000EACEFA /* CXMLNode_XPathExtensions.m */; };
+		C2565CDD1767115000EACEFA /* CTidy.m in Sources */ = {isa = PBXBuildFile; fileRef = C2565CBE1767115000EACEFA /* CTidy.m */; };
+		C2565CDF176711D400EACEFA /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C2565CDE176711D400EACEFA /* libicucore.dylib */; };
+		C2565CE1176711DB00EACEFA /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2565CE0176711DB00EACEFA /* Security.framework */; };
+		C2565CE5176711EB00EACEFA /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2565CE4176711EB00EACEFA /* SystemConfiguration.framework */; };
+		C2565CE7176711F200EACEFA /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2565CE6176711F200EACEFA /* MobileCoreServices.framework */; };
+		C2565CE9176711F900EACEFA /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2565CE8176711F900EACEFA /* GameKit.framework */; };
+		C2565CEB1767121800EACEFA /* libz.1.1.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C2565CEA1767121800EACEFA /* libz.1.1.3.dylib */; };
 		C2790F6B175447FA00628669 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2790F6A175447FA00628669 /* CFNetwork.framework */; };
 		C2790F701754484C00628669 /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C2790F6D1754484C00628669 /* NetworkManager.m */; };
 		C2FBFB45174A81A6004CF08C /* button_check.png in Resources */ = {isa = PBXBuildFile; fileRef = C2FBFB44174A81A6004CF08C /* button_check.png */; };
@@ -76,6 +113,76 @@
 		4AD0EC7B172B9DB200C89D22 /* LoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginController.m; sourceTree = "<group>"; };
 		4AD0EC7D172BA11C00C89D22 /* SiteController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SiteController.h; sourceTree = "<group>"; };
 		4AD0EC7E172BA11C00C89D22 /* SiteController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SiteController.m; sourceTree = "<group>"; };
+		C221A8271767139800E82A31 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		C2565C7C1767115000EACEFA /* ACWebDAV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACWebDAV.h; sourceTree = "<group>"; };
+		C2565C7D1767115000EACEFA /* ACWebDAVClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACWebDAVClient.h; sourceTree = "<group>"; };
+		C2565C7E1767115000EACEFA /* ACWebDAVClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACWebDAVClient.m; sourceTree = "<group>"; };
+		C2565C801767115000EACEFA /* CXMLNode+ACWebDAV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CXMLNode+ACWebDAV.h"; sourceTree = "<group>"; };
+		C2565C811767115000EACEFA /* CXMLNode+ACWebDAV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CXMLNode+ACWebDAV.m"; sourceTree = "<group>"; };
+		C2565C831767115000EACEFA /* ACWebDAVCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACWebDAVCollection.h; sourceTree = "<group>"; };
+		C2565C841767115000EACEFA /* ACWebDAVCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACWebDAVCollection.m; sourceTree = "<group>"; };
+		C2565C851767115000EACEFA /* ACWebDAVFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACWebDAVFile.h; sourceTree = "<group>"; };
+		C2565C861767115000EACEFA /* ACWebDAVFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACWebDAVFile.m; sourceTree = "<group>"; };
+		C2565C871767115000EACEFA /* ACWebDAVItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACWebDAVItem.h; sourceTree = "<group>"; };
+		C2565C881767115000EACEFA /* ACWebDAVItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACWebDAVItem.m; sourceTree = "<group>"; };
+		C2565C891767115000EACEFA /* ACWebDAVLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACWebDAVLocation.h; sourceTree = "<group>"; };
+		C2565C8A1767115000EACEFA /* ACWebDAVLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACWebDAVLocation.m; sourceTree = "<group>"; };
+		C2565C8B1767115000EACEFA /* ACWebDAVLock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACWebDAVLock.h; sourceTree = "<group>"; };
+		C2565C8C1767115000EACEFA /* ACWebDAVLock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACWebDAVLock.m; sourceTree = "<group>"; };
+		C2565C8E1767115000EACEFA /* ACWebDAVCopyRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACWebDAVCopyRequest.h; sourceTree = "<group>"; };
+		C2565C8F1767115000EACEFA /* ACWebDAVCopyRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACWebDAVCopyRequest.m; sourceTree = "<group>"; };
+		C2565C901767115000EACEFA /* ACWebDAVDeleteRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACWebDAVDeleteRequest.h; sourceTree = "<group>"; };
+		C2565C911767115000EACEFA /* ACWebDAVDeleteRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACWebDAVDeleteRequest.m; sourceTree = "<group>"; };
+		C2565C921767115000EACEFA /* ACWebDAVDownloadRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACWebDAVDownloadRequest.h; sourceTree = "<group>"; };
+		C2565C931767115000EACEFA /* ACWebDAVDownloadRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACWebDAVDownloadRequest.m; sourceTree = "<group>"; };
+		C2565C941767115000EACEFA /* ACWebDAVLockRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACWebDAVLockRequest.h; sourceTree = "<group>"; };
+		C2565C951767115000EACEFA /* ACWebDAVLockRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACWebDAVLockRequest.m; sourceTree = "<group>"; };
+		C2565C961767115000EACEFA /* ACWebDAVMakeCollectionRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACWebDAVMakeCollectionRequest.h; sourceTree = "<group>"; };
+		C2565C971767115000EACEFA /* ACWebDAVMakeCollectionRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACWebDAVMakeCollectionRequest.m; sourceTree = "<group>"; };
+		C2565C981767115000EACEFA /* ACWebDAVMoveRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACWebDAVMoveRequest.h; sourceTree = "<group>"; };
+		C2565C991767115000EACEFA /* ACWebDAVMoveRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACWebDAVMoveRequest.m; sourceTree = "<group>"; };
+		C2565C9A1767115000EACEFA /* ACWebDAVPropertyRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACWebDAVPropertyRequest.h; sourceTree = "<group>"; };
+		C2565C9B1767115000EACEFA /* ACWebDAVPropertyRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACWebDAVPropertyRequest.m; sourceTree = "<group>"; };
+		C2565C9C1767115000EACEFA /* ACWebDAVUnlockRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACWebDAVUnlockRequest.h; sourceTree = "<group>"; };
+		C2565C9D1767115000EACEFA /* ACWebDAVUnlockRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACWebDAVUnlockRequest.m; sourceTree = "<group>"; };
+		C2565C9E1767115000EACEFA /* ACWebDAVUploadRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACWebDAVUploadRequest.h; sourceTree = "<group>"; };
+		C2565C9F1767115000EACEFA /* ACWebDAVUploadRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACWebDAVUploadRequest.m; sourceTree = "<group>"; };
+		C2565CA21767115000EACEFA /* CXMLDocument_CreationExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLDocument_CreationExtensions.h; sourceTree = "<group>"; };
+		C2565CA31767115000EACEFA /* CXMLDocument_CreationExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLDocument_CreationExtensions.m; sourceTree = "<group>"; };
+		C2565CA41767115000EACEFA /* CXMLElement_CreationExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLElement_CreationExtensions.h; sourceTree = "<group>"; };
+		C2565CA51767115000EACEFA /* CXMLElement_CreationExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLElement_CreationExtensions.m; sourceTree = "<group>"; };
+		C2565CA61767115000EACEFA /* CXMLNode_CreationExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLNode_CreationExtensions.h; sourceTree = "<group>"; };
+		C2565CA71767115000EACEFA /* CXMLNode_CreationExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLNode_CreationExtensions.m; sourceTree = "<group>"; };
+		C2565CA81767115000EACEFA /* CXHTMLDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXHTMLDocument.h; sourceTree = "<group>"; };
+		C2565CA91767115000EACEFA /* CXHTMLDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXHTMLDocument.m; sourceTree = "<group>"; };
+		C2565CAA1767115000EACEFA /* CXMLDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLDocument.h; sourceTree = "<group>"; };
+		C2565CAB1767115000EACEFA /* CXMLDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLDocument.m; sourceTree = "<group>"; };
+		C2565CAC1767115000EACEFA /* CXMLDocument_PrivateExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLDocument_PrivateExtensions.h; sourceTree = "<group>"; };
+		C2565CAD1767115000EACEFA /* CXMLDocument_PrivateExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLDocument_PrivateExtensions.m; sourceTree = "<group>"; };
+		C2565CAE1767115000EACEFA /* CXMLElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLElement.h; sourceTree = "<group>"; };
+		C2565CAF1767115000EACEFA /* CXMLElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLElement.m; sourceTree = "<group>"; };
+		C2565CB01767115000EACEFA /* CXMLElement_CreationExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLElement_CreationExtensions.h; sourceTree = "<group>"; };
+		C2565CB11767115000EACEFA /* CXMLElement_CreationExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLElement_CreationExtensions.m; sourceTree = "<group>"; };
+		C2565CB21767115000EACEFA /* CXMLElement_ElementTreeExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLElement_ElementTreeExtensions.h; sourceTree = "<group>"; };
+		C2565CB31767115000EACEFA /* CXMLElement_ElementTreeExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLElement_ElementTreeExtensions.m; sourceTree = "<group>"; };
+		C2565CB41767115000EACEFA /* CXMLNamespaceNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLNamespaceNode.h; sourceTree = "<group>"; };
+		C2565CB51767115000EACEFA /* CXMLNamespaceNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLNamespaceNode.m; sourceTree = "<group>"; };
+		C2565CB61767115000EACEFA /* CXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLNode.h; sourceTree = "<group>"; };
+		C2565CB71767115000EACEFA /* CXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLNode.m; sourceTree = "<group>"; };
+		C2565CB81767115000EACEFA /* CXMLNode_PrivateExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLNode_PrivateExtensions.h; sourceTree = "<group>"; };
+		C2565CB91767115000EACEFA /* CXMLNode_PrivateExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLNode_PrivateExtensions.m; sourceTree = "<group>"; };
+		C2565CBA1767115000EACEFA /* CXMLNode_XPathExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLNode_XPathExtensions.h; sourceTree = "<group>"; };
+		C2565CBB1767115000EACEFA /* CXMLNode_XPathExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLNode_XPathExtensions.m; sourceTree = "<group>"; };
+		C2565CBD1767115000EACEFA /* CTidy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTidy.h; sourceTree = "<group>"; };
+		C2565CBE1767115000EACEFA /* CTidy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTidy.m; sourceTree = "<group>"; };
+		C2565CBF1767115000EACEFA /* TouchXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchXML.h; sourceTree = "<group>"; };
+		C2565CDE176711D400EACEFA /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
+		C2565CE0176711DB00EACEFA /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		C2565CE2176711E300EACEFA /* libz.1.2.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.5.dylib; path = usr/lib/libz.1.2.5.dylib; sourceTree = SDKROOT; };
+		C2565CE4176711EB00EACEFA /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		C2565CE6176711F200EACEFA /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		C2565CE8176711F900EACEFA /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		C2565CEA1767121800EACEFA /* libz.1.1.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.1.3.dylib; path = usr/lib/libz.1.1.3.dylib; sourceTree = SDKROOT; };
 		C2790F6A175447FA00628669 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		C2790F6C1754484C00628669 /* NetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
 		C2790F6D1754484C00628669 /* NetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkManager.m; sourceTree = "<group>"; };
@@ -90,6 +197,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C221A8281767139800E82A31 /* libxml2.dylib in Frameworks */,
+				C2565CEB1767121800EACEFA /* libz.1.1.3.dylib in Frameworks */,
+				C2565CE9176711F900EACEFA /* GameKit.framework in Frameworks */,
+				C2565CE7176711F200EACEFA /* MobileCoreServices.framework in Frameworks */,
+				C2565CE5176711EB00EACEFA /* SystemConfiguration.framework in Frameworks */,
+				C2565CE1176711DB00EACEFA /* Security.framework in Frameworks */,
+				C2565CDF176711D400EACEFA /* libicucore.dylib in Frameworks */,
 				C2790F6B175447FA00628669 /* CFNetwork.framework in Frameworks */,
 				4A187EF5172B0FD700D10D07 /* UIKit.framework in Frameworks */,
 				4A187EF7172B0FD700D10D07 /* Foundation.framework in Frameworks */,
@@ -103,9 +217,9 @@
 		4A187EE8172B0FD700D10D07 = {
 			isa = PBXGroup;
 			children = (
+				C2565C7B1767115000EACEFA /* ACWebDAV */,
 				4A3991D617557BAE005BFF96 /* tnmlogo_retina.png */,
 				4A3991D417557B8F005BFF96 /* tnmlogo.png */,
-				C2790F6A175447FA00628669 /* CFNetwork.framework */,
 				4A187EF3172B0FD700D10D07 /* Frameworks */,
 				4A187EF2172B0FD700D10D07 /* Products */,
 				4A187EFA172B0FD700D10D07 /* test7 */,
@@ -123,6 +237,15 @@
 		4A187EF3172B0FD700D10D07 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C2790F6A175447FA00628669 /* CFNetwork.framework */,
+				C221A8271767139800E82A31 /* libxml2.dylib */,
+				C2565CEA1767121800EACEFA /* libz.1.1.3.dylib */,
+				C2565CE8176711F900EACEFA /* GameKit.framework */,
+				C2565CE6176711F200EACEFA /* MobileCoreServices.framework */,
+				C2565CE4176711EB00EACEFA /* SystemConfiguration.framework */,
+				C2565CE2176711E300EACEFA /* libz.1.2.5.dylib */,
+				C2565CE0176711DB00EACEFA /* Security.framework */,
+				C2565CDE176711D400EACEFA /* libicucore.dylib */,
 				4A187EF4172B0FD700D10D07 /* UIKit.framework */,
 				4A187EF6172B0FD700D10D07 /* Foundation.framework */,
 				4A187EF8172B0FD700D10D07 /* CoreGraphics.framework */,
@@ -178,6 +301,124 @@
 				4A187F0A172B0FD700D10D07 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C2565C7B1767115000EACEFA /* ACWebDAV */ = {
+			isa = PBXGroup;
+			children = (
+				C2565C7C1767115000EACEFA /* ACWebDAV.h */,
+				C2565C7D1767115000EACEFA /* ACWebDAVClient.h */,
+				C2565C7E1767115000EACEFA /* ACWebDAVClient.m */,
+				C2565C7F1767115000EACEFA /* Additions */,
+				C2565C821767115000EACEFA /* Classes */,
+				C2565C8D1767115000EACEFA /* Requests */,
+				C2565CA01767115000EACEFA /* TouchXML */,
+			);
+			name = ACWebDAV;
+			path = ../ACConnect/src/ACWebDAV;
+			sourceTree = "<group>";
+		};
+		C2565C7F1767115000EACEFA /* Additions */ = {
+			isa = PBXGroup;
+			children = (
+				C2565C801767115000EACEFA /* CXMLNode+ACWebDAV.h */,
+				C2565C811767115000EACEFA /* CXMLNode+ACWebDAV.m */,
+			);
+			path = Additions;
+			sourceTree = "<group>";
+		};
+		C2565C821767115000EACEFA /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				C2565C831767115000EACEFA /* ACWebDAVCollection.h */,
+				C2565C841767115000EACEFA /* ACWebDAVCollection.m */,
+				C2565C851767115000EACEFA /* ACWebDAVFile.h */,
+				C2565C861767115000EACEFA /* ACWebDAVFile.m */,
+				C2565C871767115000EACEFA /* ACWebDAVItem.h */,
+				C2565C881767115000EACEFA /* ACWebDAVItem.m */,
+				C2565C891767115000EACEFA /* ACWebDAVLocation.h */,
+				C2565C8A1767115000EACEFA /* ACWebDAVLocation.m */,
+				C2565C8B1767115000EACEFA /* ACWebDAVLock.h */,
+				C2565C8C1767115000EACEFA /* ACWebDAVLock.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		C2565C8D1767115000EACEFA /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				C2565C8E1767115000EACEFA /* ACWebDAVCopyRequest.h */,
+				C2565C8F1767115000EACEFA /* ACWebDAVCopyRequest.m */,
+				C2565C901767115000EACEFA /* ACWebDAVDeleteRequest.h */,
+				C2565C911767115000EACEFA /* ACWebDAVDeleteRequest.m */,
+				C2565C921767115000EACEFA /* ACWebDAVDownloadRequest.h */,
+				C2565C931767115000EACEFA /* ACWebDAVDownloadRequest.m */,
+				C2565C941767115000EACEFA /* ACWebDAVLockRequest.h */,
+				C2565C951767115000EACEFA /* ACWebDAVLockRequest.m */,
+				C2565C961767115000EACEFA /* ACWebDAVMakeCollectionRequest.h */,
+				C2565C971767115000EACEFA /* ACWebDAVMakeCollectionRequest.m */,
+				C2565C981767115000EACEFA /* ACWebDAVMoveRequest.h */,
+				C2565C991767115000EACEFA /* ACWebDAVMoveRequest.m */,
+				C2565C9A1767115000EACEFA /* ACWebDAVPropertyRequest.h */,
+				C2565C9B1767115000EACEFA /* ACWebDAVPropertyRequest.m */,
+				C2565C9C1767115000EACEFA /* ACWebDAVUnlockRequest.h */,
+				C2565C9D1767115000EACEFA /* ACWebDAVUnlockRequest.m */,
+				C2565C9E1767115000EACEFA /* ACWebDAVUploadRequest.h */,
+				C2565C9F1767115000EACEFA /* ACWebDAVUploadRequest.m */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		C2565CA01767115000EACEFA /* TouchXML */ = {
+			isa = PBXGroup;
+			children = (
+				C2565CA11767115000EACEFA /* Creation */,
+				C2565CA81767115000EACEFA /* CXHTMLDocument.h */,
+				C2565CA91767115000EACEFA /* CXHTMLDocument.m */,
+				C2565CAA1767115000EACEFA /* CXMLDocument.h */,
+				C2565CAB1767115000EACEFA /* CXMLDocument.m */,
+				C2565CAC1767115000EACEFA /* CXMLDocument_PrivateExtensions.h */,
+				C2565CAD1767115000EACEFA /* CXMLDocument_PrivateExtensions.m */,
+				C2565CAE1767115000EACEFA /* CXMLElement.h */,
+				C2565CAF1767115000EACEFA /* CXMLElement.m */,
+				C2565CB01767115000EACEFA /* CXMLElement_CreationExtensions.h */,
+				C2565CB11767115000EACEFA /* CXMLElement_CreationExtensions.m */,
+				C2565CB21767115000EACEFA /* CXMLElement_ElementTreeExtensions.h */,
+				C2565CB31767115000EACEFA /* CXMLElement_ElementTreeExtensions.m */,
+				C2565CB41767115000EACEFA /* CXMLNamespaceNode.h */,
+				C2565CB51767115000EACEFA /* CXMLNamespaceNode.m */,
+				C2565CB61767115000EACEFA /* CXMLNode.h */,
+				C2565CB71767115000EACEFA /* CXMLNode.m */,
+				C2565CB81767115000EACEFA /* CXMLNode_PrivateExtensions.h */,
+				C2565CB91767115000EACEFA /* CXMLNode_PrivateExtensions.m */,
+				C2565CBA1767115000EACEFA /* CXMLNode_XPathExtensions.h */,
+				C2565CBB1767115000EACEFA /* CXMLNode_XPathExtensions.m */,
+				C2565CBC1767115000EACEFA /* Tidy */,
+				C2565CBF1767115000EACEFA /* TouchXML.h */,
+			);
+			path = TouchXML;
+			sourceTree = "<group>";
+		};
+		C2565CA11767115000EACEFA /* Creation */ = {
+			isa = PBXGroup;
+			children = (
+				C2565CA21767115000EACEFA /* CXMLDocument_CreationExtensions.h */,
+				C2565CA31767115000EACEFA /* CXMLDocument_CreationExtensions.m */,
+				C2565CA41767115000EACEFA /* CXMLElement_CreationExtensions.h */,
+				C2565CA51767115000EACEFA /* CXMLElement_CreationExtensions.m */,
+				C2565CA61767115000EACEFA /* CXMLNode_CreationExtensions.h */,
+				C2565CA71767115000EACEFA /* CXMLNode_CreationExtensions.m */,
+			);
+			path = Creation;
+			sourceTree = "<group>";
+		};
+		C2565CBC1767115000EACEFA /* Tidy */ = {
+			isa = PBXGroup;
+			children = (
+				C2565CBD1767115000EACEFA /* CTidy.h */,
+				C2565CBE1767115000EACEFA /* CTidy.m */,
+			);
+			path = Tidy;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,6 +509,36 @@
 				4A90989C174876950051C070 /* tableController.m in Sources */,
 				4A054642174F117E00CD3B28 /* uploadController.m in Sources */,
 				C2790F701754484C00628669 /* NetworkManager.m in Sources */,
+				C2565CC01767115000EACEFA /* ACWebDAVClient.m in Sources */,
+				C2565CC11767115000EACEFA /* CXMLNode+ACWebDAV.m in Sources */,
+				C2565CC21767115000EACEFA /* ACWebDAVCollection.m in Sources */,
+				C2565CC31767115000EACEFA /* ACWebDAVFile.m in Sources */,
+				C2565CC41767115000EACEFA /* ACWebDAVItem.m in Sources */,
+				C2565CC51767115000EACEFA /* ACWebDAVLocation.m in Sources */,
+				C2565CC61767115000EACEFA /* ACWebDAVLock.m in Sources */,
+				C2565CC71767115000EACEFA /* ACWebDAVCopyRequest.m in Sources */,
+				C2565CC81767115000EACEFA /* ACWebDAVDeleteRequest.m in Sources */,
+				C2565CC91767115000EACEFA /* ACWebDAVDownloadRequest.m in Sources */,
+				C2565CCA1767115000EACEFA /* ACWebDAVLockRequest.m in Sources */,
+				C2565CCB1767115000EACEFA /* ACWebDAVMakeCollectionRequest.m in Sources */,
+				C2565CCC1767115000EACEFA /* ACWebDAVMoveRequest.m in Sources */,
+				C2565CCD1767115000EACEFA /* ACWebDAVPropertyRequest.m in Sources */,
+				C2565CCE1767115000EACEFA /* ACWebDAVUnlockRequest.m in Sources */,
+				C2565CCF1767115000EACEFA /* ACWebDAVUploadRequest.m in Sources */,
+				C2565CD01767115000EACEFA /* CXMLDocument_CreationExtensions.m in Sources */,
+				C2565CD11767115000EACEFA /* CXMLElement_CreationExtensions.m in Sources */,
+				C2565CD21767115000EACEFA /* CXMLNode_CreationExtensions.m in Sources */,
+				C2565CD31767115000EACEFA /* CXHTMLDocument.m in Sources */,
+				C2565CD41767115000EACEFA /* CXMLDocument.m in Sources */,
+				C2565CD51767115000EACEFA /* CXMLDocument_PrivateExtensions.m in Sources */,
+				C2565CD61767115000EACEFA /* CXMLElement.m in Sources */,
+				C2565CD71767115000EACEFA /* CXMLElement_CreationExtensions.m in Sources */,
+				C2565CD81767115000EACEFA /* CXMLElement_ElementTreeExtensions.m in Sources */,
+				C2565CD91767115000EACEFA /* CXMLNamespaceNode.m in Sources */,
+				C2565CDA1767115000EACEFA /* CXMLNode.m in Sources */,
+				C2565CDB1767115000EACEFA /* CXMLNode_PrivateExtensions.m in Sources */,
+				C2565CDC1767115000EACEFA /* CXMLNode_XPathExtensions.m in Sources */,
+				C2565CDD1767115000EACEFA /* CTidy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,12 +623,10 @@
 		4A187F15172B0FD700D10D07 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/../../Downloads/QueueFTP-master\"",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "test7/T&M Collector-Prefix.pch";
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = "test7/T&M Collector-Info.plist";
 				PRODUCT_NAME = "T&M Collector";
 				WRAPPER_EXTENSION = app;
@@ -367,12 +636,10 @@
 		4A187F16172B0FD700D10D07 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/../../Downloads/QueueFTP-master\"",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "test7/T&M Collector-Prefix.pch";
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = "test7/T&M Collector-Info.plist";
 				PRODUCT_NAME = "T&M Collector";
 				WRAPPER_EXTENSION = app;
@@ -407,12 +674,10 @@
 		4A71649F1756B90400776E2F /* Ad-Hoc */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/../../Downloads/QueueFTP-master\"",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "test7/T&M Collector-Prefix.pch";
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = "test7/T&M Collector-Info.plist";
 				PRODUCT_NAME = "T&M Collector";
 				WRAPPER_EXTENSION = app;
