@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="bbN-mV-GHK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="bbN-mV-GHK">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -6129,7 +6129,6 @@
         <image name="smallbutton.png" width="70" height="44"/>
         <image name="startobs.png" width="451" height="70"/>
     </resources>
-<<<<<<< HEAD
     <classes>
         <class className="DetailTaskController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DetailTaskController.h"/>
@@ -6217,8 +6216,6 @@
             </relationships>
         </class>
     </classes>
-=======
->>>>>>> 74ca3b2cdd3e51fb2dd1d3141ba2cb0ff13aaf11
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>
