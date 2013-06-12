@@ -10,7 +10,9 @@
 
 
 #import "ViewController.h"
-
+#define T1000 @"Med records/changes"
+#define T1001 @"Color coding"
+#define T1002 @"Depart summary"
 
 @interface ViewController ()
 @property (retain, nonatomic) IBOutlet UIView *taskList;
@@ -25,7 +27,7 @@
 
 @implementation ViewController
 
-@synthesize scrollView, taskList, locationList, locMilesCity, locCodyClinic, tableView, activeAct,globalLocation,exportArr;
+@synthesize scrollView, taskList, locationList, locMilesCity, locCodyClinic, tableView, activeAct,globalLocation,exportArr, isMultitasking, interruptBtn;
 NSInteger *globalCounter;
 
 - (void)viewDidLoad
@@ -114,7 +116,6 @@ NSInteger *globalCounter;
     [_headerMain release];
     [_activityContainer release];
     [_taskBar release];
-    [_isMultitasking release];
     [super dealloc];
 }
 - (IBAction)changeLocation:(id)sender {
@@ -303,7 +304,7 @@ NSInteger *globalCounter;
         NSArray *currentArr = [activeAct objectAtIndex:count];
         NSLog(@"%@,%@,%@,%@,%@,%@,%@,%@",[currentArr objectAtIndex:0],@"update of location",@"",self.btnLocation.titleLabel.text,dateFormatted,timeFormatted,@"",@"");
         // put this information into the export array
-        NSArray *tempStorage = [[NSArray alloc] initWithObjects:[currentArr objectAtIndex:0],@"update of location",@"",self.btnLocation.titleLabel.text,timeFormatted,@"",@"", nil];
+        NSArray *tempStorage = [[NSArray alloc] initWithObjects:[currentArr objectAtIndex:0],@"update of location",@"",self.btnLocation.titleLabel.text,dateFormatted,timeFormatted,@"",@"", nil];
         [exportArr addObject:tempStorage];
         if(exportArr.count > 0){
             NSLog(@"successfully stored the current action. # of items: %d", [exportArr count]);
@@ -351,11 +352,15 @@ NSInteger *globalCounter;
 
     NSString *dateFormatted = [dateFormatterD stringFromDate:currentDate];
     NSString *timeFormatted = [dateFormatter stringFromDate:currentDate];
-
+    
     // log starts
     NSArray *nowArr = [activeAct objectAtIndex:pathToCell.row];
 //    NSLog(@"%@,%@,%@,%@,%@,%@",[nowArr objectAtIndex:1],self.lblLocation.text,[nowArr objectAtIndex:2],self.observerName.text,self.observeeName.text,timeFormatted);
     NSLog(@"%@,%@,%@,%@,%@,%@,%@,%@",[nowArr objectAtIndex:0],@"end of task",@"",self.btnLocation.titleLabel.text,dateFormatted,timeFormatted,@"",@"");
+    
+    // unhighlight the task button
+    UIButton *selectedBtn = (UIButton *)[taskList viewWithTag: [[nowArr objectAtIndex:3] integerValue]];
+    [selectedBtn setSelected:NO];
     
     // put this information into the export array
     NSArray *tempStorage = [[NSArray alloc] initWithObjects:[nowArr objectAtIndex:0],@"end of task",@"",self.btnLocation.titleLabel.text,dateFormatted,timeFormatted,@"",@"", nil];
@@ -493,6 +498,15 @@ NSInteger *globalCounter;
     //cell.textLabel.text = [activeAct objectAtIndex:indexPath.row];
     return cell;
 }
+- (IBAction)onMultitaskChange:(id)sender {
+    UISwitch *multitask = (UISwitch *)sender;
+    if(multitask.isOn == NO){
+        // see if there exists an item in the active tasks list
+        if([activeAct count] != 0){
+            [self allTasksDone:nil];
+        }
+    }
+}
 
 - (IBAction)triggerTask:(id)sender {    
 //    if([self.lblLocation.text isEqualToString:@"-"]){
@@ -514,25 +528,110 @@ NSInteger *globalCounter;
         //
         UIImage *imgTest = [UIImage imageNamed:@"fill_red.png"];
         [button setBackgroundImage:imgTest forState:UIControlStateSelected];
-        if(button.selected == YES){
-            [button setSelected:NO];
-        }else{
-            [button setSelected:YES];
-        }
         
-        // makes a log in the console
-//        NSLog(@"%@,%@,%d,%@,%@,%@",timeFormatted,self.lblLocation.text,button.tag,self.observerName.text,self.observeeName.text,@"n/a");
-        NSLog(@"%@,%@,%d,%@,%@,%@,%@,%@",[NSString stringWithFormat:@"%d",(int)globalCounter],@"creation",button.tag,self.btnLocation.titleLabel.text,dateFormatted,timeFormatted,self.observerName.text,self.observeeName.text);
-       
-        // put this information into the export array
-        NSArray *tempStorage = [[NSArray alloc] initWithObjects:[NSString stringWithFormat:@"%d", (int)globalCounter],@"creation",[NSString stringWithFormat:@"%d",button.tag],self.btnLocation.titleLabel.text,dateFormatted,timeFormatted,self.observerName.text,self.observeeName.text, nil];
-        [exportArr addObject:tempStorage];
-        if(exportArr.count > 0){
-            NSLog(@"successfully stored the current action. # of items: %d", [exportArr count]);
-        }
-        globalCounter = (NSInteger *) ((int)globalCounter + 1);
-        [activeAct insertObject:curSel atIndex:0];
-        [tableView reloadData];
+            if(isMultitasking.isOn == YES){ // if the multitasking mode is on
+                if(button.selected == YES){ // if the button is already highlighted
+                    [button setSelected:NO];
+                    // gets the current time
+                    NSDate *currentDate = [NSDate date];
+                    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+                    [dateFormatter setDateFormat:@"HH:mm:ss"];
+                    NSDateFormatter *dateFormatterD = [[NSDateFormatter alloc] init];
+                    [dateFormatterD setDateFormat:@"MMddyyyy"];
+                    
+                    NSString *dateFormatted = [dateFormatterD stringFromDate:currentDate];
+                    NSString *timeFormatted = [dateFormatter stringFromDate:currentDate];
+                    
+                    for(int i = 0; i<activeAct.count; i++){
+                        NSArray *curArr = [activeAct objectAtIndex:i];
+                        NSString *curTaskId = [curArr objectAtIndex:3];
+                        NSString *buttonTag = [[NSString alloc] initWithFormat:@"%d", button.tag];
+                        //NSLog(@"button clicked: %@, original: %@",buttonTag, curTaskId);
+                        if([curTaskId isEqualToString:buttonTag] == YES){
+                            //button.titleLabel.text = [[NSString alloc] initWithFormat:@"%d",i];
+                            NSArray *selArr = [activeAct objectAtIndex:i];
+                            NSLog(@"%@,%@,%@,%@,%@,%@,%@,%@",[selArr objectAtIndex:0],@"end of task",@"",self.btnLocation.titleLabel.text,dateFormatted,timeFormatted,@"",@"");
+                            // put this information into the export array
+                            NSArray *tempStorage = [[NSArray alloc] initWithObjects:[selArr objectAtIndex:0],@"end of task",@"",self.btnLocation.titleLabel.text,dateFormatted,timeFormatted,@"",@"", nil];
+                            [exportArr addObject:tempStorage];
+                            if(exportArr.count > 0){
+                                NSLog(@"successfully stored the current action. # of items: %d", [exportArr count]);
+                            }
+                            
+                            NSIndexPath *delCellPath = [NSIndexPath indexPathForRow:i inSection:0];
+                            
+                            
+                            [activeAct removeObjectAtIndex:i];
+                            [tableView deleteRowsAtIndexPaths:@[delCellPath] withRowAnimation:UITableViewRowAnimationFade];
+                            break;
+                        }else{
+                            //button.titleLabel.text = @"meh";
+                        }
+                    }
+                    
+                    
+                    
+                }else{ // if the button is not highlighted
+                    [button setSelected:YES];
+                    // makes a log in the console
+                    //        NSLog(@"%@,%@,%d,%@,%@,%@",timeFormatted,self.lblLocation.text,button.tag,self.observerName.text,self.observeeName.text,@"n/a");
+                    NSLog(@"%@,%@,%d,%@,%@,%@,%@,%@",[NSString stringWithFormat:@"%d",(int)globalCounter],@"creation",button.tag,self.btnLocation.titleLabel.text,dateFormatted,timeFormatted,self.observerName.text,self.observeeName.text);
+                    
+                    // put this information into the export array
+                    NSArray *tempStorage = [[NSArray alloc] initWithObjects:[NSString stringWithFormat:@"%d", (int)globalCounter],@"creation",[NSString stringWithFormat:@"%d",button.tag],self.btnLocation.titleLabel.text,dateFormatted,timeFormatted,self.observerName.text,self.observeeName.text, nil];
+                    [exportArr addObject:tempStorage];
+                    if(exportArr.count > 0){
+                        NSLog(@"successfully stored the current action. # of items: %d", [exportArr count]);
+                    }
+                    globalCounter = (NSInteger *) ((int)globalCounter + 1);
+                    [activeAct insertObject:curSel atIndex:0];
+                    [tableView reloadData];
+                }
+            }else{ // multitasking mode off
+                if(button.selected == NO){
+                    if([activeAct count]!=0){
+                        [self allTasksDone:nil];
+                    }
+                    [button setSelected:YES];
+                    // makes a log in the console
+                    //        NSLog(@"%@,%@,%d,%@,%@,%@",timeFormatted,self.lblLocation.text,button.tag,self.observerName.text,self.observeeName.text,@"n/a");
+                    NSLog(@"%@,%@,%d,%@,%@,%@,%@,%@",[NSString stringWithFormat:@"%d",(int)globalCounter],@"creation",button.tag,self.btnLocation.titleLabel.text,dateFormatted,timeFormatted,self.observerName.text,self.observeeName.text);
+                    
+                    // put this information into the export array
+                    NSArray *tempStorage = [[NSArray alloc] initWithObjects:[NSString stringWithFormat:@"%d", (int)globalCounter],@"creation",[NSString stringWithFormat:@"%d",button.tag],self.btnLocation.titleLabel.text,dateFormatted,timeFormatted,self.observerName.text,self.observeeName.text, nil];
+                    [exportArr addObject:tempStorage];
+                    if(exportArr.count > 0){
+                        NSLog(@"successfully stored the current action. # of items: %d", [exportArr count]);
+                    }
+                    globalCounter = (NSInteger *) ((int)globalCounter + 1);
+                    [activeAct insertObject:curSel atIndex:0];
+                    [tableView reloadData];
+                }else{
+                    [button setSelected:NO];
+                    // gets the current time
+                    NSDate *currentDate = [NSDate date];
+                    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+                    [dateFormatter setDateFormat:@"HH:mm:ss"];
+                    NSDateFormatter *dateFormatterD = [[NSDateFormatter alloc] init];
+                    [dateFormatterD setDateFormat:@"MMddyyyy"];
+                    
+                    NSString *dateFormatted = [dateFormatterD stringFromDate:currentDate];
+                    NSString *timeFormatted = [dateFormatter stringFromDate:currentDate];
+                    
+                    //button.titleLabel.text = [[NSString alloc] initWithFormat:@"%d",i];
+                    NSArray *selArr = [activeAct objectAtIndex:0];
+                    NSLog(@"%@,%@,%@,%@,%@,%@,%@,%@",[selArr objectAtIndex:0],@"end of task",@"",self.btnLocation.titleLabel.text,dateFormatted,timeFormatted,@"",@"");
+                    // put this information into the export array
+                    NSArray *tempStorage = [[NSArray alloc] initWithObjects:[selArr objectAtIndex:0],@"end of task",@"",self.btnLocation.titleLabel.text,dateFormatted,timeFormatted,@"",@"", nil];
+                    [exportArr addObject:tempStorage];
+                    if(exportArr.count > 0){
+                        NSLog(@"successfully stored the current action. # of items: %d", [exportArr count]);
+                    }
+                    NSIndexPath *delCellPath = [NSIndexPath indexPathForRow:0 inSection:0];
+                    [activeAct removeObjectAtIndex:0];
+                    [tableView deleteRowsAtIndexPaths:@[delCellPath] withRowAnimation:UITableViewRowAnimationFade];
+                }
+            }
     }
 }
 
@@ -548,6 +647,11 @@ NSInteger *globalCounter;
 
         NSArray *nowArr = [activeAct objectAtIndex:i];
 //        NSLog(@"%@,%@,%@,%@,%@,%@",[nowArr objectAtIndex:1],self.lblLocation.text,[nowArr objectAtIndex:2],self.observerName.text,self.observeeName.text,timeFormatted);
+        
+        // unhighlight the task button
+        UIButton *selectedBtn = (UIButton *)[taskList viewWithTag: [[nowArr objectAtIndex:3] integerValue]];
+        [selectedBtn setSelected:NO];
+        
         NSLog(@"%@,%@,%@,%@,%@,%@,%@,%@",[nowArr objectAtIndex:0],@"end of task",@"",self.btnLocation.titleLabel.text,dateFormatted,timeFormatted,@"",@"");
         
         // put this information into the export array
@@ -560,6 +664,44 @@ NSInteger *globalCounter;
     [activeAct removeAllObjects];
     [tableView reloadData];
     
+}
+
+- (IBAction)interrupt:(id)sender {
+    UIButton *btn = (UIButton *)sender;
+    UIImage *imgTest = [UIImage imageNamed:@"fill_red.png"];
+    [btn setBackgroundImage:imgTest forState:UIControlStateSelected];
+    
+    if([btn isSelected]==YES){
+        //[btn setSelected:NO];
+    }else{
+        if([activeAct count] != 0){
+            //[btn setSelected:YES];
+                NSDate *currentDate = [NSDate date];
+                NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+                [dateFormatter setDateFormat:@"HH:mm:ss"];
+                NSDateFormatter *dateFormatterD = [[NSDateFormatter alloc] init];
+                [dateFormatterD setDateFormat:@"MMddyyyy"];
+                NSString *timeFormatted = [dateFormatter stringFromDate:currentDate];
+                NSString *dateFormatted = [dateFormatterD stringFromDate:currentDate];
+                
+                NSArray *nowArr = [activeAct objectAtIndex:0];
+                
+                NSLog(@"%@,%@,%@,%@,%@,%@,%@,%@",[nowArr objectAtIndex:0],@"interruption",@"",self.btnLocation.titleLabel.text,dateFormatted,timeFormatted,@"",@"");
+                
+                [interruptBtn setSelected:NO];
+                
+                // put this information into the export array
+                NSArray *tempStorage = [[NSArray alloc] initWithObjects:[nowArr objectAtIndex:0],@"interruption",@"",self.btnLocation.titleLabel.text,dateFormatted,timeFormatted,@"",@"", nil];
+                [exportArr addObject:tempStorage];
+                if(exportArr.count > 0){
+                    NSLog(@"successfully stored the current action. # of items: %d", [exportArr count]);
+                }
+        }else{
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Error" message:@"There is no active task that can be interrupted!" delegate: nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+            [alert show];
+            [alert release];
+        }
+    }
 }
 
 
@@ -575,6 +717,10 @@ NSInteger *globalCounter;
         
         NSArray *nowArr = [activeAct objectAtIndex:indexPath.row];
 //        NSLog(@"%@,%@,%@,%@,%@,%@",[nowArr objectAtIndex:1],self.lblLocation.text, [nowArr objectAtIndex:2], self.observerName.text, self.observeeName.text,@"canceled");
+        // unhighlight the task button
+        UIButton *selectedBtn = (UIButton *)[taskList viewWithTag: [[nowArr objectAtIndex:3] integerValue]];
+        [selectedBtn setSelected:NO];
+        
         NSLog(@"%@,%@,%@,%@,%@,%@,%@,%@",[nowArr objectAtIndex:0],@"cancellation",@"",self.btnLocation.titleLabel.text,dateFormatted,timeFormatted,@"",@"");
         
         // put this information into the export array

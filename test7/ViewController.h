@@ -39,6 +39,7 @@
 @property (retain, nonatomic) NSString *globalLocation;
 @property (retain, nonatomic) NSMutableArray *exportArr;
 @property (retain, nonatomic) IBOutlet UISwitch *isMultitasking;
+@property (retain, nonatomic) IBOutlet UIButton *interruptBtn;
 
 - (IBAction)taskComp:(id)sender;
 - (IBAction)taskPaper:(id)sender;
@@ -48,6 +49,7 @@
 - (IBAction)changeViewLocation:(id)sender;
 - (IBAction)triggerTask:(id)sender;
 - (IBAction)allTasksDone:(id)sender;
+- (IBAction)interrupt:(id)sender;
 
 - (IBAction)changeLocMiles:(id)sender;
 
