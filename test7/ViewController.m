@@ -36,7 +36,7 @@ NSInteger *globalCounter;
 	// Do any additional setup after loading the view, typically from a nib.
     
     // create inside content size of scrollview
-    CGSize contentSize = CGSizeMake(scrollView.frame.size.width *2, scrollView.frame.size.height);
+    CGSize contentSize = CGSizeMake(scrollView.frame.size.width *3, scrollView.frame.size.height);
     
     // set up scrollview content size
     [scrollView setContentSize:contentSize];
@@ -510,6 +510,9 @@ NSInteger *globalCounter;
         UIAlertView *error = [[UIAlertView alloc] initWithTitle:@"Error" message:@"You have to select location first!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
         [error show];
         [error release];
+
+        // scroll to location page
+        [self scrollToPage:0];
     }else{
         UIButton *button = (UIButton *) sender;
         NSDate *currentDate = [NSDate date];
