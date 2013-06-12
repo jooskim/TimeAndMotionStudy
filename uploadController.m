@@ -9,6 +9,7 @@
 #import "uploadController.h"
 #import "NetworkManager.h"
 #include <CFNetwork/CFNetwork.h>
+#import "ACWebDAVClient.h"
 
 enum {
     kSendBufferSize = 32768
@@ -37,13 +38,11 @@ enum {
 @property (nonatomic, assign, readwrite) size_t            bufferOffset;
 @property (nonatomic, assign, readwrite) size_t            bufferLimit;
 
-
-
 @end
 
 @implementation uploadController
 {
-    uint8_t                     _buffer[kSendBufferSize];
+//    uint8_t                     _buffer[kSendBufferSize];
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -186,7 +185,13 @@ enum {
                 NSString *documentsPath = [paths objectAtIndex:0];
                 filePath = [documentsPath stringByAppendingPathComponent:[NSString stringWithFormat: @"%@", cell.textLabel.text]];
                 
-                [self startSend:filePath];
+                ACWebDAVClient *propReq = [[ACWebDAVClient alloc]init];
+                [propReq initWithHost:@"http://timemotion:tm2013@141.211.11.11" username: @"timemotion" password: @"tm2013"];
+                [propReq uploadFile:[NSString stringWithFormat: @"%@", cell.textLabel.text] toPath:@"/timemotion/log/" fromPath:filePath];
+                
+                /* // For FTP upload -------------------------------------------
+                 [self startSend:filePath];
+                 ------------------------------------------- */
             }
             
         }
@@ -247,8 +252,8 @@ enum {
 
 
 
-
-//------------------------------------------------------------------------------------------------
+/*
+//- FTP upload -----------------------------------------------------------------------------------------------
 #pragma mark * Status management
 
 // These methods are used by the core transfer code to update the UI.
@@ -513,7 +518,8 @@ enum {
     [textField resignFirstResponder];
     return NO;
 }
-
+-------------------------------------------------------------------------------------------------------------------------------- 
+*/
 
 
 @end
