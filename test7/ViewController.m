@@ -16,6 +16,7 @@
 
 @interface ViewController ()
 @property (retain, nonatomic) IBOutlet UIView *taskList;
+@property (retain, nonatomic) IBOutlet UIView *taskList2;
 @property (retain, nonatomic) IBOutlet UIView *locationList;
 @property (retain, nonatomic) IBOutlet UIView *locMilesCity;
 @property (retain, nonatomic) IBOutlet UIView *locCodyClinic;
@@ -27,7 +28,7 @@
 
 @implementation ViewController
 
-@synthesize scrollView, taskList, locationList, locMilesCity, locCodyClinic, tableView, activeAct,globalLocation,exportArr, isMultitasking, interruptBtn;
+@synthesize scrollView, taskList, taskList2, locationList, locMilesCity, locCodyClinic, tableView, activeAct, globalLocation, exportArr, isMultitasking, interruptBtn;
 NSInteger *globalCounter;
 
 - (void)viewDidLoad
@@ -53,13 +54,19 @@ NSInteger *globalCounter;
                                        0.0f,
                                        scrollViewSize.width,
                                        scrollViewSize.height);
+    CGRect ThirdViewFrame = CGRectMake(scrollViewSize.width*2,
+                                       0.0f,
+                                       scrollViewSize.width,
+                                       scrollViewSize.height);
     
     // set up frame to each page view
     [locationList setFrame:firstViewFrame];
     [taskList setFrame:SecondViewFrame];
+    [taskList2 setFrame:ThirdViewFrame];
     
     // add views on the scroll view
     [scrollView addSubview:taskList];
+    [scrollView addSubview:taskList2];
 
     if([self.valObsSite isEqualToString:@"Miles City"]){
         locCodyClinic.hidden = YES;
@@ -359,7 +366,13 @@ NSInteger *globalCounter;
     NSLog(@"%@,%@,%@,%@,%@,%@,%@,%@",[nowArr objectAtIndex:0],@"end of task",@"",self.btnLocation.titleLabel.text,dateFormatted,timeFormatted,@"",@"");
     
     // unhighlight the task button
-    UIButton *selectedBtn = (UIButton *)[taskList viewWithTag: [[nowArr objectAtIndex:3] integerValue]];
+    UIButton *selectedBtn;
+    if ([[nowArr objectAtIndex:3] integerValue] < 1600 )
+    {
+        selectedBtn = (UIButton *)[taskList viewWithTag: [[nowArr objectAtIndex:3] integerValue]];
+    } else {
+        selectedBtn = (UIButton *)[taskList2 viewWithTag: [[nowArr objectAtIndex:3] integerValue]];
+    }
     [selectedBtn setSelected:NO];
     
     // put this information into the export array
@@ -403,32 +416,32 @@ NSInteger *globalCounter;
     //UILabel *currentCat = (UILabel *)[cell viewWithTag:99];
     if([[nowArr objectAtIndex:3] intValue] >= 1000 && [[nowArr objectAtIndex:3] intValue] < 1100){
         //currentCat.text = @"Computer:Entry";
-        img = [UIImage imageNamed:@"colorCat2.png"];
+        img = [UIImage imageNamed:@"colorCat6.png"];
         imgView.image = img;
     };
     if([[nowArr objectAtIndex:3] intValue] >= 1100 && [[nowArr objectAtIndex:3] intValue] < 1200){
         //currentCat.text = @"Computer:Confirming information";
-        img = [UIImage imageNamed:@"colorCat3.png"];
+        img = [UIImage imageNamed:@"colorCat5.png"];
         imgView.image = img;
     };
     if([[nowArr objectAtIndex:3] intValue] >= 1200 && [[nowArr objectAtIndex:3] intValue] < 1300){
         //currentCat.text = @"Computer:Reading";
-        img = [UIImage imageNamed:@"colorCat4.png"];
+        img = [UIImage imageNamed:@"colorCat7.png"];
         imgView.image = img;
     };
     if([[nowArr objectAtIndex:3] intValue] >= 1300 && [[nowArr objectAtIndex:3] intValue] < 1400){
         //currentCat.text = @"Phone:Calling";
-        img = [UIImage imageNamed:@"colorCat5.png"];
+        img = [UIImage imageNamed:@"colorCat4.png"];
         imgView.image = img;
     };
     if([[nowArr objectAtIndex:3] intValue] >= 1400 && [[nowArr objectAtIndex:3] intValue] < 1500){
         //currentCat.text = @"Phone:Answering";
-        img = [UIImage imageNamed:@"colorCat6.png"];
+        img = [UIImage imageNamed:@"colorCat2.png"];
         imgView.image = img;
     };
     if([[nowArr objectAtIndex:3] intValue] >= 1500 && [[nowArr objectAtIndex:3] intValue] < 1600){
         //currentCat.text = @"Phone:Transfer call";
-        img = [UIImage imageNamed:@"colorCat7.png"];
+        img = [UIImage imageNamed:@"colorCat3.png"];
         imgView.image = img;
     };
     if([[nowArr objectAtIndex:3] intValue] >= 1600 && [[nowArr objectAtIndex:3] intValue] < 1700){
@@ -438,17 +451,17 @@ NSInteger *globalCounter;
     };
     if([[nowArr objectAtIndex:3] intValue] >= 1700 && [[nowArr objectAtIndex:3] intValue] < 1800){
         //currentCat.text = @"Paper:Reading";
-        img = [UIImage imageNamed:@"colorCat9.png"];
+        img = [UIImage imageNamed:@"colorCat10.png"];
         imgView.image = img;
     };
     if([[nowArr objectAtIndex:3] intValue] >= 1800 && [[nowArr objectAtIndex:3] intValue] < 1900){
         //currentCat.text = @"Paper:Sorting/filing/delivering";
-        img = [UIImage imageNamed:@"colorCat10.png"];
+        img = [UIImage imageNamed:@"colorCat11.png"];
         imgView.image = img;
     };
     if([[nowArr objectAtIndex:3] intValue] >= 1900 && [[nowArr objectAtIndex:3] intValue] < 2000){
         //currentCat.text = @"Paper:Retrieving/accepting";
-        img = [UIImage imageNamed:@"colorCat11.png"];
+        img = [UIImage imageNamed:@"colorCat9.png"];
         imgView.image = img;
     };
     
@@ -497,7 +510,14 @@ NSInteger *globalCounter;
             
             
             [activeAct removeObjectAtIndex:i];
-            UIButton *btnToUnselect = (UIButton *)[taskList viewWithTag:[tag integerValue]];
+            // unhighlight the task button
+            UIButton *btnToUnselect;
+            if ([tag integerValue] < 1600 )
+            {
+                btnToUnselect = (UIButton *)[taskList viewWithTag: [tag integerValue]];
+            } else {
+                btnToUnselect = (UIButton *)[taskList2 viewWithTag: [tag integerValue]];
+            }
             [btnToUnselect setSelected:NO];
             break;
         }else{
@@ -527,26 +547,27 @@ NSInteger *globalCounter;
         //
         UIImage *btnBg = nil;
         if(button.tag >= 1000 && button.tag < 1100){
-            btnBg = [UIImage imageNamed:@"colorCat2.png"];
+            btnBg = [UIImage imageNamed:@"colorCat6.png"];
         }else if(button.tag >= 1100 && button.tag < 1200){
-            btnBg = [UIImage imageNamed:@"colorCat3.png"];
-        }else if(button.tag >= 1200 && button.tag < 1300){
-            btnBg = [UIImage imageNamed:@"colorCat4.png"];
-        }else if(button.tag >= 1300 && button.tag < 1400){
             btnBg = [UIImage imageNamed:@"colorCat5.png"];
             [button setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
-        }else if(button.tag >= 1400 && button.tag < 1500){
-            btnBg = [UIImage imageNamed:@"colorCat6.png"];
-        }else if(button.tag >= 1500 && button.tag < 1600){
+        }else if(button.tag >= 1200 && button.tag < 1300){
             btnBg = [UIImage imageNamed:@"colorCat7.png"];
+        }else if(button.tag >= 1300 && button.tag < 1400){
+            btnBg = [UIImage imageNamed:@"colorCat4.png"];
+        }else if(button.tag >= 1400 && button.tag < 1500){
+            btnBg = [UIImage imageNamed:@"colorCat2.png"];
+        }else if(button.tag >= 1500 && button.tag < 1600){
+            btnBg = [UIImage imageNamed:@"colorCat3.png"];
         }else if(button.tag >= 1600 && button.tag < 1700){
             btnBg = [UIImage imageNamed:@"colorCat8.png"];
         }else if(button.tag >= 1700 && button.tag < 1800){
-            btnBg = [UIImage imageNamed:@"colorCat9.png"];
-        }else if(button.tag >= 1800 && button.tag < 1900){
             btnBg = [UIImage imageNamed:@"colorCat10.png"];
-        }else if(button.tag >= 1900 && button.tag < 2000){
+            [button setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
+        }else if(button.tag >= 1800 && button.tag < 1900){
             btnBg = [UIImage imageNamed:@"colorCat11.png"];
+        }else if(button.tag >= 1900 && button.tag < 2000){
+            btnBg = [UIImage imageNamed:@"colorCat9.png"];
         }else{
             btnBg = [UIImage imageNamed:@"colorCat1.png"];
         }
@@ -599,21 +620,23 @@ NSInteger *globalCounter;
                     
                     // code for the tasks that only lasts for a second
                     // 여기에 추가 task 버튼 tag 넣어주세요
-                    if(button.tag == 1202 || button.tag == 1301 || button.tag == 1316){
-                        NSLog(@"%@,%@,%d,%@,%@,%@,%@,%@",[NSString stringWithFormat:@"%d",(int)globalCounter],@"creation",button.tag,self.btnLocation.titleLabel.text,dateFormatted,timeFormatted,self.observerName.text,self.observeeName.text);
-                        NSArray *tempStorage = [[NSArray alloc] initWithObjects:[NSString stringWithFormat:@"%d", (int)globalCounter],@"creation",[NSString stringWithFormat:@"%d",button.tag],self.btnLocation.titleLabel.text,dateFormatted,timeFormatted,self.observerName.text,self.observeeName.text, nil];
-                        [exportArr addObject:tempStorage];
-                        if(exportArr.count > 0){
-                            NSLog(@"successfully stored the current action. # of items: %d", [exportArr count]);
-                        }
-                        globalCounter = (NSInteger *) ((int)globalCounter + 1);
-                        [activeAct insertObject:curSel atIndex:0];
-                        
-                        // delete the currently selected task after 1 second
-                        NSTimer *delTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(progEndTask:) userInfo:[[NSString alloc] initWithFormat:@"%d",button.tag] repeats:NO];
-                        
-                        
-                    }else{
+
+// for flashing events -> removed
+//                    if(button.tag == 1202 || button.tag == 1301 || button.tag == 1316){
+//                        NSLog(@"%@,%@,%d,%@,%@,%@,%@,%@",[NSString stringWithFormat:@"%d",(int)globalCounter],@"creation",button.tag,self.btnLocation.titleLabel.text,dateFormatted,timeFormatted,self.observerName.text,self.observeeName.text);
+//                        NSArray *tempStorage = [[NSArray alloc] initWithObjects:[NSString stringWithFormat:@"%d", (int)globalCounter],@"creation",[NSString stringWithFormat:@"%d",button.tag],self.btnLocation.titleLabel.text,dateFormatted,timeFormatted,self.observerName.text,self.observeeName.text, nil];
+//                        [exportArr addObject:tempStorage];
+//                        if(exportArr.count > 0){
+//                            NSLog(@"successfully stored the current action. # of items: %d", [exportArr count]);
+//                        }
+//                        globalCounter = (NSInteger *) ((int)globalCounter + 1);
+//                        [activeAct insertObject:curSel atIndex:0];
+//                        
+//                        // delete the currently selected task after 1 second
+//                        NSTimer *delTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(progEndTask:) userInfo:[[NSString alloc] initWithFormat:@"%d",button.tag] repeats:NO];
+//                        
+//
+//                    }else{
                         // makes a log in the console
                         //        NSLog(@"%@,%@,%d,%@,%@,%@",timeFormatted,self.lblLocation.text,button.tag,self.observerName.text,self.observeeName.text,@"n/a");
                         NSLog(@"%@,%@,%d,%@,%@,%@,%@,%@",[NSString stringWithFormat:@"%d",(int)globalCounter],@"creation",button.tag,self.btnLocation.titleLabel.text,dateFormatted,timeFormatted,self.observerName.text,self.observeeName.text);
@@ -627,7 +650,7 @@ NSInteger *globalCounter;
                         globalCounter = (NSInteger *) ((int)globalCounter + 1);
                         [activeAct insertObject:curSel atIndex:0];
                         [tableView reloadData];
-                    }
+//                    }
                     
                     
                 }
@@ -639,21 +662,22 @@ NSInteger *globalCounter;
                     [button setSelected:YES];
                     // code for the tasks that only lasts for a second
                     // 여기에 추가 task 버튼 tag 넣어주세요
-                    if(button.tag == 1202 || button.tag == 1301 || button.tag == 1316){
-                        NSLog(@"%@,%@,%d,%@,%@,%@,%@,%@",[NSString stringWithFormat:@"%d",(int)globalCounter],@"creation",button.tag,self.btnLocation.titleLabel.text,dateFormatted,timeFormatted,self.observerName.text,self.observeeName.text);
-                        NSArray *tempStorage = [[NSArray alloc] initWithObjects:[NSString stringWithFormat:@"%d", (int)globalCounter],@"creation",[NSString stringWithFormat:@"%d",button.tag],self.btnLocation.titleLabel.text,dateFormatted,timeFormatted,self.observerName.text,self.observeeName.text, nil];
-                        [exportArr addObject:tempStorage];
-                        if(exportArr.count > 0){
-                            NSLog(@"successfully stored the current action. # of items: %d", [exportArr count]);
-                        }
-                        globalCounter = (NSInteger *) ((int)globalCounter + 1);
-                        [activeAct insertObject:curSel atIndex:0];
-                        
-                        // delete the currently selected task after 1 second
-                        NSTimer *delTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(progEndTask:) userInfo:[[NSString alloc] initWithFormat:@"%d",button.tag] repeats:NO];
-                        
-                        
-                    }else{
+
+// for flashing events -> removed 
+//                    if(button.tag == 1202 || button.tag == 1301 || button.tag == 1316){
+//                        NSLog(@"%@,%@,%d,%@,%@,%@,%@,%@",[NSString stringWithFormat:@"%d",(int)globalCounter],@"creation",button.tag,self.btnLocation.titleLabel.text,dateFormatted,timeFormatted,self.observerName.text,self.observeeName.text);
+//                        NSArray *tempStorage = [[NSArray alloc] initWithObjects:[NSString stringWithFormat:@"%d", (int)globalCounter],@"creation",[NSString stringWithFormat:@"%d",button.tag],self.btnLocation.titleLabel.text,dateFormatted,timeFormatted,self.observerName.text,self.observeeName.text, nil];
+//                        [exportArr addObject:tempStorage];
+//                        if(exportArr.count > 0){
+//                            NSLog(@"successfully stored the current action. # of items: %d", [exportArr count]);
+//                        }
+//                        globalCounter = (NSInteger *) ((int)globalCounter + 1);
+//                        [activeAct insertObject:curSel atIndex:0];
+//                        
+//                        // delete the currently selected task after 1 second
+//                        NSTimer *delTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(progEndTask:) userInfo:[[NSString alloc] initWithFormat:@"%d",button.tag] repeats:NO];
+//                        
+//                    }else{
                         // makes a log in the console
                         //        NSLog(@"%@,%@,%d,%@,%@,%@",timeFormatted,self.lblLocation.text,button.tag,self.observerName.text,self.observeeName.text,@"n/a");
                         NSLog(@"%@,%@,%d,%@,%@,%@,%@,%@",[NSString stringWithFormat:@"%d",(int)globalCounter],@"creation",button.tag,self.btnLocation.titleLabel.text,dateFormatted,timeFormatted,self.observerName.text,self.observeeName.text);
@@ -667,7 +691,7 @@ NSInteger *globalCounter;
                         globalCounter = (NSInteger *) ((int)globalCounter + 1);
                         [activeAct insertObject:curSel atIndex:0];
                         [tableView reloadData];
-                    }
+//                    }
                     
                 }else{
                     [button setSelected:NO];
@@ -709,10 +733,16 @@ NSInteger *globalCounter;
         NSString *dateFormatted = [dateFormatterD stringFromDate:currentDate];
 
         NSArray *nowArr = [activeAct objectAtIndex:i];
-//        NSLog(@"%@,%@,%@,%@,%@,%@",[nowArr objectAtIndex:1],self.lblLocation.text,[nowArr objectAtIndex:2],self.observerName.text,self.observeeName.text,timeFormatted);
+        //NSLog(@"%@,%@,%@,%@,%@,%@",[nowArr objectAtIndex:1],self.lblLocation.text,[nowArr objectAtIndex:2],self.observerName.text,self.observeeName.text,timeFormatted);
         
         // unhighlight the task button
-        UIButton *selectedBtn = (UIButton *)[taskList viewWithTag: [[nowArr objectAtIndex:3] integerValue]];
+        UIButton *selectedBtn;
+        if ([[nowArr objectAtIndex:3] integerValue] < 1600 )
+        {
+            selectedBtn = (UIButton *)[taskList viewWithTag: [[nowArr objectAtIndex:3] integerValue]];
+        } else {
+            selectedBtn = (UIButton *)[taskList2 viewWithTag: [[nowArr objectAtIndex:3] integerValue]];
+        }
         [selectedBtn setSelected:NO];
         
         NSLog(@"%@,%@,%@,%@,%@,%@,%@,%@",[nowArr objectAtIndex:0],@"end of task",@"",self.btnLocation.titleLabel.text,dateFormatted,timeFormatted,@"",@"");
@@ -792,8 +822,15 @@ NSInteger *globalCounter;
         NSArray *nowArr = [activeAct objectAtIndex:indexPath.row];
 //        NSLog(@"%@,%@,%@,%@,%@,%@",[nowArr objectAtIndex:1],self.lblLocation.text, [nowArr objectAtIndex:2], self.observerName.text, self.observeeName.text,@"canceled");
         // unhighlight the task button
-        UIButton *selectedBtn = (UIButton *)[taskList viewWithTag: [[nowArr objectAtIndex:3] integerValue]];
+        UIButton *selectedBtn;
+        if ([[nowArr objectAtIndex:3] integerValue] < 1600 )
+        {
+            selectedBtn = (UIButton *)[taskList viewWithTag: [[nowArr objectAtIndex:3] integerValue]];
+        } else {
+            selectedBtn = (UIButton *)[taskList2 viewWithTag: [[nowArr objectAtIndex:3] integerValue]];
+        }
         [selectedBtn setSelected:NO];
+        
         
         NSLog(@"%@,%@,%@,%@,%@,%@,%@,%@",[nowArr objectAtIndex:0],@"cancellation",@"",self.btnLocation.titleLabel.text,dateFormatted,timeFormatted,@"",@"");
         

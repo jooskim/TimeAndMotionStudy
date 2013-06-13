@@ -18,16 +18,15 @@
 }
 
 
-@property (retain, nonatomic) IBOutlet UILabel *observerName;
 @property (nonatomic) NSString *valObsName;
-@property (retain, nonatomic) IBOutlet UILabel *observeeName;
 @property (nonatomic) NSString *valObsEEName;
-@property (retain, nonatomic) IBOutlet UILabel *observeSite;
 @property (nonatomic) NSString *valObsSite;
+
+@property (retain, nonatomic) IBOutlet UILabel *observerName;
+@property (retain, nonatomic) IBOutlet UILabel *observeeName;
+@property (retain, nonatomic) IBOutlet UILabel *observeSite;
 @property (retain, nonatomic) IBOutlet UILabel *lblLocation;
 @property (retain, nonatomic) IBOutlet UIButton *btnLocation;
-
-- (IBAction)changeLocation:(id)sender;
 @property (retain, nonatomic) IBOutlet UINavigationItem *detailTitle;
 @property (retain, nonatomic) IBOutlet UIView *partialV4;
 @property (retain, nonatomic) IBOutlet UIView *partialV3;
@@ -35,12 +34,13 @@
 @property (retain, nonatomic) IBOutlet UIView *partialV1;
 @property (retain, nonatomic) IBOutlet UIView *activityContainer;
 @property (retain, nonatomic) IBOutlet UITableView *tableView;
+@property (retain, nonatomic) IBOutlet UISwitch *isMultitasking;
+@property (retain, nonatomic) IBOutlet UIButton *interruptBtn;
 @property (strong, nonatomic) NSMutableArray *activeAct;
 @property (retain, nonatomic) NSString *globalLocation;
 @property (retain, nonatomic) NSMutableArray *exportArr;
-@property (retain, nonatomic) IBOutlet UISwitch *isMultitasking;
-@property (retain, nonatomic) IBOutlet UIButton *interruptBtn;
 
+- (IBAction)changeLocation:(id)sender;
 - (IBAction)taskComp:(id)sender;
 - (IBAction)taskPaper:(id)sender;
 - (IBAction)taskInteraction:(id)sender;
