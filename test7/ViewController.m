@@ -405,6 +405,7 @@ NSInteger *globalCounter;
     // activity name
     UILabel *activityName = (UILabel *)[cell viewWithTag:102];
     activityName.text = [nowArr objectAtIndex:1];
+    [activityName setTextColor:[UIColor blackColor]];
     // activity time
     UILabel *activityTime = (UILabel *)[cell viewWithTag:103];
     activityTime.text = [nowArr objectAtIndex:2];
@@ -759,10 +760,29 @@ NSInteger *globalCounter;
     
 }
 -(void) interruptTimer:(NSTimer *)theTimer{
-    UITableViewCell *topCell = (UITableViewCell *)[(UITableView *)tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
-    UILabel *topCellLabel = (UILabel *)[topCell viewWithTag:102];
-    [topCellLabel setTextColor:[UIColor blackColor]];
-    [tableView reloadData];
+    NSString *tag = (NSString *)[theTimer userInfo];
+    int targetId = -1;
+    
+    for(int i = 0; i<activeAct.count; i++){
+        NSArray *curArr = [activeAct objectAtIndex:i];
+        NSString *curTaskId = [curArr objectAtIndex:3];
+        NSString *buttonTag = tag;
+        //NSLog(@"button clicked: %@, original: %@",buttonTag, curTaskId);
+        if([curTaskId isEqualToString:buttonTag] == YES){
+            targetId = i;
+            break;
+        }else{
+        }
+    }
+    if(targetId > -1){
+        UITableViewCell *targetCell = (UITableViewCell *)[(UITableView *)tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:targetId inSection:0]];
+        UILabel *targetCellLabel = (UILabel *)[targetCell viewWithTag:102];
+        [targetCellLabel setTextColor:[UIColor blackColor]];
+        [tableView reloadData];
+        
+    }else{
+        NSLog(@"Warning: the task is already terminated");
+    }
 }
 - (IBAction)interrupt:(id)sender {
     UIButton *btn = (UIButton *)sender;
@@ -779,7 +799,7 @@ NSInteger *globalCounter;
             UILabel *topCellLabel = (UILabel *)[topCell viewWithTag:102];
             [topCellLabel setTextColor:[UIColor redColor]];
             topCellLabel.text = [[NSString alloc] initWithFormat:@"(INTERRUPTING)%@",topCellLabel.text];
-            NSTimer *setTimerToRevert = [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(interruptTimer:) userInfo:nil repeats:NO];
+            
                 NSDate *currentDate = [NSDate date];
                 NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
                 [dateFormatter setDateFormat:@"HH:mm:ss"];
@@ -789,7 +809,8 @@ NSInteger *globalCounter;
                 NSString *dateFormatted = [dateFormatterD stringFromDate:currentDate];
                 
                 NSArray *nowArr = [activeAct objectAtIndex:0];
-                
+            
+            NSTimer *setTimerToRevert = [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(interruptTimer:) userInfo:[nowArr objectAtIndex:3] repeats:NO];
                 NSLog(@"%@,%@,%@,%@,%@,%@,%@,%@",[nowArr objectAtIndex:0],@"interruption",@"",self.btnLocation.titleLabel.text,dateFormatted,timeFormatted,@"",@"");
                 
                 [interruptBtn setSelected:NO];
