@@ -874,16 +874,18 @@ NSInteger *globalCounter;
     
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsPath = [paths objectAtIndex:0];
-    NSString *observerDeHyp = [observerName.text stringByReplacingOccurrencesOfString:@" " withString:@"-"];
-    NSString *observeeDeHyp = [observeeName.text stringByReplacingOccurrencesOfString:@" " withString:@"-"];
-    NSString *plistPath = [documentsPath stringByAppendingPathComponent:[NSString stringWithFormat:@"%@-obsvr-%@-obsvee-%@.plist",timeFormatted,observerDeHyp,observeeDeHyp]];
+    NSString *observerDeHyp = [observerName.text stringByReplacingOccurrencesOfString:@" " withString:@"_"];
+    NSString *observeeDeHyp = [observeeName.text stringByReplacingOccurrencesOfString:@" " withString:@"_"];
+    NSString *observeSiteDeHyp = [observeSite.text stringByReplacingOccurrencesOfString:@" " withString:@"_"];
+    NSString *plistPath = [documentsPath stringByAppendingPathComponent:[NSString stringWithFormat:@"%@-%@-%@-%@.plist",timeFormatted,observeSiteDeHyp,observerDeHyp,observeeDeHyp]];
     NSString *error = nil;
     NSData *plistData = [NSPropertyListSerialization dataFromPropertyList:exportArr format:NSPropertyListXMLFormat_v1_0 errorDescription:&error];
     if(plistData){
         [plistData writeToFile:plistPath atomically:YES];
         // write meta data. could we change it in a way it appends to the existing file?
-        NSString *observerDeHyp = [observerName.text stringByReplacingOccurrencesOfString:@" " withString:@"-"];
-        NSString *observeeDeHyp = [observeeName.text stringByReplacingOccurrencesOfString:@" " withString:@"-"];
+        NSString *observerDeHyp = [observerName.text stringByReplacingOccurrencesOfString:@" " withString:@"_"];
+        NSString *observeeDeHyp = [observeeName.text stringByReplacingOccurrencesOfString:@" " withString:@"_"];
+        NSString *observeSiteDeHyp = [observeSite.text stringByReplacingOccurrencesOfString:@" " withString:@"_"];
         NSString *plistPathMeta = [documentsPath stringByAppendingPathComponent:@"metaData.plist"];
         NSString *errorMeta = nil;
         
@@ -893,13 +895,12 @@ NSInteger *globalCounter;
         
         if(metaExists == YES){
             metaInfo = [[NSMutableArray alloc] initWithContentsOfFile: plistPathMeta];
-            [metaInfo addObject: [NSString stringWithFormat:@"%@-obsvr-%@-obsvee-%@.plist",timeFormatted,observerDeHyp,observeeDeHyp]];
+            [metaInfo addObject: [NSString stringWithFormat:@"%@-%@-%@-%@.plist",timeFormatted,observeSiteDeHyp,observerDeHyp,observeeDeHyp]];
         }else{
-            metaInfo = [[NSMutableArray alloc] initWithObjects: [NSString stringWithFormat:@"%@-obsvr-%@-obsvee-%@.plist",timeFormatted,observerDeHyp,observeeDeHyp], nil];
+            metaInfo = [[NSMutableArray alloc] initWithObjects: [NSString stringWithFormat:@"%@-%@-%@-%@.plist",timeFormatted,observeSiteDeHyp,observerDeHyp,observeeDeHyp], nil];
         }
         
         
-        NSLog(@"%@, %@, %@", timeFormatted, observerDeHyp, observeeDeHyp);
         NSData *plistDataMeta = [NSPropertyListSerialization dataFromPropertyList: metaInfo format:NSPropertyListXMLFormat_v1_0 errorDescription:&errorMeta];
 
         if(plistDataMeta){
