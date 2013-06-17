@@ -367,7 +367,7 @@ NSInteger *globalCounter;
     
     // unhighlight the task button
     UIButton *selectedBtn;
-    if ([[nowArr objectAtIndex:3] integerValue] < 1600 )
+    if ([[nowArr objectAtIndex:3] integerValue] < 1700 )
     {
         selectedBtn = (UIButton *)[taskList viewWithTag: [[nowArr objectAtIndex:3] integerValue]];
     } else {
@@ -416,53 +416,43 @@ NSInteger *globalCounter;
     // category
     //UILabel *currentCat = (UILabel *)[cell viewWithTag:99];
     if([[nowArr objectAtIndex:3] intValue] >= 1000 && [[nowArr objectAtIndex:3] intValue] < 1100){
-        //currentCat.text = @"Computer:Entry";
         img = [UIImage imageNamed:@"colorCat6.png"];
         imgView.image = img;
     };
     if([[nowArr objectAtIndex:3] intValue] >= 1100 && [[nowArr objectAtIndex:3] intValue] < 1200){
-        //currentCat.text = @"Computer:Confirming information";
-        img = [UIImage imageNamed:@"colorCat5.png"];
+        img = [UIImage imageNamed:@"colorCat9.png"];
         imgView.image = img;
     };
     if([[nowArr objectAtIndex:3] intValue] >= 1200 && [[nowArr objectAtIndex:3] intValue] < 1300){
-        //currentCat.text = @"Computer:Reading";
-        img = [UIImage imageNamed:@"colorCat7.png"];
+        img = [UIImage imageNamed:@"colorCat5.png"];
         imgView.image = img;
     };
     if([[nowArr objectAtIndex:3] intValue] >= 1300 && [[nowArr objectAtIndex:3] intValue] < 1400){
-        //currentCat.text = @"Phone:Calling";
-        img = [UIImage imageNamed:@"colorCat4.png"];
+        img = [UIImage imageNamed:@"colorCat7.png"];
         imgView.image = img;
     };
     if([[nowArr objectAtIndex:3] intValue] >= 1400 && [[nowArr objectAtIndex:3] intValue] < 1500){
-        //currentCat.text = @"Phone:Answering";
-        img = [UIImage imageNamed:@"colorCat2.png"];
+        img = [UIImage imageNamed:@"colorCat4.png"];
         imgView.image = img;
     };
     if([[nowArr objectAtIndex:3] intValue] >= 1500 && [[nowArr objectAtIndex:3] intValue] < 1600){
-        //currentCat.text = @"Phone:Transfer call";
-        img = [UIImage imageNamed:@"colorCat3.png"];
+        img = [UIImage imageNamed:@"colorCat2.png"];
         imgView.image = img;
     };
     if([[nowArr objectAtIndex:3] intValue] >= 1600 && [[nowArr objectAtIndex:3] intValue] < 1700){
-        //currentCat.text = @"Paper:Writing";
-        img = [UIImage imageNamed:@"colorCat8.png"];
+        img = [UIImage imageNamed:@"colorCat3.png"];
         imgView.image = img;
     };
     if([[nowArr objectAtIndex:3] intValue] >= 1700 && [[nowArr objectAtIndex:3] intValue] < 1800){
-        //currentCat.text = @"Paper:Reading";
-        img = [UIImage imageNamed:@"colorCat10.png"];
+        img = [UIImage imageNamed:@"colorCat8.png"];
         imgView.image = img;
     };
     if([[nowArr objectAtIndex:3] intValue] >= 1800 && [[nowArr objectAtIndex:3] intValue] < 1900){
-        //currentCat.text = @"Paper:Sorting/filing/delivering";
-        img = [UIImage imageNamed:@"colorCat11.png"];
+        img = [UIImage imageNamed:@"colorCat10.png"];
         imgView.image = img;
     };
     if([[nowArr objectAtIndex:3] intValue] >= 1900 && [[nowArr objectAtIndex:3] intValue] < 2000){
-        //currentCat.text = @"Paper:Retrieving/accepting";
-        img = [UIImage imageNamed:@"colorCat9.png"];
+        img = [UIImage imageNamed:@"colorCat11.png"];
         imgView.image = img;
     };
     
@@ -513,7 +503,7 @@ NSInteger *globalCounter;
             [activeAct removeObjectAtIndex:i];
             // unhighlight the task button
             UIButton *btnToUnselect;
-            if ([tag integerValue] < 1600 )
+            if ([tag integerValue] < 1700 )
             {
                 btnToUnselect = (UIButton *)[taskList viewWithTag: [tag integerValue]];
             } else {
@@ -550,25 +540,26 @@ NSInteger *globalCounter;
         if(button.tag >= 1000 && button.tag < 1100){
             btnBg = [UIImage imageNamed:@"colorCat6.png"];
         }else if(button.tag >= 1100 && button.tag < 1200){
-            btnBg = [UIImage imageNamed:@"colorCat5.png"];
+            btnBg = [UIImage imageNamed:@"colorCat9.png"];
             [button setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
         }else if(button.tag >= 1200 && button.tag < 1300){
-            btnBg = [UIImage imageNamed:@"colorCat7.png"];
+            btnBg = [UIImage imageNamed:@"colorCat5.png"];
+            [button setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
         }else if(button.tag >= 1300 && button.tag < 1400){
-            btnBg = [UIImage imageNamed:@"colorCat4.png"];
+            btnBg = [UIImage imageNamed:@"colorCat7.png"];
         }else if(button.tag >= 1400 && button.tag < 1500){
-            btnBg = [UIImage imageNamed:@"colorCat2.png"];
+            btnBg = [UIImage imageNamed:@"colorCat4.png"];
         }else if(button.tag >= 1500 && button.tag < 1600){
-            btnBg = [UIImage imageNamed:@"colorCat3.png"];
+            btnBg = [UIImage imageNamed:@"colorCat2.png"];
         }else if(button.tag >= 1600 && button.tag < 1700){
-            btnBg = [UIImage imageNamed:@"colorCat8.png"];
+            btnBg = [UIImage imageNamed:@"colorCat3.png"];
         }else if(button.tag >= 1700 && button.tag < 1800){
+            btnBg = [UIImage imageNamed:@"colorCat8.png"];
+        }else if(button.tag >= 1800 && button.tag < 1900){
             btnBg = [UIImage imageNamed:@"colorCat10.png"];
             [button setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
-        }else if(button.tag >= 1800 && button.tag < 1900){
-            btnBg = [UIImage imageNamed:@"colorCat11.png"];
         }else if(button.tag >= 1900 && button.tag < 2000){
-            btnBg = [UIImage imageNamed:@"colorCat9.png"];
+            btnBg = [UIImage imageNamed:@"colorCat11.png"];
         }else{
             btnBg = [UIImage imageNamed:@"colorCat1.png"];
         }
@@ -738,7 +729,7 @@ NSInteger *globalCounter;
         
         // unhighlight the task button
         UIButton *selectedBtn;
-        if ([[nowArr objectAtIndex:3] integerValue] < 1600 )
+        if ([[nowArr objectAtIndex:3] integerValue] < 1700 )
         {
             selectedBtn = (UIButton *)[taskList viewWithTag: [[nowArr objectAtIndex:3] integerValue]];
         } else {
@@ -844,7 +835,7 @@ NSInteger *globalCounter;
 //        NSLog(@"%@,%@,%@,%@,%@,%@",[nowArr objectAtIndex:1],self.lblLocation.text, [nowArr objectAtIndex:2], self.observerName.text, self.observeeName.text,@"canceled");
         // unhighlight the task button
         UIButton *selectedBtn;
-        if ([[nowArr objectAtIndex:3] integerValue] < 1600 )
+        if ([[nowArr objectAtIndex:3] integerValue] < 1700 )
         {
             selectedBtn = (UIButton *)[taskList viewWithTag: [[nowArr objectAtIndex:3] integerValue]];
         } else {

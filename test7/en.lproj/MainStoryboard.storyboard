@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="bbN-mV-GHK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="bbN-mV-GHK">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -2766,7 +2766,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="770" height="662"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <subviews>
-                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" id="rWF-lS-Wpq">
+                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" id="rWF-lS-Wpq">
                                                 <rect key="frame" x="0.0" y="0.0" width="770" height="662"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
@@ -2774,7 +2774,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="770" height="662"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <subviews>
-                                                            <button opaque="NO" tag="1600" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="FB4-L8-s2l">
+                                                            <button opaque="NO" tag="1700" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="FB4-L8-s2l">
                                                                 <rect key="frame" x="156" y="27" width="235" height="33"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
@@ -2789,7 +2789,7 @@
                                                                     <action selector="triggerTask:" destination="HBA-Vg-3vc" eventType="touchUpInside" id="cAh-gs-vTW"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" tag="1800" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Ibm-aC-Z2h">
+                                                            <button opaque="NO" tag="1900" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Ibm-aC-Z2h">
                                                                 <rect key="frame" x="156" y="271" width="304" height="33"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
@@ -2804,7 +2804,7 @@
                                                                     <action selector="triggerTask:" destination="HBA-Vg-3vc" eventType="touchUpInside" id="nug-Fx-Q4N"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" tag="1703" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="tjM-jX-ivp">
+                                                            <button opaque="NO" tag="1802" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="tjM-jX-ivp">
                                                                 <rect key="frame" x="40" y="132" width="270" height="33"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
@@ -2819,7 +2819,7 @@
                                                                     <action selector="triggerTask:" destination="HBA-Vg-3vc" eventType="touchUpInside" id="DVT-hO-nDn"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" tag="1704" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="phD-Sh-OWG">
+                                                            <button opaque="NO" tag="1803" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="phD-Sh-OWG">
                                                                 <rect key="frame" x="313" y="132" width="198" height="33"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
@@ -2834,7 +2834,7 @@
                                                                     <action selector="triggerTask:" destination="HBA-Vg-3vc" eventType="touchUpInside" id="OY6-nt-KDD"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" tag="1706" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="sBj-N9-uIg">
+                                                            <button opaque="NO" tag="1805" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="sBj-N9-uIg">
                                                                 <rect key="frame" x="40" y="169" width="153" height="33"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
@@ -2849,7 +2849,7 @@
                                                                     <action selector="triggerTask:" destination="HBA-Vg-3vc" eventType="touchUpInside" id="wU0-Pf-Q6e"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" tag="1705" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="az2-UT-KKr">
+                                                            <button opaque="NO" tag="1804" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="az2-UT-KKr">
                                                                 <rect key="frame" x="514" y="132" width="249" height="33"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
@@ -2864,8 +2864,8 @@
                                                                     <action selector="triggerTask:" destination="HBA-Vg-3vc" eventType="touchUpInside" id="GDO-DB-apV"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" tag="1702" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Tz6-33-3Ox">
-                                                                <rect key="frame" x="560" y="95" width="203" height="33"/>
+                                                            <button opaque="NO" tag="1801" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Tz6-33-3Ox">
+                                                                <rect key="frame" x="514" y="95" width="249" height="33"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                                 <state key="normal" title="Hand sanitization" backgroundImage="rectbutton.png">
@@ -2879,7 +2879,7 @@
                                                                     <action selector="triggerTask:" destination="HBA-Vg-3vc" eventType="touchUpInside" id="z3j-do-nWS"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" tag="1711" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Wlk-2k-Vbb">
+                                                            <button opaque="NO" tag="1810" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Wlk-2k-Vbb">
                                                                 <rect key="frame" x="298" y="206" width="235" height="33"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
@@ -2894,7 +2894,7 @@
                                                                     <action selector="triggerTask:" destination="HBA-Vg-3vc" eventType="touchUpInside" id="RAL-ls-ICy"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" tag="1712" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Mmd-Bz-dKN">
+                                                            <button opaque="NO" tag="1811" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Mmd-Bz-dKN">
                                                                 <rect key="frame" x="536" y="206" width="227" height="33"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
@@ -2909,8 +2909,8 @@
                                                                     <action selector="triggerTask:" destination="HBA-Vg-3vc" eventType="touchUpInside" id="RXI-yt-9Mr"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" tag="1701" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Yp4-io-V17">
-                                                                <rect key="frame" x="273" y="95" width="284" height="33"/>
+                                                            <button opaque="NO" tag="1800" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Yp4-io-V17">
+                                                                <rect key="frame" x="155" y="95" width="356" height="33"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                                 <state key="normal" title="Exam Room Preparation/Cleaning" backgroundImage="rectbutton.png">
@@ -2924,7 +2924,7 @@
                                                                     <action selector="triggerTask:" destination="HBA-Vg-3vc" eventType="touchUpInside" id="Z2N-gt-7P9"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" tag="1802" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="22O-oq-E7k">
+                                                            <button opaque="NO" tag="1902" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="22O-oq-E7k">
                                                                 <rect key="frame" x="40" y="308" width="230" height="33"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
@@ -2939,7 +2939,7 @@
                                                                     <action selector="triggerTask:" destination="HBA-Vg-3vc" eventType="touchUpInside" id="JdI-cD-VvT"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" tag="1803" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="bPA-Nr-aWT">
+                                                            <button opaque="NO" tag="1903" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="bPA-Nr-aWT">
                                                                 <rect key="frame" x="273" y="308" width="246" height="33"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
@@ -2954,7 +2954,7 @@
                                                                     <action selector="triggerTask:" destination="HBA-Vg-3vc" eventType="touchUpInside" id="1WH-kN-Ech"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" tag="1804" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="5pS-40-88m">
+                                                            <button opaque="NO" tag="1904" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="5pS-40-88m">
                                                                 <rect key="frame" x="522" y="308" width="241" height="33"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
@@ -2969,7 +2969,7 @@
                                                                     <action selector="triggerTask:" destination="HBA-Vg-3vc" eventType="touchUpInside" id="tu9-Hx-YAq"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" tag="1801" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="m6v-dT-gWw">
+                                                            <button opaque="NO" tag="1901" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="m6v-dT-gWw">
                                                                 <rect key="frame" x="463" y="271" width="300" height="33"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
@@ -2984,7 +2984,7 @@
                                                                     <action selector="triggerTask:" destination="HBA-Vg-3vc" eventType="touchUpInside" id="7EJ-0m-XOs"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" tag="1809" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="O8Y-2N-4n7">
+                                                            <button opaque="NO" tag="1909" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="O8Y-2N-4n7">
                                                                 <rect key="frame" x="228" y="382" width="191" height="33"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
@@ -2999,7 +2999,7 @@
                                                                     <action selector="triggerTask:" destination="HBA-Vg-3vc" eventType="touchUpInside" id="IBg-6a-Pph"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" tag="1808" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="rXu-j9-laJ">
+                                                            <button opaque="NO" tag="1908" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="rXu-j9-laJ">
                                                                 <rect key="frame" x="40" y="382" width="185" height="33"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
@@ -3014,7 +3014,7 @@
                                                                     <action selector="triggerTask:" destination="HBA-Vg-3vc" eventType="touchUpInside" id="pUp-XR-65b"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" tag="1806" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="EfE-Ov-rcf">
+                                                            <button opaque="NO" tag="1906" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="EfE-Ov-rcf">
                                                                 <rect key="frame" x="228" y="345" width="191" height="33"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
@@ -3029,7 +3029,7 @@
                                                                     <action selector="triggerTask:" destination="HBA-Vg-3vc" eventType="touchUpInside" id="phA-w0-I8S"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" tag="1807" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="BGH-zO-p0e">
+                                                            <button opaque="NO" tag="1907" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="BGH-zO-p0e">
                                                                 <rect key="frame" x="422" y="345" width="341" height="33"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
@@ -3044,7 +3044,7 @@
                                                                     <action selector="triggerTask:" destination="HBA-Vg-3vc" eventType="touchUpInside" id="WXo-7M-AMV"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" tag="1805" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="rej-aS-IgT">
+                                                            <button opaque="NO" tag="1905" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="rej-aS-IgT">
                                                                 <rect key="frame" x="40" y="345" width="185" height="33"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
@@ -3059,7 +3059,7 @@
                                                                     <action selector="triggerTask:" destination="HBA-Vg-3vc" eventType="touchUpInside" id="d32-tw-FaC"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" tag="1710" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="xnr-79-D60">
+                                                            <button opaque="NO" tag="1809" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="xnr-79-D60">
                                                                 <rect key="frame" x="40" y="206" width="255" height="33"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
@@ -3074,7 +3074,7 @@
                                                                     <action selector="triggerTask:" destination="HBA-Vg-3vc" eventType="touchUpInside" id="gbN-d7-r9C"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" tag="1707" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="npi-t6-YNS">
+                                                            <button opaque="NO" tag="1806" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="npi-t6-YNS">
                                                                 <rect key="frame" x="196" y="169" width="188" height="33"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
@@ -3089,7 +3089,7 @@
                                                                     <action selector="triggerTask:" destination="HBA-Vg-3vc" eventType="touchUpInside" id="jjS-dL-8gc"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" tag="1708" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="hew-aJ-kSj">
+                                                            <button opaque="NO" tag="1807" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="hew-aJ-kSj">
                                                                 <rect key="frame" x="387" y="169" width="211" height="33"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
@@ -3104,7 +3104,7 @@
                                                                     <action selector="triggerTask:" destination="HBA-Vg-3vc" eventType="touchUpInside" id="1IE-Vs-SVw"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" tag="1709" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="njW-Vg-O8q">
+                                                            <button opaque="NO" tag="1808" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="njW-Vg-O8q">
                                                                 <rect key="frame" x="601" y="169" width="162" height="33"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
@@ -3117,21 +3117,6 @@
                                                                 </state>
                                                                 <connections>
                                                                     <action selector="triggerTask:" destination="HBA-Vg-3vc" eventType="touchUpInside" id="z0w-Ae-DVH"/>
-                                                                </connections>
-                                                            </button>
-                                                            <button opaque="NO" tag="1700" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="5bf-gH-gT6">
-                                                                <rect key="frame" x="156" y="95" width="114" height="33"/>
-                                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
-                                                                <state key="normal" title="Dictating" backgroundImage="rectbutton.png">
-                                                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                                </state>
-                                                                <state key="highlighted">
-                                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                                </state>
-                                                                <connections>
-                                                                    <action selector="triggerTask:" destination="HBA-Vg-3vc" eventType="touchUpInside" id="Twa-r6-3cw"/>
                                                                 </connections>
                                                             </button>
                                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Performing" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="TK5-uE-5NI">
@@ -3184,7 +3169,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="770" height="662"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <subviews>
-                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" id="SXA-vV-tFg">
+                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" id="SXA-vV-tFg">
                                                 <rect key="frame" x="0.0" y="0.0" width="770" height="662"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
@@ -3193,14 +3178,14 @@
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <subviews>
                                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Talking" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="997-Gl-fsS">
-                                                                <rect key="frame" x="40" y="527" width="93" height="21"/>
+                                                                <rect key="frame" x="40" y="534" width="93" height="21"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <button opaque="NO" tag="1403" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="GEr-Wt-X6l">
-                                                                <rect key="frame" x="40" y="560" width="264" height="33"/>
+                                                            <button opaque="NO" tag="1503" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="GEr-Wt-X6l">
+                                                                <rect key="frame" x="40" y="567" width="242" height="33"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                                 <state key="normal" title="Patient: Gathering/confirming info" backgroundImage="rectbutton.png">
@@ -3214,8 +3199,8 @@
                                                                     <action selector="triggerTask:" destination="HBA-Vg-3vc" eventType="touchUpInside" id="xqp-Jy-wbn"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" tag="1400" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="htb-iV-7Gt">
-                                                                <rect key="frame" x="122" y="523" width="203" height="33"/>
+                                                            <button opaque="NO" tag="1500" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="htb-iV-7Gt">
+                                                                <rect key="frame" x="122" y="530" width="203" height="33"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                                 <state key="normal" title="Co-worker: Clarifying" backgroundImage="rectbutton.png">
@@ -3229,8 +3214,8 @@
                                                                     <action selector="triggerTask:" destination="HBA-Vg-3vc" eventType="touchUpInside" id="prB-3h-aad"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" tag="1402" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="82o-hO-pG0">
-                                                                <rect key="frame" x="561" y="523" width="202" height="33"/>
+                                                            <button opaque="NO" tag="1502" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="82o-hO-pG0">
+                                                                <rect key="frame" x="561" y="530" width="202" height="33"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                                 <state key="normal" title="Co-worker: Other" backgroundImage="rectbutton.png">
@@ -3244,8 +3229,8 @@
                                                                     <action selector="triggerTask:" destination="HBA-Vg-3vc" eventType="touchUpInside" id="liq-eJ-93j"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" tag="1406" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="hMK-kb-0Ka">
-                                                                <rect key="frame" x="654" y="560" width="109" height="33"/>
+                                                            <button opaque="NO" tag="1506" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="hMK-kb-0Ka">
+                                                                <rect key="frame" x="669" y="567" width="94" height="33"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                                 <state key="normal" title="With Others" backgroundImage="rectbutton.png">
@@ -3259,8 +3244,8 @@
                                                                     <action selector="triggerTask:" destination="HBA-Vg-3vc" eventType="touchUpInside" id="Jxf-nL-fBj"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" tag="1405" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="TWa-Vb-ESl">
-                                                                <rect key="frame" x="527" y="560" width="124" height="33"/>
+                                                            <button opaque="NO" tag="1505" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="TWa-Vb-ESl">
+                                                                <rect key="frame" x="550" y="567" width="116" height="33"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                                 <state key="normal" title="Patient: Other" backgroundImage="rectbutton.png">
@@ -3274,11 +3259,11 @@
                                                                     <action selector="triggerTask:" destination="HBA-Vg-3vc" eventType="touchUpInside" id="7TL-du-OBr"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" tag="1404" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="v6v-Ar-w8w">
-                                                                <rect key="frame" x="307" y="560" width="217" height="33"/>
+                                                            <button opaque="NO" tag="1504" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="v6v-Ar-w8w">
+                                                                <rect key="frame" x="284" y="567" width="263" height="33"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
-                                                                <state key="normal" title="Patient: Giving instructions" backgroundImage="rectbutton.png">
+                                                                <state key="normal" title="Patient: Giving instruction/education" backgroundImage="rectbutton.png">
                                                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                                 </state>
@@ -3289,8 +3274,8 @@
                                                                     <action selector="triggerTask:" destination="HBA-Vg-3vc" eventType="touchUpInside" id="QrW-6t-iCh"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" tag="1401" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="gD8-Zd-EMF">
-                                                                <rect key="frame" x="328" y="523" width="230" height="33"/>
+                                                            <button opaque="NO" tag="1501" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="gD8-Zd-EMF">
+                                                                <rect key="frame" x="328" y="530" width="230" height="33"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                                 <state key="normal" title="Co-worker: Requesting" backgroundImage="rectbutton.png">
@@ -3304,7 +3289,7 @@
                                                                     <action selector="triggerTask:" destination="HBA-Vg-3vc" eventType="touchUpInside" id="RVM-HO-Gla"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" tag="1500" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="rMg-ju-HGZ">
+                                                            <button opaque="NO" tag="1600" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="rMg-ju-HGZ">
                                                                 <rect key="frame" x="122" y="612" width="203" height="33"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
@@ -3319,7 +3304,7 @@
                                                                     <action selector="triggerTask:" destination="HBA-Vg-3vc" eventType="touchUpInside" id="2aC-6d-XSC"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" tag="1501" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="2zh-OX-FfK">
+                                                            <button opaque="NO" tag="1601" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="2zh-OX-FfK">
                                                                 <rect key="frame" x="328" y="612" width="230" height="33"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
@@ -3334,8 +3319,8 @@
                                                                     <action selector="triggerTask:" destination="HBA-Vg-3vc" eventType="touchUpInside" id="EKl-Nv-bRU"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" tag="1106" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="WvS-QQ-XjQ">
-                                                                <rect key="frame" x="609" y="107" width="79" height="33"/>
+                                                            <button opaque="NO" tag="1206" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="WvS-QQ-XjQ">
+                                                                <rect key="frame" x="211" y="137" width="136" height="33"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                                 <state key="normal" title="Login" backgroundImage="rectbutton.png">
@@ -3350,7 +3335,7 @@
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" tag="1000" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="VeR-iO-PV1">
-                                                                <rect key="frame" x="283" y="19" width="234" height="33"/>
+                                                                <rect key="frame" x="272" y="19" width="126" height="33"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                                 <state key="normal" title="Instant message" backgroundImage="rectbutton.png">
@@ -3365,7 +3350,7 @@
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" tag="1001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="5cB-oQ-PAb">
-                                                                <rect key="frame" x="520" y="19" width="243" height="33"/>
+                                                                <rect key="frame" x="400" y="19" width="120" height="33"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                                 <state key="normal" title="Email/message" backgroundImage="rectbutton.png">
@@ -3379,8 +3364,23 @@
                                                                     <action selector="triggerTask:" destination="HBA-Vg-3vc" eventType="touchUpInside" id="qud-3a-BgS"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" tag="1107" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="9D1-eO-k31">
-                                                                <rect key="frame" x="691" y="107" width="72" height="33"/>
+                                                            <button opaque="NO" tag="1100" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="2ae-XL-qs2">
+                                                                <rect key="frame" x="651" y="19" width="112" height="33"/>
+                                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                                <state key="normal" title="Dictating" backgroundImage="rectbutton.png">
+                                                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </state>
+                                                                <state key="highlighted">
+                                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="triggerTask:" destination="HBA-Vg-3vc" eventType="touchUpInside" id="5BQ-US-tXQ"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" tag="1207" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="9D1-eO-k31">
+                                                                <rect key="frame" x="350" y="137" width="138" height="33"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                                 <state key="normal" title="Logout" backgroundImage="rectbutton.png">
@@ -3394,8 +3394,8 @@
                                                                     <action selector="triggerTask:" destination="HBA-Vg-3vc" eventType="touchUpInside" id="vHc-q9-SGg"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" tag="1115" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="eHq-Rn-fj9">
-                                                                <rect key="frame" x="40" y="218" width="200" height="33"/>
+                                                            <button opaque="NO" tag="1215" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="eHq-Rn-fj9">
+                                                                <rect key="frame" x="568" y="210" width="195" height="33"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                                 <state key="normal" title="Reading: Medical reference" backgroundImage="rectbutton.png">
@@ -3409,8 +3409,8 @@
                                                                     <action selector="triggerTask:" destination="HBA-Vg-3vc" eventType="touchUpInside" id="3d9-8E-phi"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" tag="1117" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="jSr-Nu-0Vv">
-                                                                <rect key="frame" x="362" y="218" width="135" height="33"/>
+                                                            <button opaque="NO" tag="1218" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="jSr-Nu-0Vv">
+                                                                <rect key="frame" x="335" y="246" width="147" height="33"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                                 <state key="normal" title="Reading: Protocol" backgroundImage="rectbutton.png">
@@ -3424,8 +3424,8 @@
                                                                     <action selector="triggerTask:" destination="HBA-Vg-3vc" eventType="touchUpInside" id="cuR-hC-2UK"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" tag="1201" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="qn1-mF-zpS">
-                                                                <rect key="frame" x="328" y="271" width="224" height="33"/>
+                                                            <button opaque="NO" tag="1301" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="qn1-mF-zpS">
+                                                                <rect key="frame" x="328" y="292" width="224" height="33"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                                 <state key="normal" title="Reading: Protocol" backgroundImage="rectbutton.png">
@@ -3439,8 +3439,8 @@
                                                                     <action selector="triggerTask:" destination="HBA-Vg-3vc" eventType="touchUpInside" id="Jvf-dL-UDy"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" tag="1118" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="YDw-lo-QCf">
-                                                                <rect key="frame" x="500" y="218" width="142" height="33"/>
+                                                            <button opaque="NO" tag="1219" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="YDw-lo-QCf">
+                                                                <rect key="frame" x="484" y="246" width="150" height="33"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                                 <state key="normal" title="Reading: Schedule" backgroundImage="rectbutton.png">
@@ -3454,8 +3454,8 @@
                                                                     <action selector="triggerTask:" destination="HBA-Vg-3vc" eventType="touchUpInside" id="U1K-Pd-iLd"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" tag="1119" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="J45-vm-y8F">
-                                                                <rect key="frame" x="645" y="218" width="118" height="33"/>
+                                                            <button opaque="NO" tag="1220" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="J45-vm-y8F">
+                                                                <rect key="frame" x="636" y="246" width="127" height="33"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                                 <state key="normal" title="Reading: Other" backgroundImage="rectbutton.png">
@@ -3469,8 +3469,8 @@
                                                                     <action selector="triggerTask:" destination="HBA-Vg-3vc" eventType="touchUpInside" id="eXP-km-fgv"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" tag="1104" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="JcJ-rD-sIQ">
-                                                                <rect key="frame" x="286" y="107" width="178" height="33"/>
+                                                            <button opaque="NO" tag="1204" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="JcJ-rD-sIQ">
+                                                                <rect key="frame" x="585" y="101" width="178" height="33"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                                 <state key="normal" title="Entering: Scheduling" backgroundImage="rectbutton.png">
@@ -3484,8 +3484,8 @@
                                                                     <action selector="triggerTask:" destination="HBA-Vg-3vc" eventType="touchUpInside" id="aFy-GC-97v"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" tag="1105" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="l2p-D4-Kd9">
-                                                                <rect key="frame" x="467" y="107" width="139" height="33"/>
+                                                            <button opaque="NO" tag="1205" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="l2p-D4-Kd9">
+                                                                <rect key="frame" x="40" y="137" width="168" height="33"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                                 <state key="normal" title="Entering: Other" backgroundImage="rectbutton.png">
@@ -3499,8 +3499,8 @@
                                                                     <action selector="triggerTask:" destination="HBA-Vg-3vc" eventType="touchUpInside" id="t2K-Uj-Bc1"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" tag="1103" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="UJO-eZ-Y9e">
-                                                                <rect key="frame" x="40" y="107" width="243" height="33"/>
+                                                            <button opaque="NO" tag="1203" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="UJO-eZ-Y9e">
+                                                                <rect key="frame" x="339" y="101" width="243" height="33"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                                 <state key="normal" title="Entering: Referral request/letter" backgroundImage="rectbutton.png">
@@ -3514,8 +3514,8 @@
                                                                     <action selector="triggerTask:" destination="HBA-Vg-3vc" eventType="touchUpInside" id="dfR-XM-2cy"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" tag="1116" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ygd-Ki-rvg">
-                                                                <rect key="frame" x="243" y="218" width="116" height="33"/>
+                                                            <button opaque="NO" tag="1216" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ygd-Ki-rvg">
+                                                                <rect key="frame" x="40" y="246" width="124" height="33"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                                 <state key="normal" title="Reading: Meds" backgroundImage="rectbutton.png">
@@ -3529,8 +3529,23 @@
                                                                     <action selector="triggerTask:" destination="HBA-Vg-3vc" eventType="touchUpInside" id="wmZ-Q9-s6Z"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" tag="1114" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="3yz-lW-ttu">
-                                                                <rect key="frame" x="539" y="181" width="224" height="33"/>
+                                                            <button opaque="NO" tag="1217" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="FpD-3W-oOd">
+                                                                <rect key="frame" x="167" y="246" width="166" height="33"/>
+                                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                                <state key="normal" title="Reading: Order/refill" backgroundImage="rectbutton.png">
+                                                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </state>
+                                                                <state key="highlighted">
+                                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="triggerTask:" destination="HBA-Vg-3vc" eventType="touchUpInside" id="1Ei-Bu-xY0"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" tag="1214" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="3yz-lW-ttu">
+                                                                <rect key="frame" x="342" y="210" width="224" height="33"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                                 <state key="normal" title="Reading: Homepage/Dashboard" backgroundImage="rectbutton.png">
@@ -3544,8 +3559,8 @@
                                                                     <action selector="triggerTask:" destination="HBA-Vg-3vc" eventType="touchUpInside" id="gx1-Ng-Wh3"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" tag="1113" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="TIy-vL-8Ig">
-                                                                <rect key="frame" x="307" y="181" width="229" height="33"/>
+                                                            <button opaque="NO" tag="1213" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="TIy-vL-8Ig">
+                                                                <rect key="frame" x="113" y="210" width="226" height="33"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                                 <state key="normal" title="Reading: Chart, data, labs, notes" backgroundImage="rectbutton.png">
@@ -3559,8 +3574,8 @@
                                                                     <action selector="triggerTask:" destination="HBA-Vg-3vc" eventType="touchUpInside" id="0D2-iF-vcs"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" tag="1100" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="g7F-HP-BUW">
-                                                                <rect key="frame" x="141" y="70" width="235" height="33"/>
+                                                            <button opaque="NO" tag="1200" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="g7F-HP-BUW">
+                                                                <rect key="frame" x="155" y="66" width="362" height="33"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                                 <state key="normal" title="Entering: Chart, data, labs, notes" backgroundImage="rectbutton.png">
@@ -3574,11 +3589,11 @@
                                                                     <action selector="triggerTask:" destination="HBA-Vg-3vc" eventType="touchUpInside" id="Rb7-24-IeT"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" tag="1102" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="MUH-jK-wF8">
-                                                                <rect key="frame" x="550" y="70" width="213" height="33"/>
+                                                            <button opaque="NO" tag="1202" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="MUH-jK-wF8">
+                                                                <rect key="frame" x="40" y="101" width="296" height="33"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
-                                                                <state key="normal" title="Entering: Patient instruction" backgroundImage="rectbutton.png">
+                                                                <state key="normal" title="Entering: Patient instruction/education" backgroundImage="rectbutton.png">
                                                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                                 </state>
@@ -3589,8 +3604,8 @@
                                                                     <action selector="triggerTask:" destination="HBA-Vg-3vc" eventType="touchUpInside" id="4bg-vN-xVx"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" tag="1203" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="6l2-bf-UIo">
-                                                                <rect key="frame" x="40" y="308" width="381" height="33"/>
+                                                            <button opaque="NO" tag="1303" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="6l2-bf-UIo">
+                                                                <rect key="frame" x="40" y="329" width="381" height="33"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                                 <state key="normal" title="Reading/Writing: Chart, data, labs, notes" backgroundImage="rectbutton.png">
@@ -3604,8 +3619,8 @@
                                                                     <action selector="triggerTask:" destination="HBA-Vg-3vc" eventType="touchUpInside" id="HeM-LJ-cjv"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" tag="1204" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Zn9-ef-V2H">
-                                                                <rect key="frame" x="423" y="308" width="340" height="33"/>
+                                                            <button opaque="NO" tag="1304" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Zn9-ef-V2H">
+                                                                <rect key="frame" x="423" y="329" width="340" height="33"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                                 <state key="normal" title="Reading/Writing: Communication sheet" backgroundImage="rectbutton.png">
@@ -3619,8 +3634,8 @@
                                                                     <action selector="triggerTask:" destination="HBA-Vg-3vc" eventType="touchUpInside" id="UtX-lh-57o"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" tag="1202" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="DcZ-vt-0mr">
-                                                                <rect key="frame" x="555" y="271" width="208" height="33"/>
+                                                            <button opaque="NO" tag="1302" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="DcZ-vt-0mr">
+                                                                <rect key="frame" x="555" y="292" width="208" height="33"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                                 <state key="normal" title="Reading: Medical reference" backgroundImage="rectbutton.png">
@@ -3634,8 +3649,8 @@
                                                                     <action selector="triggerTask:" destination="HBA-Vg-3vc" eventType="touchUpInside" id="hh3-3h-YKD"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" tag="1211" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Frv-Il-REl">
-                                                                <rect key="frame" x="601" y="382" width="162" height="33"/>
+                                                            <button opaque="NO" tag="1311" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Frv-Il-REl">
+                                                                <rect key="frame" x="601" y="403" width="162" height="33"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                                 <state key="normal" title="Writing: Order/refill" backgroundImage="rectbutton.png">
@@ -3649,8 +3664,8 @@
                                                                     <action selector="triggerTask:" destination="HBA-Vg-3vc" eventType="touchUpInside" id="JsW-E3-mJa"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" tag="1213" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="fjp-PW-LvF">
-                                                                <rect key="frame" x="279" y="419" width="209" height="33"/>
+                                                            <button opaque="NO" tag="1313" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="fjp-PW-LvF">
+                                                                <rect key="frame" x="310" y="440" width="178" height="33"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                                 <state key="normal" title="Writing: Signing/form(s)" backgroundImage="rectbutton.png">
@@ -3664,8 +3679,8 @@
                                                                     <action selector="triggerTask:" destination="HBA-Vg-3vc" eventType="touchUpInside" id="L35-da-eg1"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" tag="1210" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="zTg-1Z-t81">
-                                                                <rect key="frame" x="404" y="382" width="194" height="33"/>
+                                                            <button opaque="NO" tag="1310" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="zTg-1Z-t81">
+                                                                <rect key="frame" x="404" y="403" width="194" height="33"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                                 <state key="normal" title="Sorting/Filing/Delivering" backgroundImage="rectbutton.png">
@@ -3679,8 +3694,8 @@
                                                                     <action selector="triggerTask:" destination="HBA-Vg-3vc" eventType="touchUpInside" id="lYg-Qb-lEE"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" tag="1209" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="B4j-dw-GAT">
-                                                                <rect key="frame" x="234" y="382" width="167" height="33"/>
+                                                            <button opaque="NO" tag="1309" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="B4j-dw-GAT">
+                                                                <rect key="frame" x="234" y="403" width="167" height="33"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                                 <state key="normal" title="Retrieving/Accepting" backgroundImage="rectbutton.png">
@@ -3694,8 +3709,8 @@
                                                                     <action selector="triggerTask:" destination="HBA-Vg-3vc" eventType="touchUpInside" id="gXJ-4g-7Uz"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" tag="1200" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="efg-4z-v6K">
-                                                                <rect key="frame" x="122" y="271" width="203" height="33"/>
+                                                            <button opaque="NO" tag="1300" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="efg-4z-v6K">
+                                                                <rect key="frame" x="122" y="292" width="203" height="33"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                                 <state key="normal" title="Faxing" backgroundImage="rectbutton.png">
@@ -3709,11 +3724,11 @@
                                                                     <action selector="triggerTask:" destination="HBA-Vg-3vc" eventType="touchUpInside" id="kuW-zq-7yT"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" tag="1212" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="t72-9A-ney">
-                                                                <rect key="frame" x="40" y="419" width="236" height="33"/>
+                                                            <button opaque="NO" tag="1312" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="t72-9A-ney">
+                                                                <rect key="frame" x="40" y="440" width="267" height="33"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
-                                                                <state key="normal" title="Writing: Patient instruction" backgroundImage="rectbutton.png">
+                                                                <state key="normal" title="Writing: Patient instruction/education" backgroundImage="rectbutton.png">
                                                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                                 </state>
@@ -3724,8 +3739,8 @@
                                                                     <action selector="triggerTask:" destination="HBA-Vg-3vc" eventType="touchUpInside" id="div-va-f08"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" tag="1208" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="dUo-of-Ykp">
-                                                                <rect key="frame" x="40" y="382" width="191" height="33"/>
+                                                            <button opaque="NO" tag="1308" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="dUo-of-Ykp">
+                                                                <rect key="frame" x="40" y="403" width="191" height="33"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                                 <state key="normal" title="Reading/Writing: Other" backgroundImage="rectbutton.png">
@@ -3739,8 +3754,8 @@
                                                                     <action selector="triggerTask:" destination="HBA-Vg-3vc" eventType="touchUpInside" id="bhW-Pt-10A"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" tag="1214" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="TOW-cU-4fi">
-                                                                <rect key="frame" x="491" y="419" width="272" height="33"/>
+                                                            <button opaque="NO" tag="1314" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="TOW-cU-4fi">
+                                                                <rect key="frame" x="491" y="440" width="272" height="33"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                                 <state key="normal" title="Writing: Temp. note on scratch paper" backgroundImage="rectbutton.png">
@@ -3754,8 +3769,8 @@
                                                                     <action selector="triggerTask:" destination="HBA-Vg-3vc" eventType="touchUpInside" id="IyM-yB-sXG"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" tag="1206" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="thB-e1-b61">
-                                                                <rect key="frame" x="345" y="345" width="240" height="33"/>
+                                                            <button opaque="NO" tag="1306" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="thB-e1-b61">
+                                                                <rect key="frame" x="345" y="366" width="240" height="33"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                                 <state key="normal" title="Reading/Writing: Encounter sheet" backgroundImage="rectbutton.png">
@@ -3769,8 +3784,8 @@
                                                                     <action selector="triggerTask:" destination="HBA-Vg-3vc" eventType="touchUpInside" id="BFc-Dz-gLf"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" tag="1207" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="rVs-6Z-hMR">
-                                                                <rect key="frame" x="588" y="345" width="175" height="33"/>
+                                                            <button opaque="NO" tag="1307" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="rVs-6Z-hMR">
+                                                                <rect key="frame" x="588" y="366" width="175" height="33"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                                 <state key="normal" title="Reading/Writing: Meds" backgroundImage="rectbutton.png">
@@ -3784,8 +3799,8 @@
                                                                     <action selector="triggerTask:" destination="HBA-Vg-3vc" eventType="touchUpInside" id="9nH-BT-ZEI"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" tag="1205" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ezK-r4-bkC">
-                                                                <rect key="frame" x="40" y="345" width="302" height="33"/>
+                                                            <button opaque="NO" tag="1305" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ezK-r4-bkC">
+                                                                <rect key="frame" x="40" y="366" width="302" height="33"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                                 <state key="normal" title="Reading/Writing: Disease mgmt. template" backgroundImage="rectbutton.png">
@@ -3799,8 +3814,8 @@
                                                                     <action selector="triggerTask:" destination="HBA-Vg-3vc" eventType="touchUpInside" id="JDc-Fc-QFc"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" tag="1111" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="nSr-a4-pC4">
-                                                                <rect key="frame" x="40" y="181" width="200" height="33"/>
+                                                            <button opaque="NO" tag="1211" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="nSr-a4-pC4">
+                                                                <rect key="frame" x="561" y="174" width="202" height="33"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                                 <state key="normal" title="Processing: Reminder/alert" backgroundImage="rectbutton.png">
@@ -3814,8 +3829,8 @@
                                                                     <action selector="triggerTask:" destination="HBA-Vg-3vc" eventType="touchUpInside" id="T1j-0X-pb0"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" tag="1108" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="NTR-0g-xYM">
-                                                                <rect key="frame" x="40" y="144" width="214" height="33"/>
+                                                            <button opaque="NO" tag="1208" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="NTR-0g-xYM">
+                                                                <rect key="frame" x="491" y="137" width="272" height="33"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                                 <state key="normal" title="Processing: Administrative" backgroundImage="rectbutton.png">
@@ -3829,8 +3844,8 @@
                                                                     <action selector="triggerTask:" destination="HBA-Vg-3vc" eventType="touchUpInside" id="A8C-nd-8b2"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" tag="1109" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="dnU-vi-Kyo">
-                                                                <rect key="frame" x="257" y="144" width="267" height="33"/>
+                                                            <button opaque="NO" tag="1209" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="dnU-vi-Kyo">
+                                                                <rect key="frame" x="40" y="174" width="274" height="33"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                                 <state key="normal" title="Processing: Disease mgmt. template" backgroundImage="rectbutton.png">
@@ -3844,8 +3859,8 @@
                                                                     <action selector="triggerTask:" destination="HBA-Vg-3vc" eventType="touchUpInside" id="61S-ah-rrM"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" tag="1112" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="78n-y8-mFC">
-                                                                <rect key="frame" x="243" y="181" width="61" height="33"/>
+                                                            <button opaque="NO" tag="1212" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="78n-y8-mFC">
+                                                                <rect key="frame" x="40" y="210" width="70" height="33"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                                 <state key="normal" title="Printing" backgroundImage="rectbutton.png">
@@ -3859,8 +3874,8 @@
                                                                     <action selector="triggerTask:" destination="HBA-Vg-3vc" eventType="touchUpInside" id="FEF-3G-5LL"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" tag="1110" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="aJc-hh-rSE">
-                                                                <rect key="frame" x="527" y="144" width="236" height="33"/>
+                                                            <button opaque="NO" tag="1210" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="aJc-hh-rSE">
+                                                                <rect key="frame" x="317" y="174" width="241" height="33"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                                 <state key="normal" title="Processing: Meds reconciliation" backgroundImage="rectbutton.png">
@@ -3874,8 +3889,8 @@
                                                                     <action selector="triggerTask:" destination="HBA-Vg-3vc" eventType="touchUpInside" id="B7B-hs-dXQ"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" tag="1101" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="HfY-T6-fPE">
-                                                                <rect key="frame" x="379" y="70" width="168" height="33"/>
+                                                            <button opaque="NO" tag="1201" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="HfY-T6-fPE">
+                                                                <rect key="frame" x="520" y="65" width="243" height="33"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                                 <state key="normal" title="Entering: Order/refill" backgroundImage="rectbutton.png">
@@ -3889,7 +3904,7 @@
                                                                     <action selector="triggerTask:" destination="HBA-Vg-3vc" eventType="touchUpInside" id="5Rt-xz-n6t"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" tag="1502" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="E3e-H0-ORC">
+                                                            <button opaque="NO" tag="1602" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="E3e-H0-ORC">
                                                                 <rect key="frame" x="561" y="612" width="202" height="33"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
@@ -3904,8 +3919,8 @@
                                                                     <action selector="triggerTask:" destination="HBA-Vg-3vc" eventType="touchUpInside" id="bNG-qK-F6T"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" tag="1301" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="hcB-4X-bkG">
-                                                                <rect key="frame" x="328" y="471" width="230" height="33"/>
+                                                            <button opaque="NO" tag="1401" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="hcB-4X-bkG">
+                                                                <rect key="frame" x="328" y="485" width="230" height="33"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                                 <state key="normal" title="Calling" backgroundImage="rectbutton.png">
@@ -3919,8 +3934,8 @@
                                                                     <action selector="triggerTask:" destination="HBA-Vg-3vc" eventType="touchUpInside" id="ybR-bl-GJw"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" tag="1300" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Ecs-KO-yah">
-                                                                <rect key="frame" x="122" y="471" width="203" height="33"/>
+                                                            <button opaque="NO" tag="1400" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Ecs-KO-yah">
+                                                                <rect key="frame" x="122" y="485" width="203" height="33"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                                 <state key="normal" title="Answering" backgroundImage="rectbutton.png">
@@ -3934,8 +3949,8 @@
                                                                     <action selector="triggerTask:" destination="HBA-Vg-3vc" eventType="touchUpInside" id="yhh-q6-EwI"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" tag="1302" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="TZn-oK-tZc">
-                                                                <rect key="frame" x="561" y="471" width="202" height="33"/>
+                                                            <button opaque="NO" tag="1402" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="TZn-oK-tZc">
+                                                                <rect key="frame" x="561" y="485" width="202" height="33"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                                 <state key="normal" title="Transferring" backgroundImage="rectbutton.png">
@@ -3950,7 +3965,7 @@
                                                                 </connections>
                                                             </button>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="colorCat2.png" id="jPO-Sg-WS7">
-                                                                <rect key="frame" x="9" y="528" width="20" height="20"/>
+                                                                <rect key="frame" x="12" y="535" width="20" height="20"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             </imageView>
                                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Walking" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rOV-lK-O2E">
@@ -3961,51 +3976,62 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="colorCat3.png" id="uoq-lP-23b">
-                                                                <rect key="frame" x="9" y="617" width="20" height="20"/>
+                                                                <rect key="frame" x="12" y="616" width="20" height="20"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             </imageView>
                                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Computer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8o5-Za-0gO">
-                                                                <rect key="frame" x="46" y="74" width="93" height="21"/>
+                                                                <rect key="frame" x="40" y="69" width="93" height="21"/>
+                                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Dictating" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="co9-JK-LRV">
+                                                                <rect key="frame" x="571" y="25" width="93" height="21"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="colorCat5.png" id="y5q-Gs-cHF">
-                                                                <rect key="frame" x="15" y="75" width="20" height="20"/>
+                                                                <rect key="frame" x="12" y="70" width="20" height="20"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             </imageView>
                                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Computer: Communicating" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qAk-3n-r91">
-                                                                <rect key="frame" x="46" y="25" width="220" height="21"/>
+                                                                <rect key="frame" x="40" y="25" width="220" height="21"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="colorCat6.png" id="HEh-AS-EHe">
-                                                                <rect key="frame" x="15" y="26" width="20" height="20"/>
+                                                                <rect key="frame" x="12" y="26" width="20" height="20"/>
+                                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                            </imageView>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="colorCat9.png" id="4zL-cQ-Cs5">
+                                                                <rect key="frame" x="544" y="25" width="20" height="20"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             </imageView>
                                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Paper" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="u6k-U1-9eJ">
-                                                                <rect key="frame" x="43" y="277" width="48" height="21"/>
+                                                                <rect key="frame" x="40" y="298" width="48" height="21"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="colorCat7.png" id="ZTc-1V-ChA">
-                                                                <rect key="frame" x="12" y="278" width="20" height="20"/>
+                                                                <rect key="frame" x="12" y="299" width="20" height="20"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             </imageView>
                                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Phone" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="e4F-8j-Hh1">
-                                                                <rect key="frame" x="43" y="477" width="65" height="21"/>
+                                                                <rect key="frame" x="40" y="491" width="65" height="21"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="colorCat4.png" id="aKp-4w-q0f">
-                                                                <rect key="frame" x="12" y="478" width="20" height="20"/>
+                                                                <rect key="frame" x="12" y="492" width="20" height="20"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             </imageView>
                                                         </subviews>
@@ -4624,6 +4650,7 @@
         <image name="colorCat6.png" width="30" height="30"/>
         <image name="colorCat7.png" width="30" height="30"/>
         <image name="colorCat8.png" width="30" height="30"/>
+        <image name="colorCat9.png" width="30" height="30"/>
         <image name="end.png" width="145" height="36"/>
         <image name="rectbutton.png" width="172" height="44"/>
         <image name="smallbutton.png" width="70" height="44"/>
