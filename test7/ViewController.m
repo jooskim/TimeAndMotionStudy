@@ -10,9 +10,6 @@
 
 
 #import "ViewController.h"
-#define T1000 @"Med records/changes"
-#define T1001 @"Color coding"
-#define T1002 @"Depart summary"
 
 @interface ViewController ()
 @property (retain, nonatomic) IBOutlet UIView *taskList;
@@ -20,6 +17,7 @@
 @property (retain, nonatomic) IBOutlet UIView *locationList;
 @property (retain, nonatomic) IBOutlet UIView *locMilesCity;
 @property (retain, nonatomic) IBOutlet UIView *locCodyClinic;
+@property (retain, nonatomic) IBOutlet UIView *locCabinCreek;
 @property (retain, nonatomic) IBOutlet UINavigationItem *headerMain;
 @property (retain, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (retain, nonatomic) IBOutlet UINavigationBar *taskBar;
@@ -28,7 +26,7 @@
 
 @implementation ViewController
 
-@synthesize scrollView, taskList, taskList2, locationList, locMilesCity, locCodyClinic, tableView, activeAct, globalLocation, exportArr, isMultitasking, interruptBtn;
+@synthesize scrollView, taskList, taskList2, locationList, locMilesCity, locCodyClinic, locCabinCreek, tableView, activeAct, globalLocation, exportArr, isMultitasking, interruptBtn;
 NSInteger *globalCounter;
 
 - (void)viewDidLoad
@@ -70,15 +68,22 @@ NSInteger *globalCounter;
 
     if([self.valObsSite isEqualToString:@"Miles City"]){
         locCodyClinic.hidden = YES;
+        locCabinCreek.hidden = YES;
         locationList.hidden = YES;
         [scrollView addSubview:locMilesCity];
     }else if([self.valObsSite isEqualToString:@"Cody Clinic"]){
         locMilesCity.hidden = YES;
+        locCabinCreek.hidden = YES;
         locationList.hidden = YES;
         [scrollView addSubview:locCodyClinic];
+    }else if([self.valObsSite isEqualToString:@"Cabin Creek"]){
+        locCodyClinic.hidden = YES;
+        locMilesCity.hidden = YES;
+        locationList.hidden = YES;
     }else{
         locMilesCity.hidden = YES;
         locCodyClinic.hidden = YES;
+        locCabinCreek.hidden = YES;
         [scrollView addSubview:locationList];
     }
    
@@ -186,7 +191,23 @@ NSInteger *globalCounter;
 
 - (IBAction)changeLocMiles:(id)sender {
     UIButton *button = (UIButton *)sender;
-    [self.btnLocation setTitle:[NSString stringWithFormat:@"%@", button.titleLabel.text] forState:UIControlStateNormal];
+    NSString *prefix;
+    
+    if(button.tag >= 1000 && button.tag < 1100){
+        prefix = @"Pulm";
+    }else if(button.tag >= 1100 && button.tag < 1200){
+        prefix = @"Rece";
+    }else if(button.tag >= 1200 && button.tag < 1300){
+        prefix = @"Lab";
+    }else if(button.tag >= 1300 && button.tag < 1400){
+        prefix = @"Infu";
+    }else if(button.tag >= 1400 && button.tag < 1500){
+        prefix = @"FaPP";
+    }else{
+        prefix = @"Error_CheckTheList";
+    }
+    
+    [self.btnLocation setTitle:[NSString stringWithFormat:@"%@_%@", prefix, button.titleLabel.text] forState:UIControlStateNormal];
     NSString *navTitle = [[NSString alloc] initWithFormat:@"Select Task (%@)",button.titleLabel.text];
     globalLocation = button.titleLabel.text;
     // runs a method that updates the current array of active tasks
@@ -198,6 +219,35 @@ NSInteger *globalCounter;
         //[self.taskBar.topItem setTitle:navTitle];
         [self scrollToPage:1];
     }
+}
+
+- (IBAction)changeLocCC:(id)sender {
+    UIButton *button = (UIButton *)sender;
+    NSString *prefix;
+    
+    if(button.tag >= 1000 && button.tag < 1100){
+        prefix = @"CC";
+    }else if(button.tag >= 1100 && button.tag < 1200){
+        prefix = @"SV";
+    }else if(button.tag >= 1200 && button.tag < 1300){
+        prefix = @"CD";
+    }else{
+        prefix = @"Error_CheckTheList";
+    }
+    
+    [self.btnLocation setTitle:[NSString stringWithFormat:@"%@_%@", prefix, button.titleLabel.text] forState:UIControlStateNormal];
+    NSString *navTitle = [[NSString alloc] initWithFormat:@"Select Task (%@)",button.titleLabel.text];
+    globalLocation = button.titleLabel.text;
+    // runs a method that updates the current array of active tasks
+    if(activeAct.count == 0){
+        //[self.taskBar.topItem setTitle:navTitle];
+        [self scrollToPage:1];
+    }else{
+        [self updateLocationOfArray:sender];
+        //[self.taskBar.topItem setTitle:navTitle];
+        [self scrollToPage:1];
+    }
+
 }
 - (IBAction)changeLabelLocation_exam:(id)sender {
     UIButton *button = (UIButton *)sender;
@@ -465,8 +515,46 @@ NSInteger *globalCounter;
     UISwitch *multitask = (UISwitch *)sender;
     if(multitask.isOn == NO){
         // see if there exists an item in the active tasks list
+
         if([activeAct count] != 0){
-            [self allTasksDone:nil];
+            while(activeAct.count > 1){
+                NSDate *currentDate = [NSDate date];
+                NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+                [dateFormatter setDateFormat:@"HH:mm:ss"];
+                NSDateFormatter *dateFormatterD = [[NSDateFormatter alloc] init];
+                [dateFormatterD setDateFormat:@"MMddyyyy"];
+                NSString *timeFormatted = [dateFormatter stringFromDate:currentDate];
+                NSString *dateFormatted = [dateFormatterD stringFromDate:currentDate];
+                
+                NSArray *nowArr = [activeAct objectAtIndex:1];
+                //NSLog(@"%@,%@,%@,%@,%@,%@",[nowArr objectAtIndex:1],self.lblLocation.text,[nowArr objectAtIndex:2],self.observerName.text,self.observeeName.text,timeFormatted);
+                
+                // unhighlight the task button
+                UIButton *selectedBtn;
+                if ([[nowArr objectAtIndex:3] integerValue] < 1700 )
+                {
+                    selectedBtn = (UIButton *)[taskList viewWithTag: [[nowArr objectAtIndex:3] integerValue]];
+                } else {
+                    selectedBtn = (UIButton *)[taskList2 viewWithTag: [[nowArr objectAtIndex:3] integerValue]];
+                }
+                [selectedBtn setSelected:NO];
+                
+                NSLog(@"%@,%@,%@,%@,%@,%@,%@,%@",[nowArr objectAtIndex:0],@"end of task",@"",self.btnLocation.titleLabel.text,dateFormatted,timeFormatted,@"",@"");
+                
+                // put this information into the export array
+                NSArray *tempStorage = [[NSArray alloc] initWithObjects:[nowArr objectAtIndex:0],@"end of task",@"",self.btnLocation.titleLabel.text,dateFormatted,timeFormatted,@"",@"", nil];
+                [exportArr addObject:tempStorage];
+                if(exportArr.count > 0){
+                    NSLog(@"successfully stored the current action. # of items: %d", [exportArr count]);
+                }
+                
+                NSIndexPath *delCellPath = [NSIndexPath indexPathForRow:1 inSection:0];
+                
+                
+                [activeAct removeObjectAtIndex:1];
+                [tableView deleteRowsAtIndexPaths:@[delCellPath] withRowAnimation:UITableViewRowAnimationFade];
+            }
+
         }
     }
 }
@@ -817,6 +905,44 @@ NSInteger *globalCounter;
             [alert show];
             [alert release];
         }
+    }
+}
+
+- (IBAction)changeLocCody:(id)sender {
+    UIButton *button = (UIButton *)sender;
+    NSString *prefix;
+    
+    if(button.tag >= 1000 && button.tag < 1100){
+        prefix = @"Rece";
+    }else if(button.tag >= 1100 && button.tag < 1200){
+        prefix = @"WP";
+    }else if(button.tag >= 1200 && button.tag < 1300){
+        prefix = @"NP";
+    }else if(button.tag >= 1300 && button.tag < 1400){
+        prefix = @"Ped";
+    }else if(button.tag >= 1400 && button.tag < 1500){
+        prefix = @"SP";
+    }else if(button.tag >= 1500 && button.tag < 1600){
+        prefix = @"Infu";
+    }else if(button.tag >= 1600 && button.tag < 1700){
+        prefix = @"PhyT";
+    }else if(button.tag >= 1700 && button.tag < 1800){
+        prefix = @"Other";
+    }else{
+        prefix = @"Error_CheckTheList";
+    }
+    
+    [self.btnLocation setTitle:[NSString stringWithFormat:@"%@_%@", prefix, button.titleLabel.text] forState:UIControlStateNormal];
+    NSString *navTitle = [[NSString alloc] initWithFormat:@"Select Task (%@)",button.titleLabel.text];
+    globalLocation = button.titleLabel.text;
+    // runs a method that updates the current array of active tasks
+    if(activeAct.count == 0){
+        //[self.taskBar.topItem setTitle:navTitle];
+        [self scrollToPage:1];
+    }else{
+        [self updateLocationOfArray:sender];
+        //[self.taskBar.topItem setTitle:navTitle];
+        [self scrollToPage:1];
     }
 }
 

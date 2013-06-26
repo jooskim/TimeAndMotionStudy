@@ -51,7 +51,9 @@
 - (IBAction)allTasksDone:(id)sender;
 - (IBAction)interrupt:(id)sender;
 
+- (IBAction)changeLocCody:(id)sender;
 - (IBAction)changeLocMiles:(id)sender;
+- (IBAction)changeLocCC:(id)sender;
 
 -(IBAction) changeLabelLocation_exam:(id)sender;
 -(IBAction) changeLabelLocation_office:(id)sender;
