@@ -442,16 +442,21 @@ NSInteger *globalCounter;
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:tableIdentifier];
     }
     
+    /* remove check_button - 06/26/2013
     UIButton *doneButton = [UIButton buttonWithType: UIButtonTypeCustom];
     [doneButton addTarget:self action:@selector(taskDone:) forControlEvents:UIControlEventTouchDown];
     UIImage *doneBtnImg = [UIImage imageNamed:@"button_check_s.png"];
     doneButton.frame = CGRectMake(180,18,24,24);
     [doneButton setBackgroundImage:doneBtnImg forState:UIControlStateNormal];
     [cell addSubview:doneButton];
-    
+    */
     
     // get the current row of the data
     NSArray *nowArr = [activeAct objectAtIndex:indexPath.row];
+    // get the sequence number
+    UILabel *sequenceNumber = (UILabel *)[cell viewWithTag:105];
+    sequenceNumber.text = [nowArr objectAtIndex:0];
+    [sequenceNumber setTextColor:[UIColor blackColor]];
     // activity name
     UILabel *activityName = (UILabel *)[cell viewWithTag:102];
     activityName.text = [nowArr objectAtIndex:1];
@@ -472,10 +477,12 @@ NSInteger *globalCounter;
     if([[nowArr objectAtIndex:3] intValue] >= 1100 && [[nowArr objectAtIndex:3] intValue] < 1200){
         img = [UIImage imageNamed:@"colorCat9.png"];
         imgView.image = img;
+        [sequenceNumber setTextColor:[UIColor whiteColor]];
     };
     if([[nowArr objectAtIndex:3] intValue] >= 1200 && [[nowArr objectAtIndex:3] intValue] < 1300){
         img = [UIImage imageNamed:@"colorCat5.png"];
         imgView.image = img;
+        [sequenceNumber setTextColor:[UIColor whiteColor]];
     };
     if([[nowArr objectAtIndex:3] intValue] >= 1300 && [[nowArr objectAtIndex:3] intValue] < 1400){
         img = [UIImage imageNamed:@"colorCat7.png"];
@@ -500,10 +507,16 @@ NSInteger *globalCounter;
     if([[nowArr objectAtIndex:3] intValue] >= 1800 && [[nowArr objectAtIndex:3] intValue] < 1900){
         img = [UIImage imageNamed:@"colorCat10.png"];
         imgView.image = img;
+        [sequenceNumber setTextColor:[UIColor whiteColor]];
     };
     if([[nowArr objectAtIndex:3] intValue] >= 1900 && [[nowArr objectAtIndex:3] intValue] < 2000){
         img = [UIImage imageNamed:@"colorCat11.png"];
         imgView.image = img;
+    };
+    if([[nowArr objectAtIndex:3] intValue] >= 2000 && [[nowArr objectAtIndex:3] intValue] < 2100){
+        img = [UIImage imageNamed:@"colorCat12.png"];
+        imgView.image = img;
+        [sequenceNumber setTextColor:[UIColor whiteColor]];
     };
     
     //}
@@ -648,6 +661,9 @@ NSInteger *globalCounter;
             [button setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
         }else if(button.tag >= 1900 && button.tag < 2000){
             btnBg = [UIImage imageNamed:@"colorCat11.png"];
+        }else if(button.tag >= 2000 && button.tag < 2100){
+            btnBg = [UIImage imageNamed:@"colorCat12.png"];
+            [button setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
         }else{
             btnBg = [UIImage imageNamed:@"colorCat1.png"];
         }
