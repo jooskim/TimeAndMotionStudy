@@ -421,6 +421,12 @@ NSInteger *globalCounter;
     {
         selectedBtn = (UIButton *)[taskList viewWithTag: [[nowArr objectAtIndex:3] integerValue]];
     } else {
+        // for alias (Personal-Socializing/chtting)
+        if ([[nowArr objectAtIndex:3] integerValue] == 1906)
+        {
+            selectedBtn = (UIButton *)[taskList viewWithTag: [[nowArr objectAtIndex:3] integerValue]];
+            [selectedBtn setSelected:NO];
+        }
         selectedBtn = (UIButton *)[taskList2 viewWithTag: [[nowArr objectAtIndex:3] integerValue]];
     }
     [selectedBtn setSelected:NO];
@@ -548,6 +554,13 @@ NSInteger *globalCounter;
                 {
                     selectedBtn = (UIButton *)[taskList viewWithTag: [[nowArr objectAtIndex:3] integerValue]];
                 } else {
+                    // for alias (Personal-Socializing/chtting)
+                    if ([[nowArr objectAtIndex:3] integerValue] == 1906)
+                    {
+                        selectedBtn = (UIButton *)[taskList viewWithTag: [[nowArr objectAtIndex:3] integerValue]];
+                        [selectedBtn setSelected:NO];
+                    }
+
                     selectedBtn = (UIButton *)[taskList2 viewWithTag: [[nowArr objectAtIndex:3] integerValue]];
                 }
                 [selectedBtn setSelected:NO];
@@ -608,6 +621,13 @@ NSInteger *globalCounter;
             {
                 btnToUnselect = (UIButton *)[taskList viewWithTag: [tag integerValue]];
             } else {
+                // for alias (Personal-Socializing/chtting)
+                if ([tag integerValue] == 1906)
+                {
+                    btnToUnselect = (UIButton *)[taskList viewWithTag: [tag integerValue]];
+                    [btnToUnselect setSelected:NO];
+                }
+
                 btnToUnselect = (UIButton *)[taskList2 viewWithTag: [tag integerValue]];
             }
             [btnToUnselect setSelected:NO];
@@ -672,6 +692,14 @@ NSInteger *globalCounter;
             if(isMultitasking.isOn == YES){ // if the multitasking mode is on
                 if(button.selected == YES){ // if the button is already highlighted
                     [button setSelected:NO];
+                    
+                    // for alias (Personal-Socializing/chtting)
+                    if (button.tag == 1906)
+                    {
+                        [((UIButton *)[taskList viewWithTag: 1906]) setSelected:NO];
+                        [((UIButton *)[taskList2 viewWithTag: 1906]) setSelected:NO];
+                    }
+
                     // gets the current time
                     NSDate *currentDate = [NSDate date];
                     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
@@ -713,6 +741,14 @@ NSInteger *globalCounter;
                     
                 }else{ // if the button is not highlighted
                     [button setSelected:YES];
+                    
+                    // for alias (Personal-Socializing/chtting)
+                    if (button.tag == 1906)
+                    {
+                        [((UIButton *)[taskList viewWithTag: 1906]) setSelected:YES];
+                        [((UIButton *)[taskList2 viewWithTag: 1906]) setSelected:YES];
+                    }
+
                     
                     // code for the tasks that only lasts for a second
                     // 여기에 추가 task 버튼 tag 넣어주세요
@@ -756,6 +792,14 @@ NSInteger *globalCounter;
                         [self allTasksDone:nil];
                     }
                     [button setSelected:YES];
+                    
+                    // for alias (Personal-Socializing/chtting)
+                    if (button.tag == 1906)
+                    {
+                        [((UIButton *)[taskList viewWithTag: 1906]) setSelected:YES];
+                        [((UIButton *)[taskList2 viewWithTag: 1906]) setSelected:YES];
+                    }
+
                     // code for the tasks that only lasts for a second
                     // 여기에 추가 task 버튼 tag 넣어주세요
 
@@ -791,6 +835,14 @@ NSInteger *globalCounter;
                     
                 }else{
                     [button setSelected:NO];
+
+                    // for alias (Personal-Socializing/chtting)
+                    if (button.tag == 1906)
+                    {
+                        [((UIButton *)[taskList viewWithTag: 1906]) setSelected:NO];
+                        [((UIButton *)[taskList2 viewWithTag: 1906]) setSelected:NO];
+                    }
+
                     // gets the current time
                     NSDate *currentDate = [NSDate date];
                     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
@@ -837,6 +889,13 @@ NSInteger *globalCounter;
         {
             selectedBtn = (UIButton *)[taskList viewWithTag: [[nowArr objectAtIndex:3] integerValue]];
         } else {
+            // for alias (Personal-Socializing/chtting)
+            if ([[nowArr objectAtIndex:3] integerValue] == 1906)
+            {
+                selectedBtn = (UIButton *)[taskList viewWithTag: [[nowArr objectAtIndex:3] integerValue]];
+                [selectedBtn setSelected:NO];
+            }
+            
             selectedBtn = (UIButton *)[taskList2 viewWithTag: [[nowArr objectAtIndex:3] integerValue]];
         }
         [selectedBtn setSelected:NO];
