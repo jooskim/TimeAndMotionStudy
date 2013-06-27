@@ -421,7 +421,7 @@ NSInteger *globalCounter;
     {
         selectedBtn = (UIButton *)[taskList viewWithTag: [[nowArr objectAtIndex:3] integerValue]];
     } else {
-        // for alias (Personal-Socializing/chtting)
+        // for alias button (Personal-Socializing/chtting)
         if ([[nowArr objectAtIndex:3] integerValue] == 1906)
         {
             selectedBtn = (UIButton *)[taskList viewWithTag: [[nowArr objectAtIndex:3] integerValue]];
@@ -554,7 +554,7 @@ NSInteger *globalCounter;
                 {
                     selectedBtn = (UIButton *)[taskList viewWithTag: [[nowArr objectAtIndex:3] integerValue]];
                 } else {
-                    // for alias (Personal-Socializing/chtting)
+                    // for alias button (Personal-Socializing/chtting)
                     if ([[nowArr objectAtIndex:3] integerValue] == 1906)
                     {
                         selectedBtn = (UIButton *)[taskList viewWithTag: [[nowArr objectAtIndex:3] integerValue]];
@@ -621,7 +621,7 @@ NSInteger *globalCounter;
             {
                 btnToUnselect = (UIButton *)[taskList viewWithTag: [tag integerValue]];
             } else {
-                // for alias (Personal-Socializing/chtting)
+                // for alias button (Personal-Socializing/chtting)
                 if ([tag integerValue] == 1906)
                 {
                     btnToUnselect = (UIButton *)[taskList viewWithTag: [tag integerValue]];
@@ -693,11 +693,16 @@ NSInteger *globalCounter;
                 if(button.selected == YES){ // if the button is already highlighted
                     [button setSelected:NO];
                     
-                    // for alias (Personal-Socializing/chtting)
+                    // for alias button (Personal-Socializing/chtting)
                     if (button.tag == 1906)
                     {
-                        [((UIButton *)[taskList viewWithTag: 1906]) setSelected:NO];
-                        [((UIButton *)[taskList2 viewWithTag: 1906]) setSelected:NO];
+                        if ([button.titleLabel.text isEqual: @"Personal - Socializing/chatting"]) {
+                            button = (UIButton *)[taskList2 viewWithTag: 1906];
+                        } else {
+                            button = (UIButton *)[taskList viewWithTag: 1906];
+                        }
+                        [button setSelected:NO];
+                        [button setBackgroundImage:btnBg forState:UIControlStateSelected];
                     }
 
                     // gets the current time
@@ -742,12 +747,18 @@ NSInteger *globalCounter;
                 }else{ // if the button is not highlighted
                     [button setSelected:YES];
                     
-                    // for alias (Personal-Socializing/chtting)
+                    // for alias button (Personal-Socializing/chtting)
                     if (button.tag == 1906)
                     {
-                        [((UIButton *)[taskList viewWithTag: 1906]) setSelected:YES];
-                        [((UIButton *)[taskList2 viewWithTag: 1906]) setSelected:YES];
+                        if ([button.titleLabel.text isEqual: @"Personal - Socializing/chatting"]) {
+                            button = (UIButton *)[taskList2 viewWithTag: 1906];
+                        } else {
+                            button = (UIButton *)[taskList viewWithTag: 1906];
+                        }
+                        [button setSelected:YES];
+                        [button setBackgroundImage:btnBg forState:UIControlStateSelected];
                     }
+
 
                     
                     // code for the tasks that only lasts for a second
@@ -793,11 +804,16 @@ NSInteger *globalCounter;
                     }
                     [button setSelected:YES];
                     
-                    // for alias (Personal-Socializing/chtting)
+                    // for alias button (Personal-Socializing/chtting)
                     if (button.tag == 1906)
                     {
-                        [((UIButton *)[taskList viewWithTag: 1906]) setSelected:YES];
-                        [((UIButton *)[taskList2 viewWithTag: 1906]) setSelected:YES];
+                        if ([button.titleLabel.text isEqual: @"Personal - Socializing/chatting"]) {
+                            button = (UIButton *)[taskList2 viewWithTag: 1906];
+                        } else {
+                            button = (UIButton *)[taskList viewWithTag: 1906];
+                        }
+                        [button setSelected:YES];
+                        [button setBackgroundImage:btnBg forState:UIControlStateSelected];
                     }
 
                     // code for the tasks that only lasts for a second
@@ -836,11 +852,16 @@ NSInteger *globalCounter;
                 }else{
                     [button setSelected:NO];
 
-                    // for alias (Personal-Socializing/chtting)
+                    // for alias button (Personal-Socializing/chtting)
                     if (button.tag == 1906)
                     {
-                        [((UIButton *)[taskList viewWithTag: 1906]) setSelected:NO];
-                        [((UIButton *)[taskList2 viewWithTag: 1906]) setSelected:NO];
+                        if ([button.titleLabel.text isEqual: @"Personal - Socializing/chatting"]) {
+                            button = (UIButton *)[taskList2 viewWithTag: 1906];
+                        } else {
+                            button = (UIButton *)[taskList viewWithTag: 1906];
+                        }
+                        [button setSelected:NO];
+                        [button setBackgroundImage:btnBg forState:UIControlStateSelected];
                     }
 
                     // gets the current time
@@ -889,7 +910,7 @@ NSInteger *globalCounter;
         {
             selectedBtn = (UIButton *)[taskList viewWithTag: [[nowArr objectAtIndex:3] integerValue]];
         } else {
-            // for alias (Personal-Socializing/chtting)
+            // for alias button (Personal-Socializing/chtting)
             if ([[nowArr objectAtIndex:3] integerValue] == 1906)
             {
                 selectedBtn = (UIButton *)[taskList viewWithTag: [[nowArr objectAtIndex:3] integerValue]];
