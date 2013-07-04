@@ -203,6 +203,10 @@ NSInteger *globalCounter;
         prefix = @"Infu";
     }else if(button.tag >= 1400 && button.tag < 1500){
         prefix = @"FaPP";
+    }else if(button.tag >= 1500 && button.tag < 1600){
+        prefix = @"Conf";
+    }else if(button.tag >= 1600 && button.tag < 1700){
+        prefix = @"Tamm";
     }else{
         prefix = @"Error_CheckTheList";
     }

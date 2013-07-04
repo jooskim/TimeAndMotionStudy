@@ -1917,7 +1917,7 @@
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" tag="1120" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="YH8-Bm-O2a">
-                                                                        <rect key="frame" x="161" y="944" width="116" height="44"/>
+                                                                        <rect key="frame" x="161" y="944" width="74" height="44"/>
                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                                                         <state key="normal" title="Lab" backgroundImage="rectbutton.png">
@@ -1932,7 +1932,7 @@
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" tag="1123" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="9o2-EL-dMc">
-                                                                        <rect key="frame" x="533" y="944" width="116" height="44"/>
+                                                                        <rect key="frame" x="468" y="944" width="105" height="44"/>
                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                                                         <state key="normal" title="Hallway" backgroundImage="rectbutton.png">
@@ -1946,8 +1946,23 @@
                                                                             <action selector="changeLocCC:" destination="HBA-Vg-3vc" eventType="touchUpInside" id="AJ2-vK-Dfw"/>
                                                                         </connections>
                                                                     </button>
+                                                                    <button opaque="NO" tag="1124" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="VXC-8H-zOF">
+                                                                        <rect key="frame" x="581" y="944" width="148" height="44"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                                                        <state key="normal" title="Waiting Room" backgroundImage="rectbutton.png">
+                                                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                                        </state>
+                                                                        <state key="highlighted">
+                                                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                        </state>
+                                                                        <connections>
+                                                                            <action selector="changeLocCC:" destination="HBA-Vg-3vc" eventType="touchUpInside" id="YVJ-9q-yUf"/>
+                                                                        </connections>
+                                                                    </button>
                                                                     <button opaque="NO" tag="1121" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="1bc-Oc-8p5">
-                                                                        <rect key="frame" x="285" y="944" width="116" height="44"/>
+                                                                        <rect key="frame" x="243" y="944" width="116" height="44"/>
                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                                                         <state key="normal" title="Procedure Room" backgroundImage="rectbutton.png">
@@ -1962,7 +1977,7 @@
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" tag="1122" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="mCK-FE-IlP">
-                                                                        <rect key="frame" x="409" y="944" width="116" height="44"/>
+                                                                        <rect key="frame" x="367" y="944" width="93" height="44"/>
                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                                                         <state key="normal" title="Kitchen" backgroundImage="rectbutton.png">
@@ -2133,7 +2148,7 @@
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" tag="1032" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="cYP-gF-e6X">
-                                                                        <rect key="frame" x="28" y="461" width="172" height="44"/>
+                                                                        <rect key="frame" x="28" y="461" width="136" height="44"/>
                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                                                         <state key="normal" title="Procedure Room" backgroundImage="rectbutton.png">
@@ -2148,7 +2163,7 @@
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" tag="1033" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Apb-7e-SLh">
-                                                                        <rect key="frame" x="208" y="461" width="172" height="44"/>
+                                                                        <rect key="frame" x="172" y="461" width="100" height="44"/>
                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                                                         <state key="normal" title="Lab" backgroundImage="rectbutton.png">
@@ -2163,7 +2178,7 @@
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" tag="1034" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="0MY-v2-Pqz">
-                                                                        <rect key="frame" x="389" y="461" width="172" height="44"/>
+                                                                        <rect key="frame" x="280" y="461" width="162" height="44"/>
                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                                                         <state key="normal" title="Conference Room" backgroundImage="rectbutton.png">
@@ -2177,8 +2192,23 @@
                                                                             <action selector="changeLocCC:" destination="HBA-Vg-3vc" eventType="touchUpInside" id="uGN-bL-3lU"/>
                                                                         </connections>
                                                                     </button>
+                                                                    <button opaque="NO" tag="1036" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="zSG-aJ-zBU">
+                                                                        <rect key="frame" x="581" y="461" width="162" height="44"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                                                        <state key="normal" title="Waiting Room" backgroundImage="rectbutton.png">
+                                                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                                        </state>
+                                                                        <state key="highlighted">
+                                                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                        </state>
+                                                                        <connections>
+                                                                            <action selector="changeLocCC:" destination="HBA-Vg-3vc" eventType="touchUpInside" id="LuB-IK-GuC"/>
+                                                                        </connections>
+                                                                    </button>
                                                                     <button opaque="NO" tag="1035" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="wnn-tY-UYn">
-                                                                        <rect key="frame" x="569" y="461" width="172" height="44"/>
+                                                                        <rect key="frame" x="450" y="461" width="123" height="44"/>
                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                                                         <state key="normal" title="Hallway" backgroundImage="rectbutton.png">
@@ -3169,6 +3199,36 @@
                                                                             <action selector="changeLocMiles:" destination="HBA-Vg-3vc" eventType="touchUpInside" id="C2r-Id-a4e"/>
                                                                         </connections>
                                                                     </button>
+                                                                    <button opaque="NO" tag="1420" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="oQi-ng-lxR">
+                                                                        <rect key="frame" x="28" y="715" width="172" height="44"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                                                        <state key="normal" title="Dr.Peter's office" backgroundImage="rectbutton.png">
+                                                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                                        </state>
+                                                                        <state key="highlighted">
+                                                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                        </state>
+                                                                        <connections>
+                                                                            <action selector="changeLocMiles:" destination="HBA-Vg-3vc" eventType="touchUpInside" id="GBH-cy-EH5"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <button opaque="NO" tag="1421" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="aLm-db-zfj">
+                                                                        <rect key="frame" x="209" y="715" width="172" height="44"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                                                        <state key="normal" title="Jeniffer Curtis' office" backgroundImage="rectbutton.png">
+                                                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                                        </state>
+                                                                        <state key="highlighted">
+                                                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                        </state>
+                                                                        <connections>
+                                                                            <action selector="changeLocMiles:" destination="HBA-Vg-3vc" eventType="touchUpInside" id="jmW-Nx-pQo"/>
+                                                                        </connections>
+                                                                    </button>
                                                                     <button opaque="NO" tag="1413" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Qfb-hr-IEg">
                                                                         <rect key="frame" x="209" y="611" width="172" height="44"/>
                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -3221,7 +3281,19 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Infusion Center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lTg-dv-Shu">
-                                                                        <rect key="frame" x="214" y="340" width="111" height="21"/>
+                                                                        <rect key="frame" x="164" y="340" width="111" height="21"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Conference/Break Room" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fZK-L1-65K">
+                                                                        <rect key="frame" x="315" y="340" width="176" height="21"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Tammy Satterthwaite's Office" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qWq-GL-sN1">
+                                                                        <rect key="frame" x="522" y="340" width="210" height="21"/>
                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                                         <nil key="highlightedColor"/>
@@ -3248,7 +3320,7 @@
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" tag="1200" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="B06-YV-asb">
-                                                                        <rect key="frame" x="29" y="369" width="171" height="44"/>
+                                                                        <rect key="frame" x="29" y="369" width="122" height="44"/>
                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                                                         <state key="normal" title="Main Lab area" backgroundImage="rectbutton.png">
@@ -3263,7 +3335,7 @@
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" tag="1300" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="6q7-tm-ui4">
-                                                                        <rect key="frame" x="209" y="369" width="172" height="44"/>
+                                                                        <rect key="frame" x="159" y="369" width="147" height="44"/>
                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                                                         <state key="normal" title="Infusion stations" backgroundImage="rectbutton.png">
@@ -3275,6 +3347,36 @@
                                                                         </state>
                                                                         <connections>
                                                                             <action selector="changeLocMiles:" destination="HBA-Vg-3vc" eventType="touchUpInside" id="wDv-bt-vLB"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <button opaque="NO" tag="1500" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Vjg-1K-AOw">
+                                                                        <rect key="frame" x="314" y="369" width="200" height="44"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                                                        <state key="normal" title="Conference/Break Room" backgroundImage="rectbutton.png">
+                                                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                                        </state>
+                                                                        <state key="highlighted">
+                                                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                        </state>
+                                                                        <connections>
+                                                                            <action selector="changeLocMiles:" destination="HBA-Vg-3vc" eventType="touchUpInside" id="4YB-oh-tNG"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <button opaque="NO" tag="1600" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="uRC-Mq-op7">
+                                                                        <rect key="frame" x="522" y="369" width="218" height="44"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                                                        <state key="normal" title="Tammy Satterthwaite's Office" backgroundImage="rectbutton.png">
+                                                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                                        </state>
+                                                                        <state key="highlighted">
+                                                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                        </state>
+                                                                        <connections>
+                                                                            <action selector="changeLocMiles:" destination="HBA-Vg-3vc" eventType="touchUpInside" id="lsy-Xd-ScX"/>
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" tag="1007" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="yn4-5b-oXR">
@@ -3383,7 +3485,7 @@
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" tag="1014" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="pVE-W8-la6">
-                                                                        <rect key="frame" x="388" y="196" width="174" height="44"/>
+                                                                        <rect key="frame" x="388" y="196" width="172" height="44"/>
                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                                                         <state key="normal" title="Kerry Bower's office" backgroundImage="rectbutton.png">
@@ -3395,6 +3497,21 @@
                                                                         </state>
                                                                         <connections>
                                                                             <action selector="changeLocMiles:" destination="HBA-Vg-3vc" eventType="touchUpInside" id="xoZ-gV-YG8"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <button opaque="NO" tag="1015" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="dhc-Ho-zqE">
+                                                                        <rect key="frame" x="568" y="196" width="172" height="44"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                                                        <state key="normal" title="Danielle Brewer's office" backgroundImage="rectbutton.png">
+                                                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                                        </state>
+                                                                        <state key="highlighted">
+                                                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                        </state>
+                                                                        <connections>
+                                                                            <action selector="changeLocMiles:" destination="HBA-Vg-3vc" eventType="touchUpInside" id="uft-aq-v4Y"/>
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" tag="1012" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="6Hx-A4-dsV">
@@ -3620,6 +3737,21 @@
                                                                         </state>
                                                                         <connections>
                                                                             <action selector="changeLocMiles:" destination="HBA-Vg-3vc" eventType="touchUpInside" id="s3m-MM-wT1"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <button opaque="NO" tag="1103" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="UVW-C0-ByX">
+                                                                        <rect key="frame" x="570" y="283" width="170" height="44"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                                                        <state key="normal" title="Waiting Area" backgroundImage="rectbutton.png">
+                                                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                                        </state>
+                                                                        <state key="highlighted">
+                                                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                        </state>
+                                                                        <connections>
+                                                                            <action selector="changeLocMiles:" destination="HBA-Vg-3vc" eventType="touchUpInside" id="Lfd-u1-E2i"/>
                                                                         </connections>
                                                                     </button>
                                                                 </subviews>
