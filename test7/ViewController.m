@@ -693,6 +693,8 @@ NSInteger *globalCounter;
         NSString *tagNum = [NSString stringWithFormat:@"%d", button.tag];
         NSArray *curSel = [[NSArray alloc] initWithObjects:[NSString stringWithFormat:@"%d",(int)globalCounter],button.titleLabel.text, timeFormatted, tagNum, nil];
         //
+        [dateFormatter release];
+        [dateFormatterD release];
         UIImage *btnBg = nil;
         if(button.tag >= 1000 && button.tag < 1100){
             btnBg = [UIImage imageNamed:@"colorCat6.png"];
@@ -750,6 +752,8 @@ NSInteger *globalCounter;
                     
                     NSString *dateFormatted = [dateFormatterD stringFromDate:currentDate];
                     NSString *timeFormatted = [dateFormatter stringFromDate:currentDate];
+                    [dateFormatter release];
+                    [dateFormatterD release];
                     
                     for(int i = 0; i<activeAct.count; i++){
                         NSArray *curArr = [activeAct objectAtIndex:i];
@@ -839,6 +843,7 @@ NSInteger *globalCounter;
                      */
                         globalCounter = (NSInteger *) ((int)globalCounter + 1);
                         [activeAct insertObject:curSel atIndex:0];
+                        [curSel release];
                         [tableView reloadData];
 //                    }
                     
@@ -895,10 +900,10 @@ NSInteger *globalCounter;
                      */
                         [self instantSave:tempStorage];
                         [tempStorage release];
-                        [dateFormatter release]; //!
-                        [dateFormatterD release]; //!
+
                         globalCounter = (NSInteger *) ((int)globalCounter + 1);
                         [activeAct insertObject:curSel atIndex:0];
+                            [curSel release];
                         [tableView reloadData];
 //                    }
                     
@@ -942,6 +947,7 @@ NSInteger *globalCounter;
                     [tempStorage release];
                     [dateFormatter release];
                     [dateFormatterD release];
+
                     NSIndexPath *delCellPath = [NSIndexPath indexPathForRow:0 inSection:0];
                     [activeAct removeObjectAtIndex:0];
                     [tableView deleteRowsAtIndexPaths:@[delCellPath] withRowAnimation:UITableViewRowAnimationFade];
