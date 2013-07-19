@@ -226,7 +226,7 @@ NSInteger *globalCounter;
     }
     
     [self.btnLocation setTitle:[NSString stringWithFormat:@"%@_%@", prefix, button.titleLabel.text] forState:UIControlStateNormal];
-    NSString *navTitle = [[NSString alloc] initWithFormat:@"Select Task (%@)",button.titleLabel.text];
+    //NSString *navTitle = [[NSString alloc] initWithFormat:@"Select Task (%@)",button.titleLabel.text];
     globalLocation = button.titleLabel.text;
     // runs a method that updates the current array of active tasks
     if(activeAct.count == 0){
@@ -254,7 +254,7 @@ NSInteger *globalCounter;
     }
     
     [self.btnLocation setTitle:[NSString stringWithFormat:@"%@_%@", prefix, button.titleLabel.text] forState:UIControlStateNormal];
-    NSString *navTitle = [[NSString alloc] initWithFormat:@"Select Task (%@)",button.titleLabel.text];
+    //NSString *navTitle = [[NSString alloc] initWithFormat:@"Select Task (%@)",button.titleLabel.text];
     globalLocation = button.titleLabel.text;
     // runs a method that updates the current array of active tasks
     if(activeAct.count == 0){
@@ -271,7 +271,7 @@ NSInteger *globalCounter;
     UIButton *button = (UIButton *)sender;
 //    lblLocation.text = [NSString stringWithFormat:@"Exam Room %@", button.titleLabel.text];
     [self.btnLocation setTitle:[NSString stringWithFormat:@"Exam Room %@", button.titleLabel.text] forState:UIControlStateNormal];
-    NSString *navTitle = [[NSString alloc] initWithFormat:@"Select Task (Exam Room %@)",button.titleLabel.text];
+    //NSString *navTitle = [[NSString alloc] initWithFormat:@"Select Task (Exam Room %@)",button.titleLabel.text];
     globalLocation = button.titleLabel.text;
     // checks whether there is more than an active task in the array, and if there is, update the locations of the items in the  array
     if(activeAct.count == 0){
@@ -288,7 +288,7 @@ NSInteger *globalCounter;
     UIButton *button = (UIButton *)sender;
 //    lblLocation.text = [NSString stringWithFormat:@"Office %@", button.titleLabel.text];
     [self.btnLocation setTitle:[NSString stringWithFormat:@"Office %@", button.titleLabel.text] forState:UIControlStateNormal];
-    NSString *navTitle = [[NSString alloc] initWithFormat:@"Select Task (Office %@)",button.titleLabel.text];
+    //NSString *navTitle = [[NSString alloc] initWithFormat:@"Select Task (Office %@)",button.titleLabel.text];
     globalLocation = button.titleLabel.text;
     // runs a method that updates the current array of active tasks
     if(activeAct.count == 0){
@@ -304,7 +304,7 @@ NSInteger *globalCounter;
     UIButton *button = (UIButton *)sender;
 //    lblLocation.text = [NSString stringWithFormat:@"Procedure Room %@", button.titleLabel.text];
     [self.btnLocation setTitle:[NSString stringWithFormat:@"Procedure Room %@", button.titleLabel.text] forState:UIControlStateNormal];
-    NSString *navTitle = [[NSString alloc] initWithFormat:@"Select Task (Procedure Room %@)",button.titleLabel.text];
+    //NSString *navTitle = [[NSString alloc] initWithFormat:@"Select Task (Procedure Room %@)",button.titleLabel.text];
     globalLocation = button.titleLabel.text;
     // runs a method that updates the current array of active tasks
     if(activeAct.count == 0){
@@ -320,7 +320,7 @@ NSInteger *globalCounter;
     UIButton *button = (UIButton *)sender;
 //    lblLocation.text = [NSString stringWithFormat:@"Nurse Station %@", button.titleLabel.text];
     [self.btnLocation setTitle:[NSString stringWithFormat:@"Nurse Station %@", button.titleLabel.text] forState:UIControlStateNormal];
-    NSString *navTitle = [[NSString alloc] initWithFormat:@"Select Task (Nurse Station %@)",button.titleLabel.text];
+    //NSString *navTitle = [[NSString alloc] initWithFormat:@"Select Task (Nurse Station %@)",button.titleLabel.text];
     globalLocation = button.titleLabel.text;
     // runs a method that updates the current array of active tasks
     if(activeAct.count == 0){
@@ -336,7 +336,7 @@ NSInteger *globalCounter;
     UIButton *button = (UIButton *)sender;
 //    lblLocation.text = [NSString stringWithFormat:@"Lab %@", button.titleLabel.text];
     [self.btnLocation setTitle:[NSString stringWithFormat:@"Lab %@", button.titleLabel.text] forState:UIControlStateNormal];
-    NSString *navTitle = [[NSString alloc] initWithFormat:@"Select Task (Lab %@)",button.titleLabel.text];
+    //NSString *navTitle = [[NSString alloc] initWithFormat:@"Select Task (Lab %@)",button.titleLabel.text];
     globalLocation = button.titleLabel.text;
     // runs a method that updates the current array of active tasks
     if(activeAct.count == 0){
@@ -352,7 +352,7 @@ NSInteger *globalCounter;
     UIButton *button = (UIButton *)sender;
 //    lblLocation.text = [NSString stringWithFormat:@"%@", button.titleLabel.text];
     [self.btnLocation setTitle:[NSString stringWithFormat:@"%@", button.titleLabel.text] forState:UIControlStateNormal];
-    NSString *navTitle = [[NSString alloc] initWithFormat:@"Select Task (%@)",button.titleLabel.text];
+    //NSString *navTitle = [[NSString alloc] initWithFormat:@"Select Task (%@)",button.titleLabel.text];
     globalLocation = button.titleLabel.text;
     // runs a method that updates the current array of active tasks
     if(activeAct.count == 0){
@@ -615,6 +615,7 @@ NSInteger *globalCounter;
     }
 }
 
+/* -- DELETE THIS WHEN WE CAN CONFIRM THE APPLICATION WORKS WELL WITHOUT THIS
 - (void)progEndTask:(NSTimer*)theTimer{
     NSString *tag = (NSString *)[theTimer userInfo];
     NSDate *currentDate = [NSDate date];
@@ -636,11 +637,11 @@ NSInteger *globalCounter;
             NSLog(@"%@,%@,%@,%@,%@,%@,%@,%@",[selArr objectAtIndex:0],@"end of task",@"",self.btnLocation.titleLabel.text,dateFormatted,timeFormatted,@"",@"");
             // put this information into the export array
             NSArray *tempStorage = [[NSArray alloc] initWithObjects:[selArr objectAtIndex:0],@"end of task",@"",self.btnLocation.titleLabel.text,dateFormatted,timeFormatted,@"",@"", nil];
-            /*
+            */ /*
             [exportArr addObject:tempStorage];
             if(exportArr.count > 0){
                 NSLog(@"successfully stored the current action. # of items: %d", [exportArr count]);
-            }*/
+            }*/ /*
             [self instantSave:tempStorage];
             [tempStorage release];
             
@@ -670,7 +671,7 @@ NSInteger *globalCounter;
     }
     [dateFormatter release];
     [dateFormatterD release];
-}
+} */
 - (IBAction)triggerTask:(id)sender {
 //    if([self.lblLocation.text isEqualToString:@"-"]){
     if([self.btnLocation.titleLabel.text isEqualToString:@"-"]){
@@ -1099,7 +1100,7 @@ NSInteger *globalCounter;
     }
     
     [self.btnLocation setTitle:[NSString stringWithFormat:@"%@_%@", prefix, button.titleLabel.text] forState:UIControlStateNormal];
-    NSString *navTitle = [[NSString alloc] initWithFormat:@"Select Task (%@)",button.titleLabel.text];
+    //NSString *navTitle = [[NSString alloc] initWithFormat:@"Select Task (%@)",button.titleLabel.text];
     globalLocation = button.titleLabel.text;
     // runs a method that updates the current array of active tasks
     if(activeAct.count == 0){

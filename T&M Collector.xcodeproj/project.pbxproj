@@ -28,7 +28,6 @@
 		4A3E5B7B1749114D0083672F /* smallbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A3E5B7A1749114D0083672F /* smallbutton.png */; };
 		4A3E5B7D174915060083672F /* end.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A3E5B7C174915060083672F /* end.png */; };
 		4A62BD191766B8190004C4C5 /* fill_red.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A62BD181766B8190004C4C5 /* fill_red.png */; };
-		4A90989C174876950051C070 /* tableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A90989B174876950051C070 /* tableController.m */; };
 		4AB4F9FA1767FB0D001BCF57 /* ACWebDAVClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB4F9B81767FB0D001BCF57 /* ACWebDAVClient.m */; };
 		4AB4F9FB1767FB0D001BCF57 /* CXMLNode+ACWebDAV.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB4F9BB1767FB0D001BCF57 /* CXMLNode+ACWebDAV.m */; };
 		4AB4F9FC1767FB0D001BCF57 /* ACWebDAVCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB4F9BE1767FB0D001BCF57 /* ACWebDAVCollection.m */; };
@@ -118,8 +117,6 @@
 		4A3E5B7A1749114D0083672F /* smallbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = smallbutton.png; sourceTree = "<group>"; };
 		4A3E5B7C174915060083672F /* end.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = end.png; sourceTree = "<group>"; };
 		4A62BD181766B8190004C4C5 /* fill_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fill_red.png; sourceTree = "<group>"; };
-		4A90989A174876950051C070 /* tableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tableController.h; path = ../tableController.h; sourceTree = "<group>"; };
-		4A90989B174876950051C070 /* tableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = tableController.m; path = ../tableController.m; sourceTree = "<group>"; };
 		4AB4F9B61767FB0D001BCF57 /* ACWebDAV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACWebDAV.h; sourceTree = "<group>"; };
 		4AB4F9B71767FB0D001BCF57 /* ACWebDAVClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACWebDAVClient.h; sourceTree = "<group>"; };
 		4AB4F9B81767FB0D001BCF57 /* ACWebDAVClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACWebDAVClient.m; sourceTree = "<group>"; };
@@ -282,8 +279,6 @@
 		4A187EFA172B0FD700D10D07 /* test7 */ = {
 			isa = PBXGroup;
 			children = (
-				4A90989A174876950051C070 /* tableController.h */,
-				4A90989B174876950051C070 /* tableController.m */,
 				4A054640174F117E00CD3B28 /* uploadController.h */,
 				4A054641174F117E00CD3B28 /* uploadController.m */,
 				C2790F6C1754484C00628669 /* NetworkManager.h */,
@@ -557,7 +552,6 @@
 				4AD0EC79172B9B1000C89D22 /* DetailTaskController.m in Sources */,
 				4AD0EC7C172B9DB200C89D22 /* LoginController.m in Sources */,
 				4AD0EC7F172BA11C00C89D22 /* SiteController.m in Sources */,
-				4A90989C174876950051C070 /* tableController.m in Sources */,
 				4A054642174F117E00CD3B28 /* uploadController.m in Sources */,
 				C2790F701754484C00628669 /* NetworkManager.m in Sources */,
 				4AB4F9FA1767FB0D001BCF57 /* ACWebDAVClient.m in Sources */,
