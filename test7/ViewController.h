@@ -39,6 +39,7 @@
 @property (strong, nonatomic) NSMutableArray *activeAct;
 @property (retain, nonatomic) NSString *globalLocation;
 @property (retain, nonatomic) NSMutableArray *exportArr;
+@property (retain, nonatomic) NSDate *nowDate;
 
 - (IBAction)changeLocation:(id)sender;
 - (IBAction)taskComp:(id)sender;

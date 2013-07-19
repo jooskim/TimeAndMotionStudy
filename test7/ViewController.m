@@ -70,20 +70,36 @@ NSInteger *globalCounter;
         locCodyClinic.hidden = YES;
         locCabinCreek.hidden = YES;
         locationList.hidden = YES;
+        // see if the code below causes errors
+        [locCodyClinic release];
+        [locCabinCreek release];
+        [locationList release];
         [scrollView addSubview:locMilesCity];
     }else if([self.valObsSite isEqualToString:@"Cody Clinic"]){
         locMilesCity.hidden = YES;
         locCabinCreek.hidden = YES;
         locationList.hidden = YES;
+        // see if the code below causes errors
+        [locMilesCity release];
+        [locCabinCreek release];
+        [locationList release];
         [scrollView addSubview:locCodyClinic];
     }else if([self.valObsSite isEqualToString:@"Cabin Creek"]){
         locCodyClinic.hidden = YES;
         locMilesCity.hidden = YES;
         locationList.hidden = YES;
+        // see if the code below causes errors
+        [locCodyClinic release];
+        [locMilesCity release];
+        [locationList release];
     }else{
         locMilesCity.hidden = YES;
         locCodyClinic.hidden = YES;
         locCabinCreek.hidden = YES;
+        // see if the code below causes errors
+        [locMilesCity release];
+        [locCodyClinic release];
+        [locCabinCreek release];
         [scrollView addSubview:locationList];
     }
    
@@ -118,8 +134,6 @@ NSInteger *globalCounter;
 }
 
 - (void)dealloc {
-//    [_observerName release];
-//    [_observeSite release];
     [_detailTitle release];
     [_partialV2 release];
     [_partialV1 release];
@@ -366,10 +380,15 @@ NSInteger *globalCounter;
         NSLog(@"%@,%@,%@,%@,%@,%@,%@,%@",[currentArr objectAtIndex:0],@"update of location",@"",self.btnLocation.titleLabel.text,dateFormatted,timeFormatted,@"",@"");
         // put this information into the export array
         NSArray *tempStorage = [[NSArray alloc] initWithObjects:[currentArr objectAtIndex:0],@"update of location",@"",self.btnLocation.titleLabel.text,dateFormatted,timeFormatted,@"",@"", nil];
+        /*
         [exportArr addObject:tempStorage];
         if(exportArr.count > 0){
             NSLog(@"successfully stored the current action. # of items: %d", [exportArr count]);
-        }
+        }*/
+        [self instantSave:tempStorage];
+        [tempStorage release];
+        [dateFormatter release];
+        [dateFormatterD release];
     }
 }
 - (IBAction)scrollToLocation:(id)sender {
@@ -387,7 +406,6 @@ NSInteger *globalCounter;
         NSLog(@"Cancel");
     }else{
         [self allTasksDone:nil];
-        [self saveData: nil];
         [self performSegueWithIdentifier:@"logoutSegue" sender: self];
         
     }
@@ -399,6 +417,7 @@ NSInteger *globalCounter;
     return activeAct.count;
 }
 
+/* -- DELETE THIS WHEN WE CAN CONFIRM THE APPLICATION WORKS WELL WITHOUT THIS
 -(void) taskDone:(id) sender {
     // gets the cell information from the superview
     UITableViewCell *owingCell = (UITableViewCell *)[sender superview];
@@ -445,6 +464,7 @@ NSInteger *globalCounter;
     [activeAct removeObjectAtIndex:pathToCell.row];
     [tableView deleteRowsAtIndexPaths:@[pathToCell] withRowAnimation:UITableViewRowAnimationFade];
 }
+*/
 -(UITableViewCell *)tableView:(UITableView *)aTableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *tableIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:tableIdentifier];
@@ -573,10 +593,16 @@ NSInteger *globalCounter;
                 
                 // put this information into the export array
                 NSArray *tempStorage = [[NSArray alloc] initWithObjects:[nowArr objectAtIndex:0],@"end of task",@"",self.btnLocation.titleLabel.text,dateFormatted,timeFormatted,@"",@"", nil];
+                /*
                 [exportArr addObject:tempStorage];
                 if(exportArr.count > 0){
                     NSLog(@"successfully stored the current action. # of items: %d", [exportArr count]);
                 }
+                 */
+                [self instantSave:tempStorage];
+                [tempStorage release];
+                [dateFormatter release];
+                [dateFormatterD release];
                 
                 NSIndexPath *delCellPath = [NSIndexPath indexPathForRow:1 inSection:0];
                 
@@ -610,10 +636,13 @@ NSInteger *globalCounter;
             NSLog(@"%@,%@,%@,%@,%@,%@,%@,%@",[selArr objectAtIndex:0],@"end of task",@"",self.btnLocation.titleLabel.text,dateFormatted,timeFormatted,@"",@"");
             // put this information into the export array
             NSArray *tempStorage = [[NSArray alloc] initWithObjects:[selArr objectAtIndex:0],@"end of task",@"",self.btnLocation.titleLabel.text,dateFormatted,timeFormatted,@"",@"", nil];
+            /*
             [exportArr addObject:tempStorage];
             if(exportArr.count > 0){
                 NSLog(@"successfully stored the current action. # of items: %d", [exportArr count]);
-            }
+            }*/
+            [self instantSave:tempStorage];
+            [tempStorage release];
             
             NSIndexPath *delCellPath = [NSIndexPath indexPathForRow:i inSection:0];
             
@@ -639,6 +668,8 @@ NSInteger *globalCounter;
         }else{
         }
     }
+    [dateFormatter release];
+    [dateFormatterD release];
 }
 - (IBAction)triggerTask:(id)sender {
 //    if([self.lblLocation.text isEqualToString:@"-"]){
@@ -730,10 +761,15 @@ NSInteger *globalCounter;
                             NSLog(@"%@,%@,%@,%@,%@,%@,%@,%@",[selArr objectAtIndex:0],@"end of task",@"",self.btnLocation.titleLabel.text,dateFormatted,timeFormatted,@"",@"");
                             // put this information into the export array
                             NSArray *tempStorage = [[NSArray alloc] initWithObjects:[selArr objectAtIndex:0],@"end of task",@"",self.btnLocation.titleLabel.text,dateFormatted,timeFormatted,@"",@"", nil];
+                            /*
                             [exportArr addObject:tempStorage];
                             if(exportArr.count > 0){
                                 NSLog(@"successfully stored the current action. # of items: %d", [exportArr count]);
                             }
+                             */
+                            [self instantSave:tempStorage];
+                            [tempStorage release];
+                            [buttonTag release];
                             
                             NSIndexPath *delCellPath = [NSIndexPath indexPathForRow:i inSection:0];
                             
@@ -790,10 +826,16 @@ NSInteger *globalCounter;
                         
                         // put this information into the export array
                         NSArray *tempStorage = [[NSArray alloc] initWithObjects:[NSString stringWithFormat:@"%d", (int)globalCounter],@"creation",[NSString stringWithFormat:@"%d",button.tag],self.btnLocation.titleLabel.text,dateFormatted,timeFormatted,self.observerName.text,self.observeeName.text, nil];
+                    
+                    [self instantSave:tempStorage];
+                    [tempStorage release];
+                    
+                    /*
                         [exportArr addObject:tempStorage];
                         if(exportArr.count > 0){
                             NSLog(@"successfully stored the current action. # of items: %d", [exportArr count]);
                         }
+                     */
                         globalCounter = (NSInteger *) ((int)globalCounter + 1);
                         [activeAct insertObject:curSel atIndex:0];
                         [tableView reloadData];
@@ -844,10 +886,16 @@ NSInteger *globalCounter;
                         
                         // put this information into the export array
                         NSArray *tempStorage = [[NSArray alloc] initWithObjects:[NSString stringWithFormat:@"%d", (int)globalCounter],@"creation",[NSString stringWithFormat:@"%d",button.tag],self.btnLocation.titleLabel.text,dateFormatted,timeFormatted,self.observerName.text,self.observeeName.text, nil];
+                    /*
                         [exportArr addObject:tempStorage];
                         if(exportArr.count > 0){
                             NSLog(@"successfully stored the current action. # of items: %d", [exportArr count]);
                         }
+                     */
+                        [self instantSave:tempStorage];
+                        [tempStorage release];
+                        [dateFormatter release]; //!
+                        [dateFormatterD release]; //!
                         globalCounter = (NSInteger *) ((int)globalCounter + 1);
                         [activeAct insertObject:curSel atIndex:0];
                         [tableView reloadData];
@@ -883,10 +931,16 @@ NSInteger *globalCounter;
                     NSLog(@"%@,%@,%@,%@,%@,%@,%@,%@",[selArr objectAtIndex:0],@"end of task",@"",self.btnLocation.titleLabel.text,dateFormatted,timeFormatted,@"",@"");
                     // put this information into the export array
                     NSArray *tempStorage = [[NSArray alloc] initWithObjects:[selArr objectAtIndex:0],@"end of task",@"",self.btnLocation.titleLabel.text,dateFormatted,timeFormatted,@"",@"", nil];
+                    /*
                     [exportArr addObject:tempStorage];
                     if(exportArr.count > 0){
                         NSLog(@"successfully stored the current action. # of items: %d", [exportArr count]);
                     }
+                     */
+                    [self instantSave:tempStorage];
+                    [tempStorage release];
+                    [dateFormatter release];
+                    [dateFormatterD release];
                     NSIndexPath *delCellPath = [NSIndexPath indexPathForRow:0 inSection:0];
                     [activeAct removeObjectAtIndex:0];
                     [tableView deleteRowsAtIndexPaths:@[delCellPath] withRowAnimation:UITableViewRowAnimationFade];
@@ -929,10 +983,16 @@ NSInteger *globalCounter;
         
         // put this information into the export array
         NSArray *tempStorage = [[NSArray alloc] initWithObjects:[nowArr objectAtIndex:0],@"end of task",@"",self.btnLocation.titleLabel.text,dateFormatted,timeFormatted,@"",@"", nil];
+        /*
         [exportArr addObject:tempStorage];
         if(exportArr.count > 0){
             NSLog(@"successfully stored the current action. # of items: %d", [exportArr count]);
         }
+         */
+        [self instantSave:tempStorage];
+        [tempStorage release];
+        [dateFormatter release];
+        [dateFormatterD release];
     }
     [activeAct removeAllObjects];
     [tableView reloadData];
@@ -996,10 +1056,16 @@ NSInteger *globalCounter;
                 
                 // put this information into the export array
                 NSArray *tempStorage = [[NSArray alloc] initWithObjects:[nowArr objectAtIndex:0],@"interruption",@"",self.btnLocation.titleLabel.text,dateFormatted,timeFormatted,@"",@"", nil];
+                /*
                 [exportArr addObject:tempStorage];
                 if(exportArr.count > 0){
                     NSLog(@"successfully stored the current action. # of items: %d", [exportArr count]);
                 }
+                 */
+                [self instantSave:tempStorage];
+                [tempStorage release];
+                [dateFormatter release];
+                [dateFormatterD release];
         }else{
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Error" message:@"There is no active task that can be interrupted!" delegate: nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
             [alert show];
@@ -1074,13 +1140,74 @@ NSInteger *globalCounter;
         
         // put this information into the export array
         NSArray *tempStorage = [[NSArray alloc] initWithObjects:[nowArr objectAtIndex:0],@"cancellation",@"",self.btnLocation.titleLabel.text,dateFormatted,timeFormatted,@"",@"", nil];
+        /*
         [exportArr addObject:tempStorage];
         if(exportArr.count > 0){
             NSLog(@"successfully stored the current action. # of items: %d", [exportArr count]);
-        }
+        }*/
+        [self instantSave:tempStorage];
+        [tempStorage release];
+        [dateFormatter release];
+        [dateFormatterD release];
         [activeAct removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }
+}
+
+-(void) instantSave:(NSArray*)tempData { // this function accepts an NSArray as a parameter
+    self.nowDate = [NSDate date];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    //[dateFormatter setDateFormat:@"MMddyyyy-HHmmss"];
+    [dateFormatter setDateFormat:@"MMddyyyy"];
+
+    NSString *timeFormatted = [dateFormatter stringFromDate:self.nowDate]; // used for creating a file
+    
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsPath = [paths objectAtIndex:0];
+    NSString *observerDeHyp = [observerName.text stringByReplacingOccurrencesOfString:@" " withString:@"_"];
+    NSString *observeeDeHyp = [observeeName.text stringByReplacingOccurrencesOfString:@" " withString:@"_"];
+    NSString *observeSiteDeHyp = [observeSite.text stringByReplacingOccurrencesOfString:@" " withString:@"_"];
+    NSString *errorList = nil;
+    
+    // if the user is resuming a previous observation, get the file name of the log file to which we are about to append data.
+    NSString *plistPath = [documentsPath stringByAppendingPathComponent:[NSString stringWithFormat:@"%@-%@-%@-%@.plist",timeFormatted,observeSiteDeHyp,observerDeHyp,observeeDeHyp]];
+    
+    // 1-1. check whether there is a log file created on the iPad. (this means more than one task was triggered before) If there is one, proceed to the steps below
+    BOOL fileExists = [[NSFileManager defaultManager] fileExistsAtPath:plistPath];
+    if(fileExists == YES){
+        NSMutableArray *dataCollection = [[NSMutableArray alloc] initWithContentsOfFile:plistPath];
+        // append the data.
+        [dataCollection addObject:tempData];
+        
+        NSData *dataXML = [NSPropertyListSerialization dataFromPropertyList:dataCollection format:NSPropertyListXMLFormat_v1_0 errorDescription: &errorList];
+        if(dataXML){
+            [dataXML writeToFile:plistPath atomically:YES];
+            NSLog(@"Successfully created");
+        }else{
+            NSLog(@"Error in saving data: %@", errorList);
+        }
+        // empty the collection array
+        [dataCollection release];
+        
+    }else{
+        // 1-2. if there isn't any, proceed to the steps below.
+        // create a new file.
+        // append the data next.
+        NSMutableArray *dataCollection = [[NSMutableArray alloc] init];
+        [dataCollection addObject:tempData];
+        
+        NSData *dataXML = [NSPropertyListSerialization dataFromPropertyList:dataCollection format:NSPropertyListXMLFormat_v1_0 errorDescription:&errorList];
+        if(dataXML){
+            [dataXML writeToFile:plistPath atomically:YES];
+            NSLog(@"Successfully created");
+        }else{
+            NSLog(@"Error in saving data: %@", errorList);
+        }
+        // empty the collection array
+        [dataCollection release];
+    }
+    
+    [dateFormatter release];
 }
 
 -(IBAction) saveData:(id)sender {
