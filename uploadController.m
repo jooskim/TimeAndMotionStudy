@@ -277,7 +277,7 @@ enum {
         UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:selectedIndexPath];
         NSLog(@"%@", cell.textLabel.text);
         
-        NSArray *lines = [cell.textLabel.text componentsSeparatedByString: @"-"];
+        NSArray *lines = [[cell.textLabel.text stringByReplacingOccurrencesOfString:@".plist" withString:@""] componentsSeparatedByString: @"-"];
         
         ViewController *mainView = (ViewController *)segue.destinationViewController;
         mainView.valObsDate = lines[0];
