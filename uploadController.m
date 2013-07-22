@@ -10,6 +10,7 @@
 #import "NetworkManager.h"
 #include <CFNetwork/CFNetwork.h>
 #import "ACWebDAVClient.h"
+#import "ViewController.h"
 
 enum {
     kSendBufferSize = 32768
@@ -175,6 +176,7 @@ enum {
             if ([self.valAction isEqualToString:@"Resume"])
             {
                 NSLog(@"Resume button clicked");
+                [self performSegueWithIdentifier:@"resume" sender:self];
             }
             else
             {
@@ -266,6 +268,24 @@ enum {
     [super dealloc];
 }
 
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if([segue.identifier isEqualToString:@"resume"]){
+        
+        NSIndexPath *selectedIndexPath = [tableView indexPathForSelectedRow];
+        UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:selectedIndexPath];
+        NSLog(@"%@", cell.textLabel.text);
+        
+        NSArray *lines = [cell.textLabel.text componentsSeparatedByString: @"-"];
+        
+        ViewController *mainView = (ViewController *)segue.destinationViewController;
+        mainView.valObsDate = lines[0];
+        mainView.valObsSite = lines[1];
+        mainView.valObsName = lines[2];
+        mainView.valObsEEName = lines[3];
+    }
+}
 
 
 /*

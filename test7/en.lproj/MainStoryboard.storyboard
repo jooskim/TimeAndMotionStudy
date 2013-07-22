@@ -6544,6 +6544,7 @@
                         <outlet property="editButton" destination="O6g-g5-cJV" id="LHW-p4-Cct"/>
                         <outlet property="tableView" destination="P8y-uS-CKi" id="FyL-hf-ZOa"/>
                         <outlet property="titleBar" destination="dzx-TH-hTl" id="exN-76-6gl"/>
+                        <segue destination="HBA-Vg-3vc" kind="modal" identifier="resume" modalTransitionStyle="flipHorizontal" id="e7n-WI-7Ul"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qcv-gz-6er" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -6624,9 +6625,7 @@
                 <relationship kind="action" name="deleteData:"/>
                 <relationship kind="action" name="endObservation:"/>
                 <relationship kind="action" name="interrupt:"/>
-                <relationship kind="action" name="onMultitaskChange:"/>
                 <relationship kind="action" name="saveData:"/>
-                <relationship kind="action" name="scrollToLocation:"/>
                 <relationship kind="action" name="sendToFTP:"/>
                 <relationship kind="action" name="taskComp:"/>
                 <relationship kind="action" name="taskInteraction:"/>
@@ -6683,5 +6682,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="n8y-Pw-MdF"/>
         <segue reference="UId-t9-kiS"/>
+        <segue reference="dF7-UO-OCa"/>
     </inferredMetricsTieBreakers>
 </document>
