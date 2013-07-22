@@ -18,6 +18,7 @@
 }
 
 
+@property (nonatomic) NSString *valObsDate;
 @property (nonatomic) NSString *valObsName;
 @property (nonatomic) NSString *valObsEEName;
 @property (nonatomic) NSString *valObsSite;
