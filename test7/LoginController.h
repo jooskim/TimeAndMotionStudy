@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "ViewController.h">
+#import "uploadController.h">
 
 @interface LoginController : UIViewController <UITableViewDelegate,UITableViewDataSource>
 

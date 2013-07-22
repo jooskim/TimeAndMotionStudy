@@ -12,6 +12,9 @@
 @property (retain, nonatomic) IBOutlet UITableView *tableView;
 @property (retain, nonatomic) NSMutableArray *dataList;
 @property (retain, nonatomic) IBOutlet UIBarButtonItem *editButton;
+@property (retain, nonatomic) IBOutlet UINavigationItem *titleBar;
+
+@property (nonatomic) NSString *valAction;
 
 -(IBAction)toggleEdit:(id)sender;
 @end

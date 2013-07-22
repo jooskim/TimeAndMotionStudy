@@ -18,7 +18,7 @@ enum {
 @interface uploadController () <NSStreamDelegate>
 
 // things for IB
-
+@property (nonatomic) NSString *valBtnText;
 @property (nonatomic, strong, readwrite) IBOutlet UITextField *               urlText;
 @property (nonatomic, strong, readwrite) IBOutlet UITextField *               usernameText;
 @property (nonatomic, strong, readwrite) IBOutlet UITextField *               passwordText;
@@ -37,6 +37,7 @@ enum {
 @property (nonatomic, assign, readonly ) uint8_t *         buffer;
 @property (nonatomic, assign, readwrite) size_t            bufferOffset;
 @property (nonatomic, assign, readwrite) size_t            bufferLimit;
+@property (nonatomic, assign, readwrite) NSString *        valAction_s;
 
 @end
 
@@ -54,13 +55,22 @@ enum {
     return self;
 }
 
-@synthesize dataList,tableView;
+@synthesize dataList,tableView,titleBar;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     dataList = [[NSMutableArray alloc] init];
+
+    // title text setting
+    if([self.valAction isEqualToString:@"Resume"]){
+        self.valAction_s = @"resume";
+    } else {
+        self.valAction_s = @"upload";
+    }
+    titleBar.title = [@"Select observation record you wish to " stringByAppendingString: self.valAction_s];
+    
     [self loadMetaData:self];
 }
 
@@ -140,16 +150,15 @@ enum {
     
     // Show the confirmation.
     UIAlertView *alert = [[UIAlertView alloc]
-                          initWithTitle: NSLocalizedString(@"Upload Observation Data",nil)
-                          message: [NSString stringWithFormat: @"Are you sure you want to upload %@?", cell.textLabel.text]
+                          initWithTitle: [NSString stringWithFormat: @"%@ Observation Data", self.valAction]
+                          message: [NSString stringWithFormat: @"Are you sure you want to %@ %@?", self.valAction_s, cell.textLabel.text]
                           delegate: self
                           cancelButtonTitle: NSLocalizedString(@"Cancel",nil)
-                          otherButtonTitles: NSLocalizedString(@"Upload",nil), nil];
+                          otherButtonTitles: NSLocalizedString(self.valAction ,nil), nil];
     [alert show];
     [alert release];
     
 }
-
 
 // Called when an alertview button is touched
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
@@ -158,44 +167,50 @@ enum {
         case 0:
         {
             // NSLog(@"Cancel button clicked by the user");
-        }
             break;
+        }
             
         case 1:
         {
-            //NSLog(@"Upload button clicked by the user");
-            
-            // Upload the data
-            //    assert( [sender isKindOfClass:[UIView class]] );
-            
-            if ( ! self.isSending ) {
-                NSString *  filePath;
-                
-                // User the tag on the UIButton to determine which image to send.
-                
-                //        assert(sender.tag >= 0);
-                //        filePath = [[NetworkManager sharedInstance] pathForTestImage:(NSUInteger) sender.tag];
-                //        assert(filePath != nil);
-                
-                NSIndexPath *selectedIndexPath = [tableView indexPathForSelectedRow];
-                UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:selectedIndexPath];
-                //                NSLog(@"%@", cell.textLabel.text);
-                
-                NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-                NSString *documentsPath = [paths objectAtIndex:0];
-                filePath = [documentsPath stringByAppendingPathComponent:[NSString stringWithFormat: @"%@", cell.textLabel.text]];
-                
-                ACWebDAVClient *propReq = [[ACWebDAVClient alloc]init];
-                [propReq initWithHost:@"http://timemotion:tm2013@141.211.11.11" username: @"timemotion" password: @"tm2013"];
-                [propReq uploadFile:[NSString stringWithFormat: @"%@", cell.textLabel.text] toPath:@"/timemotion/log/" fromPath:filePath];
-                
-                /* // For FTP upload -------------------------------------------
-                 [self startSend:filePath];
-                 ------------------------------------------- */
+            if ([self.valAction isEqualToString:@"Resume"])
+            {
+                NSLog(@"Resume button clicked");
             }
+            else
+            {
+                //NSLog(@"Upload button clicked by the user");
+                
+                // Upload the data
+                //    assert( [sender isKindOfClass:[UIView class]] );
             
-        }
+                if ( ! self.isSending ) {
+                    NSString *  filePath;
+                
+                    // User the tag on the UIButton to determine which image to send.
+                
+                    //        assert(sender.tag >= 0);
+                    //        filePath = [[NetworkManager sharedInstance] pathForTestImage:(NSUInteger) sender.tag];
+                    //        assert(filePath != nil);
+                
+                    NSIndexPath *selectedIndexPath = [tableView indexPathForSelectedRow];
+                    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:selectedIndexPath];
+                    //                NSLog(@"%@", cell.textLabel.text);
+                
+                    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+                    NSString *documentsPath = [paths objectAtIndex:0];
+                    filePath = [documentsPath stringByAppendingPathComponent:[NSString stringWithFormat: @"%@", cell.textLabel.text]];
+                
+                    ACWebDAVClient *propReq = [[ACWebDAVClient alloc]init];
+                    [propReq initWithHost:@"http://timemotion:tm2013@141.211.11.11" username: @"timemotion" password: @"tm2013"];
+                    [propReq uploadFile:[NSString stringWithFormat: @"%@", cell.textLabel.text] toPath:@"/timemotion/log/" fromPath:filePath];
+                
+                    /* // For FTP upload -------------------------------------------
+                     [self startSend:filePath];
+                     ------------------------------------------- */
+                }
+            }
             break;
+        }
     }
     
 }
@@ -247,6 +262,7 @@ enum {
 
 - (void)dealloc {
     [_editButton release];
+    [titleBar release];
     [super dealloc];
 }
 

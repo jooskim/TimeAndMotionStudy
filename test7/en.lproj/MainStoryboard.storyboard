@@ -6443,7 +6443,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="v7i-nR-N9t">
-                                <rect key="frame" x="721" y="558" width="283" height="139"/>
+                                <rect key="frame" x="721" y="635" width="283" height="62"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <state key="normal" title="Upload Observation Data" backgroundImage="startobs.png">
@@ -6454,7 +6454,22 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Mok-Tq-YjO" kind="modal" identifier="upload" modalTransitionStyle="flipHorizontal" id="d8m-Io-Hc4"/>
+                                    <segue destination="Mok-Tq-YjO" kind="modal" identifier="Upload" modalTransitionStyle="flipHorizontal" id="d8m-Io-Hc4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Awn-PV-JVm">
+                                <rect key="frame" x="721" y="558" width="283" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <state key="normal" title="Resume Observation" backgroundImage="startobs.png">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Mok-Tq-YjO" kind="modal" identifier="Resume" modalTransitionStyle="flipHorizontal" id="UId-t9-kiS"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -6528,6 +6543,7 @@
                     <connections>
                         <outlet property="editButton" destination="O6g-g5-cJV" id="LHW-p4-Cct"/>
                         <outlet property="tableView" destination="P8y-uS-CKi" id="FyL-hf-ZOa"/>
+                        <outlet property="titleBar" destination="dzx-TH-hTl" id="exN-76-6gl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qcv-gz-6er" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -6567,12 +6583,105 @@
         <image name="smallbutton.png" width="70" height="44"/>
         <image name="startobs.png" width="451" height="70"/>
     </resources>
+    <classes>
+        <class className="DetailTaskController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DetailTaskController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="locationPartialView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="titleBar" candidateClass="UINavigationBar"/>
+            </relationships>
+        </class>
+        <class className="LoginController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginController.h"/>
+            <relationships>
+                <relationship kind="action" name="changeRA:"/>
+                <relationship kind="action" name="changeSite:"/>
+                <relationship kind="action" name="hideKeyboard:"/>
+                <relationship kind="action" name="replicateName:"/>
+                <relationship kind="action" name="startObs:"/>
+                <relationship kind="outlet" name="obsEE" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="obsEEInput" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="obsRA" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="obsSite" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="allTasksDone:"/>
+                <relationship kind="action" name="changeLabelLocation_exam:"/>
+                <relationship kind="action" name="changeLabelLocation_lab:"/>
+                <relationship kind="action" name="changeLabelLocation_nurse:"/>
+                <relationship kind="action" name="changeLabelLocation_office:"/>
+                <relationship kind="action" name="changeLabelLocation_other:"/>
+                <relationship kind="action" name="changeLabelLocation_procedure:"/>
+                <relationship kind="action" name="changeLocCC:"/>
+                <relationship kind="action" name="changeLocCody:"/>
+                <relationship kind="action" name="changeLocMiles:"/>
+                <relationship kind="action" name="changeLocation:"/>
+                <relationship kind="action" name="changeViewLocation:"/>
+                <relationship kind="action" name="changeViewTask:"/>
+                <relationship kind="action" name="deleteData:"/>
+                <relationship kind="action" name="endObservation:"/>
+                <relationship kind="action" name="interrupt:"/>
+                <relationship kind="action" name="onMultitaskChange:"/>
+                <relationship kind="action" name="saveData:"/>
+                <relationship kind="action" name="scrollToLocation:"/>
+                <relationship kind="action" name="sendToFTP:"/>
+                <relationship kind="action" name="taskComp:"/>
+                <relationship kind="action" name="taskInteraction:"/>
+                <relationship kind="action" name="taskPaper:"/>
+                <relationship kind="action" name="triggerTask:"/>
+                <relationship kind="outlet" name="activityContainer" candidateClass="UIView"/>
+                <relationship kind="outlet" name="btnLocation" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="detailTitle" candidateClass="UINavigationItem"/>
+                <relationship kind="outlet" name="headerMain" candidateClass="UINavigationItem"/>
+                <relationship kind="outlet" name="interruptBtn" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="isMultitasking" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="lblLocation" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="locCabinCreek" candidateClass="UIView"/>
+                <relationship kind="outlet" name="locCodyClinic" candidateClass="UIView"/>
+                <relationship kind="outlet" name="locMilesCity" candidateClass="UIView"/>
+                <relationship kind="outlet" name="locationList" candidateClass="UIView"/>
+                <relationship kind="outlet" name="observeSite" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="observeeName" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="observerName" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="partialV1" candidateClass="UIView"/>
+                <relationship kind="outlet" name="partialV2" candidateClass="UIView"/>
+                <relationship kind="outlet" name="partialV3" candidateClass="UIView"/>
+                <relationship kind="outlet" name="partialV4" candidateClass="UIView"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="taskBar" candidateClass="UINavigationBar"/>
+                <relationship kind="outlet" name="taskList" candidateClass="UIView"/>
+                <relationship kind="outlet" name="taskList2" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="uploadController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/uploadController.h"/>
+            <relationships>
+                <relationship kind="action" name="cancelAction:"/>
+                <relationship kind="action" name="sendAction:" candidateClass="UIView"/>
+                <relationship kind="action" name="toggleEdit:"/>
+                <relationship kind="outlet" name="activityIndicator" candidateClass="UIActivityIndicatorView"/>
+                <relationship kind="outlet" name="cancelButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="editButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="passwordText" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="statusLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="titleBar" candidateClass="UINavigationItem"/>
+                <relationship kind="outlet" name="urlText" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="usernameText" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="hIZ-ln-hI5"/>
+        <segue reference="n8y-Pw-MdF"/>
+        <segue reference="UId-t9-kiS"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -1189,7 +1189,7 @@ NSInteger *globalCounter;
         NSData *dataXML = [NSPropertyListSerialization dataFromPropertyList:dataCollection format:NSPropertyListXMLFormat_v1_0 errorDescription: &errorList];
         if(dataXML){
             [dataXML writeToFile:plistPath atomically:YES];
-            NSLog(@"Successfully created");
+            NSLog(@"Successfully created (append)");
         }else{
             NSLog(@"Error in saving data: %@", errorList);
         }

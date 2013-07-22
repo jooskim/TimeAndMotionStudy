@@ -101,7 +101,13 @@
         mainView.valObsSite = self.obsSite.text;
         mainView.valObsName = self.obsRA.text;
         mainView.valObsEEName = self.obsEE.text;
+    } else {    // upload, resume
+        uploadController *mainView = (uploadController *)segue.destinationViewController;
+        mainView.valAction = segue.identifier;
     }
+
+    
+
 }
 
 
