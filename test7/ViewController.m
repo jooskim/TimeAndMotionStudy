@@ -108,6 +108,7 @@ NSInteger *globalCounter;
     self.observerName.text = self.valObsName;
     self.observeeName.text = self.valObsEEName;
     self.observeSite.text = self.valObsSite;
+    self.dateTest.text = self.valObsDate;
     
     // initialize the global counter with 0
     globalCounter = (int) 0;
@@ -142,6 +143,7 @@ NSInteger *globalCounter;
     [_headerMain release];
     [_activityContainer release];
     [_taskBar release];
+    [_dateTest release];
     [super dealloc];
 }
 - (IBAction)changeLocation:(id)sender {
@@ -1177,6 +1179,11 @@ NSInteger *globalCounter;
     NSString *errorList = nil;
     
     // if the user is resuming a previous observation, get the file name of the log file to which we are about to append data.
+    NSLog(@"%@",self.dateTest.text);
+    if(self.dateTest.text.length != 0){
+        timeFormatted = self.dateTest.text;
+    }
+    
     NSString *plistPath = [documentsPath stringByAppendingPathComponent:[NSString stringWithFormat:@"%@-%@-%@-%@.plist",timeFormatted,observeSiteDeHyp,observerDeHyp,observeeDeHyp]];
     
     // 1-1. check whether there is a log file created on the iPad. (this means more than one task was triggered before) If there is one, proceed to the steps below
@@ -1195,6 +1202,7 @@ NSInteger *globalCounter;
         }
         // empty the collection array
         [dataCollection release];
+        [self metaWrite:timeFormatted];
         
     }else{
         // 1-2. if there isn't any, proceed to the steps below.
@@ -1212,11 +1220,76 @@ NSInteger *globalCounter;
         }
         // empty the collection array
         [dataCollection release];
+        [self metaWrite:timeFormatted];
     }
     
     [dateFormatter release];
 }
 
+-(void) metaWrite:(NSString*)sender {
+    NSString *timeFormatted = sender;
+    
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsPath = [paths objectAtIndex:0];
+    NSString *observerDeHyp = [observerName.text stringByReplacingOccurrencesOfString:@" " withString:@"_"];
+    NSString *observeeDeHyp = [observeeName.text stringByReplacingOccurrencesOfString:@" " withString:@"_"];
+    NSString *observeSiteDeHyp = [observeSite.text stringByReplacingOccurrencesOfString:@" " withString:@"_"];
+    NSString *plistPathMeta = [documentsPath stringByAppendingPathComponent:@"metaData.plist"];
+    NSString *errorMeta = nil;
+    
+    BOOL metaExists = [[NSFileManager defaultManager] fileExistsAtPath:plistPathMeta];
+    
+    NSMutableArray *metaInfo;
+    
+    if(metaExists == YES){
+        metaInfo = [[NSMutableArray alloc] initWithContentsOfFile: plistPathMeta];
+        // determine whether there exists the same log file (another if/else statement goes here)
+        //NSString *plistPath = [documentsPath stringByAppendingPathComponent:[NSString stringWithFormat:@"%@-%@-%@-%@.plist",timeFormatted,observeSiteDeHyp,observerDeHyp,observeeDeHyp]];
+        
+        // 1-1. check whether there is a log file created on the iPad. (this means more than one task was triggered before) If there is one, proceed to the steps below
+        
+        NSString *haystack = [[NSString alloc] initWithFormat:@"%@-%@-%@-%@.plist", timeFormatted, observeSiteDeHyp, observerDeHyp, observeeDeHyp];
+        int sig=0;
+        
+        for(int i=0; i<[metaInfo count]; i++){
+            //NSLog(@"%@ vs %@",[metaInfo objectAtIndex:0],haystack);
+            if([haystack isEqualToString:[metaInfo objectAtIndex:i]]){
+                sig=1;
+                break;
+            }else{
+                continue;
+            }
+        }
+        
+        if(sig == 1){
+            // nothing happens
+            NSLog(@"File already exists. metaWrite is not updating the metaData.plist file.");
+        }else{
+            [metaInfo addObject: [NSString stringWithFormat:@"%@-%@-%@-%@.plist",timeFormatted,observeSiteDeHyp,observerDeHyp,observeeDeHyp]];
+            NSData *plistDataMeta = [NSPropertyListSerialization dataFromPropertyList: metaInfo format:NSPropertyListXMLFormat_v1_0 errorDescription:&errorMeta];
+            
+            if(plistDataMeta){
+                [plistDataMeta writeToFile:plistPathMeta atomically:YES];
+                [metaInfo release];
+            }else{
+                NSLog(@"Error in saving meta data: %@", errorMeta);
+            }
+        }
+        
+    }else{
+        metaInfo = [[NSMutableArray alloc] initWithObjects: [NSString stringWithFormat:@"%@-%@-%@-%@.plist",timeFormatted,observeSiteDeHyp,observerDeHyp,observeeDeHyp], nil];
+        NSData *plistDataMeta = [NSPropertyListSerialization dataFromPropertyList: metaInfo format:NSPropertyListXMLFormat_v1_0 errorDescription:&errorMeta];
+        
+        if(plistDataMeta){
+            [plistDataMeta writeToFile:plistPathMeta atomically:YES];
+            [metaInfo release];
+        }else{
+            NSLog(@"Error in saving meta data: %@", errorMeta);
+        }
+    }
+    
+}
+/*
 -(IBAction) saveData:(id)sender {
     NSDate *currentDate = [NSDate date];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
@@ -1263,7 +1336,7 @@ NSInteger *globalCounter;
         NSLog(@"Error in savedata: %@", error);
     }
 }
-
+*/
 
 -(IBAction) sendToFTP:(id)sender {
     

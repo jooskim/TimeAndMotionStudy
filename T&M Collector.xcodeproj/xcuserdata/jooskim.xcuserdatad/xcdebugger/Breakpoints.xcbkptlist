@@ -8,12 +8,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "test7/ViewController.h"
-         timestampString = "395884317.194485"
+         timestampString = "396164704.719001"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "64"
-         endingLineNumber = "64"
-         landmarkName = "-changeLabelLocation_other:"
+         startingLineNumber = "66"
+         endingLineNumber = "66"
+         landmarkName = "-changeLabelLocation_lab:"
          landmarkType = "4">
       </FileBreakpoint>
       <FileBreakpoint
@@ -21,12 +21,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "test7/ViewController.h"
-         timestampString = "390869706.660087"
+         timestampString = "396164704.719001"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "35"
-         endingLineNumber = "35"
-         landmarkName = "activityContainer"
+         startingLineNumber = "37"
+         endingLineNumber = "37"
+         landmarkName = "partialV1"
          landmarkType = "19">
       </FileBreakpoint>
       <FileBreakpoint
@@ -58,11 +58,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "test7/ViewController.m"
-         timestampString = "395886610.915604"
+         timestampString = "396164783.284424"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "532"
-         endingLineNumber = "532"
+         startingLineNumber = "534"
+         endingLineNumber = "534"
          landmarkName = "-tableView:cellForRowAtIndexPath:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -71,24 +71,24 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "test7/ViewController.m"
-         timestampString = "395887877.891812"
+         timestampString = "396164783.284424"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "207"
-         endingLineNumber = "207"
+         startingLineNumber = "209"
+         endingLineNumber = "209"
          landmarkName = "-changeLocMiles:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "Yes"
+         shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "test7/ViewController.m"
-         timestampString = "395900316.54926"
+         timestampString = "396164783.284424"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "739"
-         endingLineNumber = "739"
+         startingLineNumber = "741"
+         endingLineNumber = "741"
          landmarkName = "-triggerTask:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -97,11 +97,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "test7/ViewController.m"
-         timestampString = "395887877.891812"
+         timestampString = "396164783.284424"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "227"
-         endingLineNumber = "227"
+         startingLineNumber = "229"
+         endingLineNumber = "229"
          landmarkName = "-changeLocMiles:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -110,12 +110,51 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "test7/ViewController.m"
-         timestampString = "395900330.837583"
+         timestampString = "396164783.284424"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "408"
-         endingLineNumber = "408"
+         startingLineNumber = "410"
+         endingLineNumber = "410"
          landmarkName = "-alertView:clickedButtonAtIndex:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "test7/ViewController.m"
+         timestampString = "396164783.284424"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "1278"
+         endingLineNumber = "1278"
+         landmarkName = "-metaWrite:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "test7/ViewController.m"
+         timestampString = "396164783.284424"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "1185"
+         endingLineNumber = "1185"
+         landmarkName = "-instantSave:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "test7/ViewController.m"
+         timestampString = "396164783.284424"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "1188"
+         endingLineNumber = "1188"
+         landmarkName = "-instantSave:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

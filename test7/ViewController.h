@@ -26,6 +26,8 @@
 @property (retain, nonatomic) IBOutlet UILabel *observerName;
 @property (retain, nonatomic) IBOutlet UILabel *observeeName;
 @property (retain, nonatomic) IBOutlet UILabel *observeSite;
+@property (retain, nonatomic) IBOutlet UILabel *dateTest;
+
 @property (retain, nonatomic) IBOutlet UILabel *lblLocation;
 @property (retain, nonatomic) IBOutlet UIButton *btnLocation;
 @property (retain, nonatomic) IBOutlet UINavigationItem *detailTitle;
@@ -63,7 +65,7 @@
 -(IBAction) changeLabelLocation_nurse:(id)sender;
 -(IBAction) changeLabelLocation_lab:(id)sender;
 -(IBAction) changeLabelLocation_other:(id)sender;
--(IBAction) saveData:(id)sender;
+/*-(IBAction) saveData:(id)sender; */
 -(IBAction) deleteData:(id)sender;
 -(IBAction) sendToFTP:(id)sender;
 
