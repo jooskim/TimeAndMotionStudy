@@ -66,7 +66,7 @@ NSInteger *globalCounter;
     [scrollView addSubview:taskList];
     [scrollView addSubview:taskList2];
 
-    if([self.valObsSite isEqualToString:@"Miles City"]){
+    if([self.valObsSite isEqualToString:@"Miles City"]|| [self.valObsSite isEqualToString:@"Miles_City"]){
         locCodyClinic.hidden = YES;
         locCabinCreek.hidden = YES;
         locationList.hidden = YES;
@@ -75,7 +75,7 @@ NSInteger *globalCounter;
         [locCabinCreek release];
         [locationList release];
         [scrollView addSubview:locMilesCity];
-    }else if([self.valObsSite isEqualToString:@"Cody Clinic"]){
+    }else if([self.valObsSite isEqualToString:@"Cody Clinic"]|| [self.valObsSite isEqualToString:@"Cody_Clinic"]){
         locMilesCity.hidden = YES;
         locCabinCreek.hidden = YES;
         locationList.hidden = YES;
@@ -84,7 +84,7 @@ NSInteger *globalCounter;
         [locCabinCreek release];
         [locationList release];
         [scrollView addSubview:locCodyClinic];
-    }else if([self.valObsSite isEqualToString:@"Cabin Creek"]){
+    }else if([self.valObsSite isEqualToString:@"Cabin Creek"]|| [self.valObsSite isEqualToString:@"Cabin_Creek"]){
         locCodyClinic.hidden = YES;
         locMilesCity.hidden = YES;
         locationList.hidden = YES;
