@@ -18,6 +18,7 @@
 @property (retain, nonatomic) IBOutlet UIView *locMilesCity;
 @property (retain, nonatomic) IBOutlet UIView *locCodyClinic;
 @property (retain, nonatomic) IBOutlet UIView *locCabinCreek;
+@property (retain, nonatomic) IBOutlet UIView *locENT;
 @property (retain, nonatomic) IBOutlet UINavigationItem *headerMain;
 @property (retain, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (retain, nonatomic) IBOutlet UINavigationBar *taskBar;
@@ -26,7 +27,7 @@
 
 @implementation ViewController
 
-@synthesize scrollView, taskList, taskList2, locationList, locMilesCity, locCodyClinic, locCabinCreek, tableView, activeAct, globalLocation, exportArr, isMultitasking, interruptBtn;
+@synthesize scrollView, taskList, taskList2, locationList, locMilesCity, locCodyClinic, locCabinCreek, locENT, tableView, activeAct, globalLocation, exportArr, isMultitasking, interruptBtn;
 NSInteger *globalCounter;
 
 - (void)viewDidLoad
@@ -67,39 +68,59 @@ NSInteger *globalCounter;
     [scrollView addSubview:taskList2];
 
     if([self.valObsSite isEqualToString:@"Miles City"]|| [self.valObsSite isEqualToString:@"Miles_City"]){
+        locationList.hidden = YES;
         locCodyClinic.hidden = YES;
         locCabinCreek.hidden = YES;
-        locationList.hidden = YES;
+        locENT.hidden = YES;
         // see if the code below causes errors
+        [locationList release];
         [locCodyClinic release];
         [locCabinCreek release];
-        [locationList release];
+        [locENT release];
         [scrollView addSubview:locMilesCity];
     }else if([self.valObsSite isEqualToString:@"Cody Clinic"]|| [self.valObsSite isEqualToString:@"Cody_Clinic"]){
+        locationList.hidden = YES;
         locMilesCity.hidden = YES;
         locCabinCreek.hidden = YES;
-        locationList.hidden = YES;
+        locENT.hidden = YES;
         // see if the code below causes errors
+        [locationList release];
         [locMilesCity release];
         [locCabinCreek release];
-        [locationList release];
+        [locENT release];
         [scrollView addSubview:locCodyClinic];
     }else if([self.valObsSite isEqualToString:@"Cabin Creek"]|| [self.valObsSite isEqualToString:@"Cabin_Creek"]){
+        locationList.hidden = YES;
         locCodyClinic.hidden = YES;
         locMilesCity.hidden = YES;
-        locationList.hidden = YES;
+        locENT.hidden = YES;
         // see if the code below causes errors
+        [locationList release];
         [locCodyClinic release];
         [locMilesCity release];
+        [locENT release];
+        [scrollView addSubview:locCabinCreek];
+    }else if([self.valObsSite isEqualToString:@"Ear, Nose, and Throat"]|| [self.valObsSite isEqualToString:@"Ear,_Nose,_and_Throat"]){
+        locationList.hidden = YES;
+        locCodyClinic.hidden = YES;
+        locMilesCity.hidden = YES;
+        locCabinCreek.hidden = YES;
+        // see if the code below causes errors
         [locationList release];
+        [locCodyClinic release];
+        [locMilesCity release];
+        [locCabinCreek release];
+        [scrollView addSubview:locENT];
     }else{
         locMilesCity.hidden = YES;
         locCodyClinic.hidden = YES;
         locCabinCreek.hidden = YES;
+        locENT.hidden = YES;
         // see if the code below causes errors
         [locMilesCity release];
         [locCodyClinic release];
         [locCabinCreek release];
+        [locENT release];
         [scrollView addSubview:locationList];
     }
    
